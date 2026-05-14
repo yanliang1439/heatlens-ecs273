@@ -1,0 +1,66 @@
+# -----------------------------
+# OS / editor clutter
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# -----------------------------
+# Frontend (React / Vite / npm)
+# -----------------------------
+frontend/heatlens-ui/node_modules/
+frontend/heatlens-ui/dist/
+frontend/heatlens-ui/.vite/
+frontend/heatlens-ui/coverage/
+frontend/heatlens-ui/npm-debug.log*
+frontend/heatlens-ui/yarn-debug.log*
+frontend/heatlens-ui/yarn-error.log*
+frontend/heatlens-ui/pnpm-debug.log*
+
+# -----------------------------
+# Python / backend / ML
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# -----------------------------
+# Local environment files
+# -----------------------------
+.env
+.env.*
+*.local
+
+# -----------------------------
+# Local project tooling
+# -----------------------------
+.agents/
+.codex/
+
