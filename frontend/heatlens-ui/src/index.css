@@ -231,6 +231,46 @@ body {
   background: #eff6ff;
 }
 
+.simulator-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+.simulator-controls,
+.simulator-results {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.slider-group {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid #d7dde5;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.slider-group input {
+  width: 100%;
+}
+
+.delta-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.delta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid #d7dde5;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
 @media (max-width: 700px) {
   .app-shell {
     padding: 1rem;
@@ -238,7 +278,8 @@ body {
 
   .status-grid,
   .county-list,
-  .shap-summary {
+  .shap-summary,
+  .simulator-grid {
     grid-template-columns: 1fr;
   }
 

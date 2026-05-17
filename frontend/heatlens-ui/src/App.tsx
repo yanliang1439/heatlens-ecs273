@@ -8,6 +8,7 @@ import type { AppSelection } from "./types/stateTypes";
 import FeatureDetail from "./views/FeatureDetail";
 import MapOverview from "./views/MapOverview";
 import ShapBreakdown from "./views/ShapBreakdown";
+import WhatIfSimulator from "./views/WhatIfSimulator";
 
 function App() {
   const defaultSelection: AppSelection = {
@@ -123,6 +124,10 @@ function App() {
 
       <FeatureDetail countyDetail={selectedCountyDetail} />
       <ShapBreakdown shapBreakdown={selectedShapBreakdown} />
+      <WhatIfSimulator
+        countyDetail={selectedCountyDetail}
+        shapBreakdown={selectedShapBreakdown}
+      />
     </main>
   );
 }
