@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { countyDetailMock, countySummariesMock } from "./data/mockData";
+import {
+  countyDetailsMock,
+  countySummariesMock,
+} from "./data/mockData";
 import type { AppSelection } from "./types/stateTypes";
+import FeatureDetail from "./views/FeatureDetail";
 import MapOverview from "./views/MapOverview";
 
 function App() {
@@ -22,6 +26,17 @@ function App() {
 
   if (!selectedCounty) {
     return <main className="app-shell">Selection could not be loaded.</main>;
+  }
+
+  const selectedCountyDetail = countyDetailsMock.find((county) => {
+    return (
+      county.countyFips === selection.selectedCountyFips &&
+      county.year === selection.selectedYear
+    );
+  });
+
+  if (!selectedCountyDetail) {
+    return <main className="app-shell">County detail could not be loaded.</main>;
   }
 
   function handleCountyChange(nextCountyFips: string) {
@@ -78,8 +93,8 @@ function App() {
           <p>
             Detail view feature groups ready:{" "}
             <strong>
-              {Object.keys(countyDetailMock.climateFeatures).length +
-                Object.keys(countyDetailMock.vulnerabilityFeatures).length}
+              {Object.keys(selectedCountyDetail.climateFeatures).length +
+                Object.keys(selectedCountyDetail.vulnerabilityFeatures).length}
             </strong>
           </p>
         </div>
@@ -92,6 +107,8 @@ function App() {
         onCountyChange={handleCountyChange}
         onYearChange={handleYearChange}
       />
+
+      <FeatureDetail countyDetail={selectedCountyDetail} />
     </main>
   );
 }

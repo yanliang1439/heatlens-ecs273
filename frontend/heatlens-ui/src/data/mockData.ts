@@ -57,48 +57,200 @@ export const countySummariesMock: CountySummaryRecord[] = [
   },
 ];
 
-export const countyDetailMock: CountyDetailRecord = {
-  countyName: "Sacramento",
-  countyFips: "06067",
-  year: 2022,
-  predictedEdRate: 14.2,
-  observedEdRate: 13.8,
-  climateFeatures: {
-    summerAvgMax: 96.1,
-    heatwaveDays: 18,
-    consecutiveHotDays: 7,
-    warmNightCount: 24,
-    tailPercentileTemp: 101.4,
+export const countyDetailsMock: CountyDetailRecord[] = [
+  {
+    countyName: "Sacramento",
+    countyFips: "06067",
+    year: 2021,
+    predictedEdRate: 12.9,
+    observedEdRate: 12.4,
+    climateFeatures: {
+      summerAvgMax: 94.8,
+      heatwaveDays: 14,
+      consecutiveHotDays: 5,
+      warmNightCount: 20,
+      tailPercentileTemp: 99.2,
+    },
+    vulnerabilityFeatures: {
+      elderlyPct: 14.4,
+      povertyPct: 11.5,
+      acCoverage: 77.4,
+      treeCanopy: 19.1,
+    },
   },
-  vulnerabilityFeatures: {
-    elderlyPct: 14.7,
-    povertyPct: 11.2,
-    acCoverage: 78.0,
-    treeCanopy: 19.5,
+  {
+    countyName: "Sacramento",
+    countyFips: "06067",
+    year: 2022,
+    predictedEdRate: 14.2,
+    observedEdRate: 13.8,
+    climateFeatures: {
+      summerAvgMax: 96.1,
+      heatwaveDays: 18,
+      consecutiveHotDays: 7,
+      warmNightCount: 24,
+      tailPercentileTemp: 101.4,
+    },
+    vulnerabilityFeatures: {
+      elderlyPct: 14.7,
+      povertyPct: 11.2,
+      acCoverage: 78.0,
+      treeCanopy: 19.5,
+    },
   },
-};
+  {
+    countyName: "Yolo",
+    countyFips: "06113",
+    year: 2021,
+    predictedEdRate: 9.8,
+    observedEdRate: 9.4,
+    climateFeatures: {
+      summerAvgMax: 92.6,
+      heatwaveDays: 10,
+      consecutiveHotDays: 4,
+      warmNightCount: 16,
+      tailPercentileTemp: 97.3,
+    },
+    vulnerabilityFeatures: {
+      elderlyPct: 13.1,
+      povertyPct: 10.4,
+      acCoverage: 75.8,
+      treeCanopy: 16.9,
+    },
+  },
+  {
+    countyName: "Yolo",
+    countyFips: "06113",
+    year: 2022,
+    predictedEdRate: 10.9,
+    observedEdRate: 10.5,
+    climateFeatures: {
+      summerAvgMax: 94.0,
+      heatwaveDays: 13,
+      consecutiveHotDays: 5,
+      warmNightCount: 18,
+      tailPercentileTemp: 99.1,
+    },
+    vulnerabilityFeatures: {
+      elderlyPct: 13.3,
+      povertyPct: 10.1,
+      acCoverage: 76.1,
+      treeCanopy: 17.2,
+    },
+  },
+  {
+    countyName: "Imperial",
+    countyFips: "06025",
+    year: 2021,
+    predictedEdRate: 16.7,
+    observedEdRate: 17.0,
+    climateFeatures: {
+      summerAvgMax: 103.5,
+      heatwaveDays: 28,
+      consecutiveHotDays: 11,
+      warmNightCount: 30,
+      tailPercentileTemp: 108.6,
+    },
+    vulnerabilityFeatures: {
+      elderlyPct: 12.8,
+      povertyPct: 18.9,
+      acCoverage: 70.4,
+      treeCanopy: 8.4,
+    },
+  },
+  {
+    countyName: "Imperial",
+    countyFips: "06025",
+    year: 2022,
+    predictedEdRate: 18.4,
+    observedEdRate: 18.9,
+    climateFeatures: {
+      summerAvgMax: 104.8,
+      heatwaveDays: 31,
+      consecutiveHotDays: 13,
+      warmNightCount: 33,
+      tailPercentileTemp: 110.2,
+    },
+    vulnerabilityFeatures: {
+      elderlyPct: 12.9,
+      povertyPct: 18.7,
+      acCoverage: 70.9,
+      treeCanopy: 8.2,
+    },
+  },
+];
 
-export const shapBreakdownMock: ShapBreakdownRecord = {
-  countyName: "Sacramento",
-  countyFips: "06067",
-  year: 2022,
-  baseValue: 9.4,
-  prediction: 14.2,
-  shapValues: [
-    {
-      feature: "heatwaveDays",
-      value: 18,
-      shapContribution: 2.1,
-    },
-    {
-      feature: "warmNightCount",
-      value: 24,
-      shapContribution: 1.4,
-    },
-    {
-      feature: "acCoverage",
-      value: 78.0,
-      shapContribution: -0.8,
-    },
-  ],
-};
+export const shapBreakdownsMock: ShapBreakdownRecord[] = [
+  {
+    countyName: "Sacramento",
+    countyFips: "06067",
+    year: 2021,
+    baseValue: 9.1,
+    prediction: 12.9,
+    shapValues: [
+      { feature: "heatwaveDays", value: 14, shapContribution: 1.7 },
+      { feature: "warmNightCount", value: 20, shapContribution: 1.1 },
+      { feature: "acCoverage", value: 77.4, shapContribution: -0.6 },
+    ],
+  },
+  {
+    countyName: "Sacramento",
+    countyFips: "06067",
+    year: 2022,
+    baseValue: 9.4,
+    prediction: 14.2,
+    shapValues: [
+      { feature: "heatwaveDays", value: 18, shapContribution: 2.1 },
+      { feature: "warmNightCount", value: 24, shapContribution: 1.4 },
+      { feature: "acCoverage", value: 78.0, shapContribution: -0.8 },
+    ],
+  },
+  {
+    countyName: "Yolo",
+    countyFips: "06113",
+    year: 2021,
+    baseValue: 8.5,
+    prediction: 9.8,
+    shapValues: [
+      { feature: "heatwaveDays", value: 10, shapContribution: 0.9 },
+      { feature: "povertyPct", value: 10.4, shapContribution: 0.4 },
+      { feature: "treeCanopy", value: 16.9, shapContribution: -0.3 },
+    ],
+  },
+  {
+    countyName: "Yolo",
+    countyFips: "06113",
+    year: 2022,
+    baseValue: 8.7,
+    prediction: 10.9,
+    shapValues: [
+      { feature: "heatwaveDays", value: 13, shapContribution: 1.1 },
+      { feature: "warmNightCount", value: 18, shapContribution: 0.6 },
+      { feature: "treeCanopy", value: 17.2, shapContribution: -0.4 },
+    ],
+  },
+  {
+    countyName: "Imperial",
+    countyFips: "06025",
+    year: 2021,
+    baseValue: 10.2,
+    prediction: 16.7,
+    shapValues: [
+      { feature: "heatwaveDays", value: 28, shapContribution: 2.8 },
+      { feature: "povertyPct", value: 18.9, shapContribution: 1.4 },
+      { feature: "treeCanopy", value: 8.4, shapContribution: 0.9 },
+    ],
+  },
+  {
+    countyName: "Imperial",
+    countyFips: "06025",
+    year: 2022,
+    baseValue: 10.4,
+    prediction: 18.4,
+    shapValues: [
+      { feature: "heatwaveDays", value: 31, shapContribution: 3.2 },
+      { feature: "warmNightCount", value: 33, shapContribution: 1.7 },
+      { feature: "treeCanopy", value: 8.2, shapContribution: 1.0 },
+    ],
+  },
+];
