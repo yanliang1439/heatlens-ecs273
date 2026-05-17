@@ -2,8 +2,8 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #1f2937;
-  background: #eef2f5;
+  color: #e6edf3;
+  background: #0d1117;
 }
 
 * {
@@ -12,6 +12,7 @@
 
 body {
   margin: 0;
+  background: #0d1117;
 }
 
 #root {
@@ -20,21 +21,24 @@ body {
 
 .app-shell {
   min-height: 100vh;
-  padding: 2rem;
-  max-width: 1100px;
+  padding: 1.5rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.hero-panel,
+.top-bar,
 .view-panel {
-  background: #ffffff;
-  border: 1px solid #d7dde5;
+  background: #161b22;
+  border: 1px solid #30363d;
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
 }
 
-.hero-panel {
+.top-bar {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
 }
 
@@ -44,33 +48,60 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #9a3412;
+  color: #7d8590;
 }
 
-.hero-panel h1,
-.section-heading h2,
+.top-bar h1,
 .status-card h2,
-.view-card h3 {
+.view-panel h2,
+.view-panel h3 {
   margin-top: 0;
+}
+
+.top-bar h1 {
+  margin-bottom: 0.5rem;
 }
 
 .hero-copy {
   max-width: 55rem;
   margin-bottom: 0;
+  color: #9da7b3;
 }
 
-.status-grid {
+.toolbar-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.selection-summary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .status-card {
-  background: #fffaf2;
-  border: 1px solid #f1d6b8;
+  background: #0d1117;
+  border: 1px solid #30363d;
   border-radius: 14px;
   padding: 1rem 1.25rem;
+}
+
+.status-card p {
+  margin-bottom: 0.45rem;
+  color: #c9d1d9;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.95fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+.side-column {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .view-panel {
@@ -96,7 +127,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #92400e;
+  color: #7d8590;
 }
 
 .control-row {
@@ -110,36 +141,96 @@ body {
   flex-direction: column;
   gap: 0.25rem;
   font-size: 0.95rem;
+  color: #c9d1d9;
 }
 
 .control-group select {
   min-width: 9rem;
   padding: 0.55rem 0.7rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #30363d;
   border-radius: 10px;
-  background: #ffffff;
+  background: #0d1117;
+  color: #e6edf3;
 }
 
-.map-placeholder {
-  min-height: 220px;
+.county-map-shell {
+  margin-bottom: 1rem;
+}
+
+.map-loading {
+  min-height: 430px;
   display: grid;
   place-items: center;
-  margin-bottom: 1rem;
-  border: 1px dashed #94a3b8;
+  border: 1px solid #30363d;
   border-radius: 14px;
-  background: linear-gradient(180deg, #f8fafc, #edf2f7);
-  text-align: center;
-  padding: 1rem;
+  background: #0d1117;
+  color: #9da7b3;
+}
+
+.county-map {
+  width: 100%;
+  display: block;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  background: #0d1117;
+}
+
+.county-shape {
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+.county-shape:hover {
+  opacity: 0.85;
+}
+
+.map-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  color: #9da7b3;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legend-swatch.selected {
+  background: #2f81f7;
+}
+
+.legend-swatch.high {
+  background: #f85149;
+}
+
+.legend-swatch.medium {
+  background: #d29922;
+}
+
+.legend-swatch.low {
+  background: #238636;
 }
 
 .panel-copy {
   margin-top: 0;
   margin-bottom: 1rem;
+  color: #9da7b3;
 }
 
 .county-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
@@ -149,16 +240,23 @@ body {
   gap: 0.75rem;
   width: 100%;
   padding: 0.8rem 0.95rem;
-  border: 1px solid #d7dde5;
+  border: 1px solid #30363d;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #0d1117;
+  color: #e6edf3;
   text-align: left;
   cursor: pointer;
 }
 
+.county-row p {
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+  color: #9da7b3;
+}
+
 .county-row.selected {
-  border-color: #2563eb;
-  background: #e8f0ff;
+  border-color: #2f81f7;
+  background: #111827;
 }
 
 .feature-section + .feature-section {
@@ -174,14 +272,21 @@ body {
   gap: 0.6rem;
 }
 
+.feature-group-label {
+  color: #7d8590;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .feature-row {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding: 0.8rem 0.95rem;
-  border: 1px solid #d7dde5;
+  border: 1px solid #30363d;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #0d1117;
 }
 
 .shap-summary {
@@ -193,14 +298,15 @@ body {
 
 .summary-box {
   padding: 0.9rem 1rem;
-  border: 1px solid #d7dde5;
+  border: 1px solid #30363d;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #0d1117;
 }
 
 .summary-box span {
   display: block;
   margin-bottom: 0.3rem;
+  color: #9da7b3;
 }
 
 .shap-list {
@@ -219,16 +325,17 @@ body {
 
 .shap-row p {
   margin-bottom: 0;
+  color: #9da7b3;
 }
 
 .shap-row.positive {
-  border: 1px solid #fecaca;
-  background: #fff1f2;
+  border: 1px solid #5a1f23;
+  background: #2d1418;
 }
 
 .shap-row.negative {
-  border: 1px solid #bfdbfe;
-  background: #eff6ff;
+  border: 1px solid #1f3a5f;
+  background: #101b2b;
 }
 
 .simulator-grid {
@@ -247,9 +354,9 @@ body {
   display: grid;
   gap: 0.45rem;
   padding: 1rem;
-  border: 1px solid #d7dde5;
+  border: 1px solid #30363d;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #0d1117;
 }
 
 .slider-group input {
@@ -266,9 +373,9 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.8rem 0.95rem;
-  border: 1px solid #d7dde5;
+  border: 1px solid #30363d;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #0d1117;
 }
 
 @media (max-width: 700px) {
@@ -276,7 +383,9 @@ body {
     padding: 1rem;
   }
 
-  .status-grid,
+  .top-bar,
+  .selection-summary,
+  .dashboard-grid,
   .county-list,
   .shap-summary,
   .simulator-grid {

@@ -44,8 +44,8 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
       </div>
 
       <p className="panel-copy">
-        This version uses a small local placeholder calculation. Later the same
-        controls can call the real counterfactual API and replace these values.
+        This panel answers the intervention question: if we improve AC coverage
+        or tree canopy, how might the prediction change?
       </p>
 
       <div className="simulator-grid">

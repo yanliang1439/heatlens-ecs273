@@ -32,8 +32,8 @@ function ShapBreakdown(props: ShapBreakdownProps) {
       </div>
 
       <p className="panel-copy">
-        For now this is a simple ranked list. Later we can upgrade it into a
-        more visual SHAP chart once the real outputs are stable.
+        This panel answers a different question from the feature list: which
+        values are pushing the prediction upward or downward the most?
       </p>
 
       <div className="shap-list">

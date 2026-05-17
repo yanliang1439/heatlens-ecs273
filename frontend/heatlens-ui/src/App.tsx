@@ -4,6 +4,8 @@ import {
   countySummariesMock,
   shapBreakdownsMock,
 } from "./data/mockData";
+import CountySelect from "./components/CountySelect";
+import YearSelect from "./components/YearSelect";
 import type { AppSelection } from "./types/stateTypes";
 import FeatureDetail from "./views/FeatureDetail";
 import MapOverview from "./views/MapOverview";
@@ -53,6 +55,17 @@ function App() {
     return <main className="app-shell">SHAP detail could not be loaded.</main>;
   }
 
+  const yearOptions = Array.from(
+    new Set(countySummariesMock.map((county) => county.year))
+  ).sort();
+
+  const countyOptions = countySummariesMock
+    .filter((county) => county.year === selection.selectedYear)
+    .map((county) => ({
+      countyFips: county.countyFips,
+      countyName: county.countyName,
+    }));
+
   function handleCountyChange(nextCountyFips: string) {
     setSelection((currentSelection) => ({
       ...currentSelection,
@@ -74,56 +87,69 @@ function App() {
 
   return (
     <main className="app-shell">
-      <section className="hero-panel">
-        <p className="eyebrow">ECS 273 Final Project</p>
-        <h1>HeatLens Frontend</h1>
-        <p className="hero-copy">
-          This is the frontend workspace for the HeatLens visual analytics
-          project. Right now this page is just a clean starting point so we can
-          build each view one step at a time.
-        </p>
-      </section>
-
-      <section className="status-grid">
-        <div className="status-card">
-          <h2>Current Selection</h2>
-          <p>
-            County: <strong>{selectedCounty.countyName}</strong>
-          </p>
-          <p>
-            Year: <strong>{selectedCounty.year}</strong>
-          </p>
-          <p>
-            Predicted ED visit rate:{" "}
-            <strong>{selectedCounty.predictedEdRate.toFixed(1)}</strong>
+      <section className="top-bar">
+        <div>
+          <p className="eyebrow">ECS 273 Final Project</p>
+          <h1>HeatLens</h1>
+          <p className="hero-copy">
+            Mock frontend dashboard for exploring county heat-health risk,
+            model explanations, and simple intervention scenarios.
           </p>
         </div>
 
-        <div className="status-card">
-          <h2>Data Shape Check</h2>
-          <p>
-            Mock county records loaded: <strong>{countySummariesMock.length}</strong>
-          </p>
-          <p>
-            Detail view feature groups ready:{" "}
-            <strong>
-              {Object.keys(selectedCountyDetail.climateFeatures).length +
-                Object.keys(selectedCountyDetail.vulnerabilityFeatures).length}
-            </strong>
-          </p>
+        <div className="toolbar-card">
+          <div className="control-row">
+            <YearSelect
+              years={yearOptions}
+              selectedYear={selection.selectedYear}
+              onChange={handleYearChange}
+            />
+            <CountySelect
+              counties={countyOptions}
+              selectedCountyFips={selection.selectedCountyFips}
+              onChange={handleCountyChange}
+            />
+          </div>
+
+          <div className="selection-summary">
+            <div className="status-card">
+              <h2>Selected County</h2>
+              <p>
+                <strong>{selectedCounty.countyName}</strong> in{" "}
+                <strong>{selectedCounty.year}</strong>
+              </p>
+              <p>
+                Predicted ED rate:{" "}
+                <strong>{selectedCounty.predictedEdRate.toFixed(1)}</strong>
+              </p>
+            </div>
+
+            <div className="status-card">
+              <h2>How To Read This</h2>
+              <p>1. Pick a county and year.</p>
+              <p>2. Check its features and SHAP drivers.</p>
+              <p>3. Try an intervention in the simulator.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <MapOverview
-        countySummaries={countySummariesMock}
-        selectedCountyFips={selection.selectedCountyFips}
-        selectedYear={selection.selectedYear}
-        onCountyChange={handleCountyChange}
-        onYearChange={handleYearChange}
-      />
+      <section className="dashboard-grid">
+        <div className="map-column">
+          <MapOverview
+            countySummaries={countySummariesMock}
+            selectedCountyFips={selection.selectedCountyFips}
+            selectedYear={selection.selectedYear}
+            onCountyChange={handleCountyChange}
+          />
+        </div>
 
-      <FeatureDetail countyDetail={selectedCountyDetail} />
-      <ShapBreakdown shapBreakdown={selectedShapBreakdown} />
+        <div className="side-column">
+          <FeatureDetail countyDetail={selectedCountyDetail} />
+          <ShapBreakdown shapBreakdown={selectedShapBreakdown} />
+        </div>
+      </section>
+
       <WhatIfSimulator
         countyDetail={selectedCountyDetail}
         shapBreakdown={selectedShapBreakdown}

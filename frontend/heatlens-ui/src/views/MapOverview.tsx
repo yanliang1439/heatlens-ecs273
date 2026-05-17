@@ -1,5 +1,4 @@
-import CountySelect from "../components/CountySelect";
-import YearSelect from "../components/YearSelect";
+import CountyMap from "../components/CountyMap";
 import type { CountySummaryRecord } from "../types/dataTypes";
 
 type MapOverviewProps = {
@@ -7,28 +6,11 @@ type MapOverviewProps = {
   selectedCountyFips: string;
   selectedYear: number;
   onCountyChange: (countyFips: string) => void;
-  onYearChange: (year: number) => void;
 };
 
 function MapOverview(props: MapOverviewProps) {
-  const {
-    countySummaries,
-    selectedCountyFips,
-    selectedYear,
-    onCountyChange,
-    onYearChange,
-  } = props;
-
-  const yearOptions = Array.from(
-    new Set(countySummaries.map((county) => county.year))
-  ).sort();
-
-  const countyOptions = countySummaries
-    .filter((county) => county.year === selectedYear)
-    .map((county) => ({
-      countyFips: county.countyFips,
-      countyName: county.countyName,
-    }));
+  const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } =
+    props;
 
   const visibleCounties = countySummaries.filter((county) => {
     return county.year === selectedYear;
@@ -40,30 +22,19 @@ function MapOverview(props: MapOverviewProps) {
         <div>
           <p className="panel-tag">View 1</p>
           <h2>Map Overview</h2>
-        </div>
-        <div className="control-row">
-          <YearSelect
-            years={yearOptions}
-            selectedYear={selectedYear}
-            onChange={onYearChange}
-          />
-          <CountySelect
-            counties={countyOptions}
-            selectedCountyFips={selectedCountyFips}
-            onChange={onCountyChange}
-          />
-        </div>
-      </div>
-
-      <div className="map-placeholder">
-        <div>
-          <h3>Map area placeholder</h3>
-          <p>
-            This box will be replaced by the California county map once the
-            boundary data is added.
+          <p className="panel-copy">
+            Select a county from the map to update the detail panels on the
+            right and the simulator below.
           </p>
         </div>
       </div>
+
+      <CountyMap
+        countySummaries={countySummaries}
+        selectedCountyFips={selectedCountyFips}
+        selectedYear={selectedYear}
+        onCountyChange={onCountyChange}
+      />
 
       <div className="county-list">
         {visibleCounties.map((county) => {
@@ -76,7 +47,10 @@ function MapOverview(props: MapOverviewProps) {
               className={isSelected ? "county-row selected" : "county-row"}
               onClick={() => onCountyChange(county.countyFips)}
             >
-              <span>{county.countyName}</span>
+              <div>
+                <strong>{county.countyName}</strong>
+                <p>{county.riskLevel} risk</p>
+              </div>
               <span>{county.predictedEdRate.toFixed(1)}</span>
             </button>
           );

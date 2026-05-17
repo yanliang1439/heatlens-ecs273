@@ -23,11 +23,12 @@ function FeatureDetail(props: FeatureDetailProps) {
 
       <p className="panel-copy">
         These values are coming from mock county detail records for now. Later
-        this panel can turn into a chart, but a clear table is enough to prove
-        the data flow first.
+        this panel can turn into a chart, but right now it answers the simple
+        question: what does the model know about this county?
       </p>
 
       <div className="feature-section">
+        <p className="feature-group-label">Climate</p>
         <h3>Climate Features</h3>
         <div className="feature-list">
           {climateFeatures.map(([featureName, value]) => (
@@ -40,6 +41,7 @@ function FeatureDetail(props: FeatureDetailProps) {
       </div>
 
       <div className="feature-section">
+        <p className="feature-group-label">Vulnerability</p>
         <h3>Vulnerability Features</h3>
         <div className="feature-list">
           {vulnerabilityFeatures.map(([featureName, value]) => (
