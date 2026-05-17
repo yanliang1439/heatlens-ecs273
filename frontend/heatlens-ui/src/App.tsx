@@ -1,39 +1,7 @@
 import { useState } from "react";
-import ViewCard from "./components/ViewCard";
 import { countyDetailMock, countySummariesMock } from "./data/mockData";
 import type { AppSelection } from "./types/stateTypes";
-import type { ViewSummary } from "./types/viewTypes";
-
-const plannedViews: ViewSummary[] = [
-  {
-    id: "map-overview",
-    title: "Map Overview",
-    status: "next up",
-    description:
-      "California county map with risk coloring, hover details, and year selection.",
-  },
-  {
-    id: "feature-detail",
-    title: "Feature Detail",
-    status: "planned",
-    description:
-      "Bar chart for the selected county's main climate and vulnerability features.",
-  },
-  {
-    id: "shap-breakdown",
-    title: "SHAP Breakdown",
-    status: "planned",
-    description:
-      "Simple explanation view for what is pushing the prediction up or down.",
-  },
-  {
-    id: "what-if-simulator",
-    title: "What-if Simulator",
-    status: "planned",
-    description:
-      "Slider-based controls for testing changes like AC coverage and tree canopy.",
-  },
-];
+import MapOverview from "./views/MapOverview";
 
 function App() {
   const defaultSelection: AppSelection = {
@@ -41,7 +9,7 @@ function App() {
     selectedYear: countySummariesMock[0].year,
   };
 
-  const [selection] = useState<AppSelection>(defaultSelection);
+  const [selection, setSelection] = useState<AppSelection>(defaultSelection);
 
   // Keeping this lookup close to App for now makes the early state flow easier
   // to follow before we split more logic into separate files.
@@ -54,6 +22,25 @@ function App() {
 
   if (!selectedCounty) {
     return <main className="app-shell">Selection could not be loaded.</main>;
+  }
+
+  function handleCountyChange(nextCountyFips: string) {
+    setSelection((currentSelection) => ({
+      ...currentSelection,
+      selectedCountyFips: nextCountyFips,
+    }));
+  }
+
+  function handleYearChange(nextYear: number) {
+    const firstCountyInYear = countySummariesMock.find((county) => {
+      return county.year === nextYear;
+    });
+
+    setSelection({
+      selectedYear: nextYear,
+      selectedCountyFips:
+        firstCountyInYear?.countyFips ?? defaultSelection.selectedCountyFips,
+    });
   }
 
   return (
@@ -98,21 +85,13 @@ function App() {
         </div>
       </section>
 
-      <section className="views-panel">
-        <div className="section-heading">
-          <h2>Planned Views</h2>
-          <p>
-            These are the four main interface pieces we promised in the
-            proposal and project plan.
-          </p>
-        </div>
-
-        <div className="view-grid">
-          {plannedViews.map((view) => (
-            <ViewCard key={view.id} view={view} />
-          ))}
-        </div>
-      </section>
+      <MapOverview
+        countySummaries={countySummariesMock}
+        selectedCountyFips={selection.selectedCountyFips}
+        selectedYear={selection.selectedYear}
+        onCountyChange={handleCountyChange}
+        onYearChange={handleYearChange}
+      />
     </main>
   );
 }
