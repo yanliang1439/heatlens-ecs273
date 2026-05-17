@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
   color: #1f2937;
-  background: #f3f4f6;
+  background: #eef2f5;
 }
 
 * {
@@ -20,12 +20,100 @@ body {
 
 .app-shell {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  text-align: center;
   padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.app-shell h1 {
+.hero-panel,
+.views-panel {
+  background: #ffffff;
+  border: 1px solid #d7dde5;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+}
+
+.hero-panel {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9a3412;
+}
+
+.hero-panel h1,
+.section-heading h2,
+.status-card h2,
+.view-card h3 {
+  margin-top: 0;
+}
+
+.hero-copy {
+  max-width: 55rem;
+  margin-bottom: 0;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-card {
+  background: #fffaf2;
+  border: 1px solid #f1d6b8;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.section-heading p {
+  margin-bottom: 0;
+}
+
+.view-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.view-card {
+  background: #f8fafc;
+  border: 1px solid #d7dde5;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+}
+
+.view-status {
+  display: inline-block;
+  margin-top: 0;
   margin-bottom: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .status-grid,
+  .view-grid {
+    grid-template-columns: 1fr;
+  }
 }
