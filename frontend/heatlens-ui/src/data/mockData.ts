@@ -10,6 +10,14 @@ export const countySummariesMock: CountySummaryRecord[] = [
   {
     countyName: "Sacramento",
     countyFips: "06067",
+    year: 2021,
+    predictedEdRate: 12.9,
+    observedEdRate: 12.4,
+    riskLevel: "medium",
+  },
+  {
+    countyName: "Sacramento",
+    countyFips: "06067",
     year: 2022,
     predictedEdRate: 14.2,
     observedEdRate: 13.8,
@@ -18,10 +26,26 @@ export const countySummariesMock: CountySummaryRecord[] = [
   {
     countyName: "Yolo",
     countyFips: "06113",
+    year: 2021,
+    predictedEdRate: 9.8,
+    observedEdRate: 9.4,
+    riskLevel: "medium",
+  },
+  {
+    countyName: "Yolo",
+    countyFips: "06113",
     year: 2022,
     predictedEdRate: 10.9,
     observedEdRate: 10.5,
     riskLevel: "medium",
+  },
+  {
+    countyName: "Imperial",
+    countyFips: "06025",
+    year: 2021,
+    predictedEdRate: 16.7,
+    observedEdRate: 17.0,
+    riskLevel: "high",
   },
   {
     countyName: "Imperial",

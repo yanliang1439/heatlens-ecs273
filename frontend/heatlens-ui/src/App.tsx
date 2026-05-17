@@ -1,5 +1,7 @@
+import { useState } from "react";
 import ViewCard from "./components/ViewCard";
 import { countyDetailMock, countySummariesMock } from "./data/mockData";
+import type { AppSelection } from "./types/stateTypes";
 import type { ViewSummary } from "./types/viewTypes";
 
 const plannedViews: ViewSummary[] = [
@@ -34,7 +36,25 @@ const plannedViews: ViewSummary[] = [
 ];
 
 function App() {
-  const sampleCounty = countySummariesMock[0];
+  const defaultSelection: AppSelection = {
+    selectedCountyFips: countySummariesMock[0].countyFips,
+    selectedYear: countySummariesMock[0].year,
+  };
+
+  const [selection] = useState<AppSelection>(defaultSelection);
+
+  // Keeping this lookup close to App for now makes the early state flow easier
+  // to follow before we split more logic into separate files.
+  const selectedCounty = countySummariesMock.find((county) => {
+    return (
+      county.countyFips === selection.selectedCountyFips &&
+      county.year === selection.selectedYear
+    );
+  });
+
+  if (!selectedCounty) {
+    return <main className="app-shell">Selection could not be loaded.</main>;
+  }
 
   return (
     <main className="app-shell">
@@ -50,14 +70,16 @@ function App() {
 
       <section className="status-grid">
         <div className="status-card">
-          <h2>Current Mock Sample</h2>
+          <h2>Current Selection</h2>
           <p>
-            Using <strong>{sampleCounty.countyName}</strong> in{" "}
-            <strong>{sampleCounty.year}</strong> as a temporary example.
+            County: <strong>{selectedCounty.countyName}</strong>
+          </p>
+          <p>
+            Year: <strong>{selectedCounty.year}</strong>
           </p>
           <p>
             Predicted ED visit rate:{" "}
-            <strong>{sampleCounty.predictedEdRate.toFixed(1)}</strong>
+            <strong>{selectedCounty.predictedEdRate.toFixed(1)}</strong>
           </p>
         </div>
 
