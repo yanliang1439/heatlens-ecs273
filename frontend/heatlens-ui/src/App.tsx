@@ -2,10 +2,12 @@ import { useState } from "react";
 import {
   countyDetailsMock,
   countySummariesMock,
+  shapBreakdownsMock,
 } from "./data/mockData";
 import type { AppSelection } from "./types/stateTypes";
 import FeatureDetail from "./views/FeatureDetail";
 import MapOverview from "./views/MapOverview";
+import ShapBreakdown from "./views/ShapBreakdown";
 
 function App() {
   const defaultSelection: AppSelection = {
@@ -37,6 +39,17 @@ function App() {
 
   if (!selectedCountyDetail) {
     return <main className="app-shell">County detail could not be loaded.</main>;
+  }
+
+  const selectedShapBreakdown = shapBreakdownsMock.find((county) => {
+    return (
+      county.countyFips === selection.selectedCountyFips &&
+      county.year === selection.selectedYear
+    );
+  });
+
+  if (!selectedShapBreakdown) {
+    return <main className="app-shell">SHAP detail could not be loaded.</main>;
   }
 
   function handleCountyChange(nextCountyFips: string) {
@@ -109,6 +122,7 @@ function App() {
       />
 
       <FeatureDetail countyDetail={selectedCountyDetail} />
+      <ShapBreakdown shapBreakdown={selectedShapBreakdown} />
     </main>
   );
 }

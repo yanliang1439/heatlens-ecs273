@@ -184,13 +184,61 @@ body {
   background: #f8fafc;
 }
 
+.shap-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.summary-box {
+  padding: 0.9rem 1rem;
+  border: 1px solid #d7dde5;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.summary-box span {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.shap-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.shap-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+}
+
+.shap-row p {
+  margin-bottom: 0;
+}
+
+.shap-row.positive {
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+}
+
+.shap-row.negative {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+}
+
 @media (max-width: 700px) {
   .app-shell {
     padding: 1rem;
   }
 
   .status-grid,
-  .county-list {
+  .county-list,
+  .shap-summary {
     grid-template-columns: 1fr;
   }
 
