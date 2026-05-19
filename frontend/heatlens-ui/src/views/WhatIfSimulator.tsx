@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { CountyDetailRecord, ShapBreakdownRecord } from "../types/dataTypes";
+import { formatFeatureLabel } from "../utils/formatters";
 
 type WhatIfSimulatorProps = {
   countyDetail: CountyDetailRecord;
@@ -22,6 +23,7 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
 
   const simulation = {
     updatedPrediction,
+    predictionChange: updatedPrediction - countyDetail.predictedEdRate,
     shapDelta: [
       {
         feature: "acCoverage",
@@ -48,6 +50,17 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
           This panel answers the intervention question: if we improve AC
           coverage or tree canopy, how might the prediction change?
         </p>
+
+        <div className="summary-strip">
+          <div className="summary-chip">
+            <span>Starting county</span>
+            <strong>{countyDetail.countyName}</strong>
+          </div>
+          <div className="summary-chip">
+            <span>Current base value</span>
+            <strong>{shapBreakdown.baseValue.toFixed(1)}</strong>
+          </div>
+        </div>
 
         <div className="simulator-grid">
           <div className="simulator-controls">
@@ -83,23 +96,26 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
           </div>
 
           <div className="simulator-results">
-            <div className="summary-box">
-              <span>Original prediction</span>
-              <strong>{countyDetail.predictedEdRate.toFixed(1)}</strong>
+            <div className="before-after-grid">
+              <div className="summary-box">
+                <span>Original prediction</span>
+                <strong>{countyDetail.predictedEdRate.toFixed(1)}</strong>
+              </div>
+              <div className="summary-box emphasis-box">
+                <span>Updated prediction</span>
+                <strong>{simulation.updatedPrediction.toFixed(1)}</strong>
+              </div>
             </div>
+
             <div className="summary-box">
-              <span>Updated prediction</span>
-              <strong>{simulation.updatedPrediction.toFixed(1)}</strong>
-            </div>
-            <div className="summary-box">
-              <span>Original base value</span>
-              <strong>{shapBreakdown.baseValue.toFixed(1)}</strong>
+              <span>Prediction change</span>
+              <strong>{simulation.predictionChange.toFixed(1)}</strong>
             </div>
 
             <div className="delta-list">
               {simulation.shapDelta.map((item) => (
                 <div key={item.feature} className="delta-row">
-                  <span>{item.feature}</span>
+                  <span>{formatFeatureLabel(item.feature)}</span>
                   <strong>{item.delta.toFixed(2)}</strong>
                 </div>
               ))}

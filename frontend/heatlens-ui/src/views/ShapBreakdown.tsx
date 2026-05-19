@@ -1,4 +1,5 @@
 import type { ShapBreakdownRecord } from "../types/dataTypes";
+import { formatFeatureLabel, formatSignedNumber } from "../utils/formatters";
 
 type ShapBreakdownProps = {
   shapBreakdown: ShapBreakdownRecord;
@@ -10,6 +11,9 @@ function ShapBreakdown(props: ShapBreakdownProps) {
   const orderedValues = [...shapBreakdown.shapValues].sort((left, right) => {
     return Math.abs(right.shapContribution) - Math.abs(left.shapContribution);
   });
+  const maxContribution = Math.max(
+    ...orderedValues.map((item) => Math.abs(item.shapContribution))
+  );
 
   return (
     <section className="view-panel">
@@ -43,14 +47,21 @@ function ShapBreakdown(props: ShapBreakdownProps) {
               item.shapContribution >= 0
                 ? "shap-row positive"
                 : "shap-row negative";
+            const barWidth = `${(Math.abs(item.shapContribution) / maxContribution) * 100}%`;
 
             return (
               <div key={item.feature} className={directionClass}>
-                <div>
-                  <strong>{item.feature}</strong>
+                <div className="shap-copy">
+                  <strong>{formatFeatureLabel(item.feature)}</strong>
                   <p>Feature value: {item.value}</p>
+                  <div className="shap-meter">
+                    <div
+                      className="shap-meter-fill"
+                      style={{ width: barWidth }}
+                    />
+                  </div>
                 </div>
-                <strong>{item.shapContribution.toFixed(1)}</strong>
+                <strong>{formatSignedNumber(item.shapContribution)}</strong>
               </div>
             );
           })}
