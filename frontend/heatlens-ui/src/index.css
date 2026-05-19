@@ -13,99 +13,143 @@
 body {
   margin: 0;
   background: #0d1117;
+  overflow: hidden;
 }
 
 #root {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .app-shell {
-  min-height: 100vh;
-  padding: 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.top-bar,
-.view-panel {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
-}
-
-.top-bar {
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: #0d1117;
+}
+
+.app-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 0.8rem 1rem;
+  background: #090c10;
+  border-bottom: 1px solid #21262d;
+}
+
+.header-title {
+  min-width: 0;
 }
 
 .eyebrow {
-  margin: 0 0 0.5rem;
-  font-size: 0.85rem;
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #7d8590;
 }
 
-.top-bar h1,
-.status-card h2,
+.app-header h1,
 .view-panel h2,
 .view-panel h3 {
   margin-top: 0;
 }
 
-.top-bar h1 {
-  margin-bottom: 0.5rem;
+.app-header h1 {
+  margin-bottom: 0.15rem;
+  font-size: 1.35rem;
 }
 
 .hero-copy {
-  max-width: 55rem;
-  margin-bottom: 0;
+  margin: 0;
   color: #9da7b3;
+  font-size: 0.88rem;
 }
 
-.toolbar-card {
+.header-controls {
   display: grid;
-  gap: 1rem;
+  gap: 0.45rem;
+  justify-items: end;
+  align-self: center;
 }
 
-.selection-summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+.control-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
 }
 
-.status-card {
-  background: #0d1117;
-  border: 1px solid #30363d;
-  border-radius: 14px;
-  padding: 1rem 1.25rem;
-}
-
-.status-card p {
-  margin-bottom: 0.45rem;
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
   color: #c9d1d9;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 0.95fr;
-  gap: 1.5rem;
-  align-items: start;
-  margin-bottom: 1.5rem;
+.control-group select {
+  min-width: 9rem;
+  padding: 0.42rem 0.6rem;
+  border: 1px solid #30363d;
+  border-radius: 0;
+  background: #0d1117;
+  color: #e6edf3;
 }
 
-.side-column {
+.toolbar-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  color: #9da7b3;
+  font-size: 0.86rem;
+}
+
+.workspace-grid {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.92fr) minmax(300px, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 0;
+}
+
+.workspace-pane {
+  min-height: 0;
+  overflow: hidden;
+  border-right: 1px solid #21262d;
+  border-bottom: 1px solid #21262d;
+  background: #161b22;
+}
+
+.map-pane {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.feature-pane {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.shap-pane {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.simulator-pane {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+  border-right: 0;
 }
 
 .view-panel {
-  margin-bottom: 1.5rem;
+  height: 100%;
+  min-height: 0;
+  padding: 0.9rem;
+  background: #161b22;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .panel-header {
@@ -113,48 +157,49 @@ body {
   justify-content: space-between;
   gap: 1rem;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .panel-header h2 {
   margin: 0;
+  font-size: 1rem;
 }
 
 .panel-tag {
   margin-top: 0;
-  margin-bottom: 0.35rem;
-  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #7d8590;
 }
 
-.control-row {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+.panel-copy {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+  color: #9da7b3;
+  font-size: 0.92rem;
 }
 
-.control-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  font-size: 0.95rem;
-  color: #c9d1d9;
+.muted-copy {
+  font-size: 0.82rem;
+  color: #7d8590;
+  margin-top: -0.4rem;
 }
 
-.control-group select {
-  min-width: 9rem;
-  padding: 0.55rem 0.7rem;
-  border: 1px solid #30363d;
-  border-radius: 10px;
-  background: #0d1117;
-  color: #e6edf3;
+.map-overview-shell {
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
 }
 
 .county-map-shell {
-  margin-bottom: 1rem;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  height: 100%;
 }
 
 .map-loading {
@@ -162,16 +207,16 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid #30363d;
-  border-radius: 14px;
   background: #0d1117;
   color: #9da7b3;
 }
 
 .county-map {
   width: 100%;
+  height: 100%;
+  min-height: 0;
   display: block;
   border: 1px solid #30363d;
-  border-radius: 14px;
   background: #0d1117;
 }
 
@@ -188,21 +233,19 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 0.75rem;
   color: #9da7b3;
+  font-size: 0.88rem;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.9rem;
 }
 
 .legend-swatch {
   width: 12px;
   height: 12px;
-  border-radius: 3px;
   display: inline-block;
 }
 
@@ -222,36 +265,61 @@ body {
   background: #238636;
 }
 
-.panel-copy {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #9da7b3;
+.map-layout {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.county-sidebar {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  border-left: 1px solid #21262d;
+  padding-left: 0.75rem;
+  overflow: hidden;
+}
+
+.county-sidebar-header {
+  margin-bottom: 0.5rem;
+}
+
+.county-sidebar-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .county-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  gap: 0.45rem;
+  max-height: none;
+  overflow: auto;
+  padding-right: 0.15rem;
 }
 
 .county-row {
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.55rem;
   width: 100%;
-  padding: 0.8rem 0.95rem;
+  padding: 0.45rem 0.55rem;
   border: 1px solid #30363d;
-  border-radius: 12px;
   background: #0d1117;
   color: #e6edf3;
   text-align: left;
   cursor: pointer;
+  font-size: 0.84rem;
 }
 
 .county-row p {
-  margin-top: 0.2rem;
+  margin-top: 0.08rem;
   margin-bottom: 0;
   color: #9da7b3;
+  font-size: 0.75rem;
 }
 
 .county-row.selected {
@@ -259,22 +327,40 @@ body {
   background: #111827;
 }
 
+.feature-detail-shell,
+.shap-shell,
+.simulator-shell {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-sections,
+.shap-list,
+.simulator-grid {
+  min-height: 0;
+  overflow: auto;
+  padding-right: 0.15rem;
+}
+
 .feature-section + .feature-section {
   margin-top: 1rem;
 }
 
 .feature-section h3 {
-  margin-bottom: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 0.55rem;
 }
 
 .feature-list {
   display: grid;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .feature-group-label {
   color: #7d8590;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -283,23 +369,21 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.8rem 0.95rem;
+  padding: 0.65rem 0.8rem;
   border: 1px solid #30363d;
-  border-radius: 12px;
   background: #0d1117;
 }
 
 .shap-summary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
 }
 
 .summary-box {
-  padding: 0.9rem 1rem;
+  padding: 0.75rem 0.85rem;
   border: 1px solid #30363d;
-  border-radius: 12px;
   background: #0d1117;
 }
 
@@ -311,7 +395,7 @@ body {
 
 .shap-list {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.65rem;
 }
 
 .shap-row {
@@ -319,8 +403,7 @@ body {
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
-  padding: 0.9rem 1rem;
-  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
 }
 
 .shap-row p {
@@ -340,22 +423,21 @@ body {
 
 .simulator-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
 }
 
 .simulator-controls,
 .simulator-results {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .slider-group {
   display: grid;
   gap: 0.45rem;
-  padding: 1rem;
+  padding: 0.8rem;
   border: 1px solid #30363d;
-  border-radius: 12px;
   background: #0d1117;
 }
 
@@ -365,34 +447,125 @@ body {
 
 .delta-list {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.65rem;
 }
 
 .delta-row {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.8rem 0.95rem;
+  padding: 0.65rem 0.8rem;
   border: 1px solid #30363d;
-  border-radius: 12px;
   background: #0d1117;
 }
 
-@media (max-width: 700px) {
-  .app-shell {
-    padding: 1rem;
+@media (max-width: 1100px) {
+  .app-header {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
-  .top-bar,
-  .selection-summary,
-  .dashboard-grid,
-  .county-list,
-  .shap-summary,
-  .simulator-grid {
+  .header-controls {
+    justify-items: start;
+    align-self: start;
+  }
+
+  .workspace-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .map-pane {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+  }
+
+  .feature-pane {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .shap-pane {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .simulator-pane {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    border-right: 0;
+  }
+
+  .county-list {
     grid-template-columns: 1fr;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .county-sidebar {
+    border-left: 0;
+    border-top: 1px solid #21262d;
+    padding-left: 0;
+    padding-top: 0.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    overflow: auto;
+  }
+
+  #root,
+  .app-shell {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .app-shell {
+    grid-template-rows: auto auto;
+  }
+
+  .toolbar-summary {
+    gap: 0.5rem 0.9rem;
+  }
+
+  .workspace-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .map-pane,
+  .feature-pane,
+  .shap-pane,
+  .simulator-pane {
+    grid-column: auto;
+    grid-row: auto;
+    border-right: 0;
+  }
+
+  .county-list,
+  .shap-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .county-sidebar {
+    border-left: 0;
+    border-top: 1px solid #21262d;
+    padding-left: 0;
+    padding-top: 0.75rem;
   }
 
   .panel-header {
     flex-direction: column;
+  }
+
+  .county-map {
+    min-height: 280px;
   }
 }

@@ -20,8 +20,8 @@ function App() {
 
   const [selection, setSelection] = useState<AppSelection>(defaultSelection);
 
-  // Keeping this lookup close to App for now makes the early state flow easier
-  // to follow before we split more logic into separate files.
+  // Keeping these lookups close to App is still the easiest way to follow the
+  // shared selection flow while the data is mock-only.
   const selectedCounty = countySummariesMock.find((county) => {
     return (
       county.countyFips === selection.selectedCountyFips &&
@@ -29,14 +29,15 @@ function App() {
     );
   });
 
-  if (!selectedCounty) {
-    return <main className="app-shell">Selection could not be loaded.</main>;
-  }
+  const fallbackCounty =
+    selectedCounty ??
+    countySummariesMock.find((county) => county.year === selection.selectedYear) ??
+    countySummariesMock[0];
 
   const selectedCountyDetail = countyDetailsMock.find((county) => {
     return (
-      county.countyFips === selection.selectedCountyFips &&
-      county.year === selection.selectedYear
+      county.countyFips === fallbackCounty.countyFips &&
+      county.year === fallbackCounty.year
     );
   });
 
@@ -46,8 +47,8 @@ function App() {
 
   const selectedShapBreakdown = shapBreakdownsMock.find((county) => {
     return (
-      county.countyFips === selection.selectedCountyFips &&
-      county.year === selection.selectedYear
+      county.countyFips === fallbackCounty.countyFips &&
+      county.year === fallbackCounty.year
     );
   });
 
@@ -67,6 +68,17 @@ function App() {
     }));
 
   function handleCountyChange(nextCountyFips: string) {
+    const countyExistsForYear = countySummariesMock.some((county) => {
+      return (
+        county.countyFips === nextCountyFips &&
+        county.year === selection.selectedYear
+      );
+    });
+
+    if (!countyExistsForYear) {
+      return;
+    }
+
     setSelection((currentSelection) => ({
       ...currentSelection,
       selectedCountyFips: nextCountyFips,
@@ -87,17 +99,17 @@ function App() {
 
   return (
     <main className="app-shell">
-      <section className="top-bar">
-        <div>
+      <header className="app-header">
+        <div className="header-title">
           <p className="eyebrow">ECS 273 Final Project</p>
           <h1>HeatLens</h1>
           <p className="hero-copy">
-            Mock frontend dashboard for exploring county heat-health risk,
-            model explanations, and simple intervention scenarios.
+            Explore county heat-health risk, explanation signals, and simple
+            intervention scenarios in one workspace.
           </p>
         </div>
 
-        <div className="toolbar-card">
+        <div className="header-controls">
           <div className="control-row">
             <YearSelect
               years={yearOptions}
@@ -106,54 +118,51 @@ function App() {
             />
             <CountySelect
               counties={countyOptions}
-              selectedCountyFips={selection.selectedCountyFips}
+              selectedCountyFips={fallbackCounty.countyFips}
               onChange={handleCountyChange}
             />
           </div>
 
-          <div className="selection-summary">
-            <div className="status-card">
-              <h2>Selected County</h2>
-              <p>
-                <strong>{selectedCounty.countyName}</strong> in{" "}
-                <strong>{selectedCounty.year}</strong>
-              </p>
-              <p>
-                Predicted ED rate:{" "}
-                <strong>{selectedCounty.predictedEdRate.toFixed(1)}</strong>
-              </p>
-            </div>
-
-            <div className="status-card">
-              <h2>How To Read This</h2>
-              <p>1. Pick a county and year.</p>
-              <p>2. Check its features and SHAP drivers.</p>
-              <p>3. Try an intervention in the simulator.</p>
-            </div>
+          <div className="toolbar-summary">
+            <span>
+              County <strong>{fallbackCounty.countyName}</strong>
+            </span>
+            <span>
+              Year <strong>{fallbackCounty.year}</strong>
+            </span>
+            <span>
+              Predicted ED rate{" "}
+              <strong>{fallbackCounty.predictedEdRate.toFixed(1)}</strong>
+            </span>
           </div>
         </div>
-      </section>
+      </header>
 
-      <section className="dashboard-grid">
-        <div className="map-column">
+      <section className="workspace-grid">
+        <div className="workspace-pane map-pane">
           <MapOverview
             countySummaries={countySummariesMock}
-            selectedCountyFips={selection.selectedCountyFips}
-            selectedYear={selection.selectedYear}
+            selectedCountyFips={fallbackCounty.countyFips}
+            selectedYear={fallbackCounty.year}
             onCountyChange={handleCountyChange}
           />
         </div>
 
-        <div className="side-column">
+        <div className="workspace-pane feature-pane">
           <FeatureDetail countyDetail={selectedCountyDetail} />
+        </div>
+
+        <div className="workspace-pane shap-pane">
           <ShapBreakdown shapBreakdown={selectedShapBreakdown} />
         </div>
-      </section>
 
-      <WhatIfSimulator
-        countyDetail={selectedCountyDetail}
-        shapBreakdown={selectedShapBreakdown}
-      />
+        <div className="workspace-pane simulator-pane">
+          <WhatIfSimulator
+            countyDetail={selectedCountyDetail}
+            shapBreakdown={selectedShapBreakdown}
+          />
+        </div>
+      </section>
     </main>
   );
 }

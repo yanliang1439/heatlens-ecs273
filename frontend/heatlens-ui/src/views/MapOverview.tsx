@@ -26,35 +26,50 @@ function MapOverview(props: MapOverviewProps) {
             Select a county from the map to update the detail panels on the
             right and the simulator below.
           </p>
+          <p className="panel-copy muted-copy">
+            The mock dashboard only has detailed records for the counties shown
+            in the list for now.
+          </p>
         </div>
       </div>
 
-      <CountyMap
-        countySummaries={countySummaries}
-        selectedCountyFips={selectedCountyFips}
-        selectedYear={selectedYear}
-        onCountyChange={onCountyChange}
-      />
+      <div className="map-overview-shell">
+        <div className="map-layout">
+          <CountyMap
+            countySummaries={countySummaries}
+            selectedCountyFips={selectedCountyFips}
+            selectedYear={selectedYear}
+            onCountyChange={onCountyChange}
+          />
 
-      <div className="county-list">
-        {visibleCounties.map((county) => {
-          const isSelected = county.countyFips === selectedCountyFips;
+          <aside className="county-sidebar">
+            <div className="county-sidebar-header">
+              <p className="feature-group-label">County List</p>
+              <h3>Counties in {selectedYear}</h3>
+            </div>
 
-          return (
-            <button
-              key={`${county.countyFips}-${county.year}`}
-              type="button"
-              className={isSelected ? "county-row selected" : "county-row"}
-              onClick={() => onCountyChange(county.countyFips)}
-            >
-              <div>
-                <strong>{county.countyName}</strong>
-                <p>{county.riskLevel} risk</p>
-              </div>
-              <span>{county.predictedEdRate.toFixed(1)}</span>
-            </button>
-          );
-        })}
+            <div className="county-list">
+              {visibleCounties.map((county) => {
+                const isSelected = county.countyFips === selectedCountyFips;
+
+                return (
+                  <button
+                    key={`${county.countyFips}-${county.year}`}
+                    type="button"
+                    className={isSelected ? "county-row selected" : "county-row"}
+                    onClick={() => onCountyChange(county.countyFips)}
+                  >
+                    <div>
+                      <strong>{county.countyName}</strong>
+                      <p>{county.riskLevel} risk</p>
+                    </div>
+                    <span>{county.predictedEdRate.toFixed(1)}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   );

@@ -13,44 +13,48 @@ function ShapBreakdown(props: ShapBreakdownProps) {
 
   return (
     <section className="view-panel">
-      <div className="panel-header">
-        <div>
-          <p className="panel-tag">View 3</p>
-          <h2>SHAP Breakdown</h2>
+      <div className="shap-shell">
+        <div className="panel-header">
+          <div>
+            <p className="panel-tag">View 3</p>
+            <h2>SHAP Breakdown</h2>
+          </div>
         </div>
-      </div>
 
-      <div className="shap-summary">
-        <div className="summary-box">
-          <span>Base value</span>
-          <strong>{shapBreakdown.baseValue.toFixed(1)}</strong>
+        <div className="shap-summary">
+          <div className="summary-box">
+            <span>Base value</span>
+            <strong>{shapBreakdown.baseValue.toFixed(1)}</strong>
+          </div>
+          <div className="summary-box">
+            <span>Prediction</span>
+            <strong>{shapBreakdown.prediction.toFixed(1)}</strong>
+          </div>
         </div>
-        <div className="summary-box">
-          <span>Prediction</span>
-          <strong>{shapBreakdown.prediction.toFixed(1)}</strong>
-        </div>
-      </div>
 
-      <p className="panel-copy">
-        This panel answers a different question from the feature list: which
-        values are pushing the prediction upward or downward the most?
-      </p>
+        <p className="panel-copy">
+          This panel answers a different question from the feature list: which
+          values are pushing the prediction upward or downward the most?
+        </p>
 
-      <div className="shap-list">
-        {orderedValues.map((item) => {
-          const directionClass =
-            item.shapContribution >= 0 ? "shap-row positive" : "shap-row negative";
+        <div className="shap-list">
+          {orderedValues.map((item) => {
+            const directionClass =
+              item.shapContribution >= 0
+                ? "shap-row positive"
+                : "shap-row negative";
 
-          return (
-            <div key={item.feature} className={directionClass}>
-              <div>
-                <strong>{item.feature}</strong>
-                <p>Feature value: {item.value}</p>
+            return (
+              <div key={item.feature} className={directionClass}>
+                <div>
+                  <strong>{item.feature}</strong>
+                  <p>Feature value: {item.value}</p>
+                </div>
+                <strong>{item.shapContribution.toFixed(1)}</strong>
               </div>
-              <strong>{item.shapContribution.toFixed(1)}</strong>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

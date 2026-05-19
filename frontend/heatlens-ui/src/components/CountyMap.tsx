@@ -1,19 +1,16 @@
-import { geoMercator, geoPath } from "d3";
 import { useEffect, useState } from "react";
 import type { CountySummaryRecord } from "../types/dataTypes";
 
-type CountyGeoFeature = {
-  type: "Feature";
-  properties: {
-    countyName: string;
-    countyFips: string;
-  };
-  geometry: unknown;
+type CountyPathRecord = {
+  countyName: string;
+  countyFips: string;
+  path: string;
 };
 
-type CountyGeoCollection = {
-  type: "FeatureCollection";
-  features: CountyGeoFeature[];
+type CountyPathCollection = {
+  width: number;
+  height: number;
+  counties: CountyPathRecord[];
 };
 
 type CountyMapProps = {
@@ -22,9 +19,6 @@ type CountyMapProps = {
   selectedYear: number;
   onCountyChange: (countyFips: string) => void;
 };
-
-const mapWidth = 760;
-const mapHeight = 430;
 
 function getCountyFill(
   countyFips: string,
@@ -57,24 +51,24 @@ function getCountyFill(
 
 function CountyMap(props: CountyMapProps) {
   const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } = props;
-  const [countyGeoJson, setCountyGeoJson] = useState<CountyGeoCollection | null>(
+  const [countyPaths, setCountyPaths] = useState<CountyPathCollection | null>(
     null
   );
 
   useEffect(() => {
     let ignore = false;
 
-    async function loadCountyData() {
-      const response = await fetch("/data/california-counties.json");
-      const data = (await response.json()) as CountyGeoCollection;
+    async function loadCountyPaths() {
+      const response = await fetch("/data/california-county-paths.json");
+      const data = (await response.json()) as CountyPathCollection;
 
       if (!ignore) {
-        setCountyGeoJson(data);
+        setCountyPaths(data);
       }
     }
 
-    loadCountyData().catch((error) => {
-      console.error("Could not load county boundary file.", error);
+    loadCountyPaths().catch((error) => {
+      console.error("Could not load county path file.", error);
     });
 
     return () => {
@@ -82,38 +76,22 @@ function CountyMap(props: CountyMapProps) {
     };
   }, []);
 
-  if (!countyGeoJson) {
+  if (!countyPaths) {
     return <div className="map-loading">Loading county boundaries...</div>;
   }
-
-  const projection = geoMercator().fitExtent(
-    [
-      [18, 18],
-      [mapWidth - 18, mapHeight - 18],
-    ],
-    countyGeoJson as never
-  );
-
-  const pathBuilder = geoPath(projection);
 
   return (
     <div className="county-map-shell">
       <svg
-        viewBox={`0 0 ${mapWidth} ${mapHeight}`}
+        viewBox={`0 0 ${countyPaths.width} ${countyPaths.height}`}
         className="county-map"
         role="img"
         aria-label="California county heat risk map"
+        preserveAspectRatio="xMidYMid meet"
       >
-        {countyGeoJson.features.map((feature) => {
-          const pathValue = pathBuilder(feature as never);
-
-          if (!pathValue) {
-            return null;
-          }
-
-          const { countyFips, countyName } = feature.properties;
+        {countyPaths.counties.map((county) => {
           const fill = getCountyFill(
-            countyFips,
+            county.countyFips,
             selectedCountyFips,
             countySummaries,
             selectedYear
@@ -121,15 +99,15 @@ function CountyMap(props: CountyMapProps) {
 
           return (
             <path
-              key={countyFips}
-              d={pathValue}
+              key={county.countyFips}
+              d={county.path}
               fill={fill}
               stroke="#0d1117"
-              strokeWidth={1}
+              strokeWidth={0.8}
               className="county-shape"
-              onClick={() => onCountyChange(countyFips)}
+              onClick={() => onCountyChange(county.countyFips)}
             >
-              <title>{countyName}</title>
+              <title>{county.countyName}</title>
             </path>
           );
         })}
