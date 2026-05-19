@@ -138,9 +138,7 @@ function CountyMap(props: CountyMapProps) {
                     y: event.clientY,
                   });
                 }}
-              >
-                <title>{county.countyName}</title>
-              </path>
+              />
             );
           })}
         </svg>
@@ -167,15 +165,15 @@ function CountyMap(props: CountyMapProps) {
         </div>
         <div className="legend-item">
           <span className="legend-swatch high"></span>
-          <span>High risk in current mock data</span>
+          <span>High risk</span>
         </div>
         <div className="legend-item">
           <span className="legend-swatch medium"></span>
-          <span>Medium risk in current mock data</span>
+          <span>Medium risk</span>
         </div>
         <div className="legend-item">
           <span className="legend-swatch low"></span>
-          <span>Low risk in current mock data</span>
+          <span>Low risk</span>
         </div>
       </div>
     </div>
