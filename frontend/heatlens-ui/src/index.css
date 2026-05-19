@@ -202,6 +202,11 @@ body {
   height: 100%;
 }
 
+.county-map-frame {
+  position: relative;
+  min-height: 0;
+}
+
 .map-loading {
   min-height: 430px;
   display: grid;
@@ -227,6 +232,21 @@ body {
 
 .county-shape:hover {
   opacity: 0.85;
+}
+
+.map-tooltip {
+  position: fixed;
+  z-index: 20;
+  pointer-events: none;
+  display: grid;
+  gap: 0.2rem;
+  min-width: 165px;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #30363d;
+  background: #0b0f14;
+  color: #e6edf3;
+  font-size: 0.82rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .map-legend {
