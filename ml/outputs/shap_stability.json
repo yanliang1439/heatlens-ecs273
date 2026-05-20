@@ -1,0 +1,106 @@
+{
+  "nBootstraps": 20,
+  "seed": 42,
+  "panelRows": 240,
+  "featureStability": [
+    {
+      "feature": "summerAvgMax",
+      "meanAbsShap": 1.2944,
+      "stdAbsShap": 0.2737,
+      "cv": 0.2115,
+      "rankRange": [
+        1,
+        2
+      ],
+      "rankMode": 1
+    },
+    {
+      "feature": "tailPercentileTemp",
+      "meanAbsShap": 0.5374,
+      "stdAbsShap": 0.2916,
+      "cv": 0.5426,
+      "rankRange": [
+        1,
+        8
+      ],
+      "rankMode": 2
+    },
+    {
+      "feature": "heatwaveDays",
+      "meanAbsShap": 0.4897,
+      "stdAbsShap": 0.1174,
+      "cv": 0.2397,
+      "rankRange": [
+        2,
+        7
+      ],
+      "rankMode": 3
+    },
+    {
+      "feature": "povertyPct",
+      "meanAbsShap": 0.3512,
+      "stdAbsShap": 0.1296,
+      "cv": 0.3691,
+      "rankRange": [
+        2,
+        9
+      ],
+      "rankMode": 4
+    },
+    {
+      "feature": "acCoverage",
+      "meanAbsShap": 0.3404,
+      "stdAbsShap": 0.0815,
+      "cv": 0.2393,
+      "rankRange": [
+        2,
+        9
+      ],
+      "rankMode": 4
+    },
+    {
+      "feature": "warmNightCount",
+      "meanAbsShap": 0.332,
+      "stdAbsShap": 0.132,
+      "cv": 0.3977,
+      "rankRange": [
+        2,
+        8
+      ],
+      "rankMode": 7
+    },
+    {
+      "feature": "elderlyPct",
+      "meanAbsShap": 0.2929,
+      "stdAbsShap": 0.0514,
+      "cv": 0.1756,
+      "rankRange": [
+        3,
+        8
+      ],
+      "rankMode": 5
+    },
+    {
+      "feature": "treeCanopy",
+      "meanAbsShap": 0.271,
+      "stdAbsShap": 0.0805,
+      "cv": 0.2971,
+      "rankRange": [
+        3,
+        9
+      ],
+      "rankMode": 6
+    },
+    {
+      "feature": "consecutiveHotDays",
+      "meanAbsShap": 0.1257,
+      "stdAbsShap": 0.0665,
+      "cv": 0.5292,
+      "rankRange": [
+        7,
+        9
+      ],
+      "rankMode": 9
+    }
+  ]
+}

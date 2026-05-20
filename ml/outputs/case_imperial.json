@@ -1,0 +1,450 @@
+{
+  "county": "Imperial",
+  "countyFips": "06025",
+  "summary": {
+    "yearsAnalyzed": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "averagePredictedEdRate": 18.53,
+    "headlineYear": 2022
+  },
+  "trajectory": [
+    {
+      "year": 2017,
+      "observedEdRate": 20.53,
+      "predictedEdRate": 19.54,
+      "topDrivers": [
+        {
+          "feature": "summerAvgMax",
+          "shapContribution": 3.143
+        },
+        {
+          "feature": "heatwaveDays",
+          "shapContribution": 1.542
+        },
+        {
+          "feature": "povertyPct",
+          "shapContribution": 1.173
+        },
+        {
+          "feature": "warmNightCount",
+          "shapContribution": 0.938
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "shapContribution": 0.842
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "observedEdRate": 18.96,
+      "predictedEdRate": 18.9,
+      "topDrivers": [
+        {
+          "feature": "summerAvgMax",
+          "shapContribution": 3.122
+        },
+        {
+          "feature": "heatwaveDays",
+          "shapContribution": 1.529
+        },
+        {
+          "feature": "povertyPct",
+          "shapContribution": 1.096
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "shapContribution": 0.837
+        },
+        {
+          "feature": "warmNightCount",
+          "shapContribution": 0.732
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "observedEdRate": 18.57,
+      "predictedEdRate": 18.47,
+      "topDrivers": [
+        {
+          "feature": "summerAvgMax",
+          "shapContribution": 3.094
+        },
+        {
+          "feature": "heatwaveDays",
+          "shapContribution": 1.486
+        },
+        {
+          "feature": "povertyPct",
+          "shapContribution": 1.183
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "shapContribution": 0.838
+        },
+        {
+          "feature": "acCoverage",
+          "shapContribution": 0.7
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "observedEdRate": 16.97,
+      "predictedEdRate": 18.25,
+      "topDrivers": [
+        {
+          "feature": "summerAvgMax",
+          "shapContribution": 3.065
+        },
+        {
+          "feature": "heatwaveDays",
+          "shapContribution": 1.425
+        },
+        {
+          "feature": "povertyPct",
+          "shapContribution": 0.884
+        },
+        {
+          "feature": "warmNightCount",
+          "shapContribution": 0.849
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "shapContribution": 0.805
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "observedEdRate": 15.94,
+      "predictedEdRate": 16.61,
+      "topDrivers": [
+        {
+          "feature": "summerAvgMax",
+          "shapContribution": 2.43
+        },
+        {
+          "feature": "povertyPct",
+          "shapContribution": 0.845
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "shapContribution": 0.716
+        },
+        {
+          "feature": "warmNightCount",
+          "shapContribution": 0.644
+        },
+        {
+          "feature": "heatwaveDays",
+          "shapContribution": 0.613
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "observedEdRate": 20.07,
+      "predictedEdRate": 19.41,
+      "topDrivers": [
+        {
+          "feature": "summerAvgMax",
+          "shapContribution": 3.124
+        },
+        {
+          "feature": "heatwaveDays",
+          "shapContribution": 1.55
+        },
+        {
+          "feature": "povertyPct",
+          "shapContribution": 1.192
+        },
+        {
+          "feature": "warmNightCount",
+          "shapContribution": 0.948
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "shapContribution": 0.833
+        }
+      ]
+    }
+  ],
+  "averagedDrivers": [
+    {
+      "feature": "summerAvgMax",
+      "meanShap": 2.996,
+      "meanValue": 105.05
+    },
+    {
+      "feature": "heatwaveDays",
+      "meanShap": 1.357,
+      "meanValue": 31.5
+    },
+    {
+      "feature": "povertyPct",
+      "meanShap": 1.062,
+      "meanValue": 19.73
+    },
+    {
+      "feature": "tailPercentileTemp",
+      "meanShap": 0.812,
+      "meanValue": 115.03
+    },
+    {
+      "feature": "warmNightCount",
+      "meanShap": 0.724,
+      "meanValue": 34.83
+    },
+    {
+      "feature": "treeCanopy",
+      "meanShap": 0.638,
+      "meanValue": 4.07
+    },
+    {
+      "feature": "acCoverage",
+      "meanShap": 0.595,
+      "meanValue": 74.77
+    },
+    {
+      "feature": "elderlyPct",
+      "meanShap": 0.248,
+      "meanValue": 16.93
+    },
+    {
+      "feature": "consecutiveHotDays",
+      "meanShap": 0.206,
+      "meanValue": 12.83
+    }
+  ],
+  "interventions": {
+    "acSweep": [
+      {
+        "intervention": {
+          "acCoverageChange": 0
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 19.41,
+        "predictionDelta": 0.0
+      },
+      {
+        "intervention": {
+          "acCoverageChange": 5
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 18.43,
+        "predictionDelta": -0.98
+      },
+      {
+        "intervention": {
+          "acCoverageChange": 10
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 18.23,
+        "predictionDelta": -1.18
+      },
+      {
+        "intervention": {
+          "acCoverageChange": 15
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 18.25,
+        "predictionDelta": -1.16
+      },
+      {
+        "intervention": {
+          "acCoverageChange": 20
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 18.17,
+        "predictionDelta": -1.24
+      }
+    ],
+    "treeSweep": [
+      {
+        "intervention": {
+          "treeCanopyChange": 0
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 19.41,
+        "predictionDelta": 0.0
+      },
+      {
+        "intervention": {
+          "treeCanopyChange": 5
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 19.21,
+        "predictionDelta": -0.2
+      },
+      {
+        "intervention": {
+          "treeCanopyChange": 10
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 18.49,
+        "predictionDelta": -0.92
+      },
+      {
+        "intervention": {
+          "treeCanopyChange": 15
+        },
+        "originalPrediction": 19.41,
+        "updatedPrediction": 18.24,
+        "predictionDelta": -1.17
+      }
+    ],
+    "combined": {
+      "countyName": "Imperial",
+      "countyFips": "06025",
+      "year": 2022,
+      "originalPrediction": 19.41,
+      "updatedPrediction": 18.23,
+      "predictionDelta": -1.18,
+      "interventions": {
+        "acCoverageChange": 5.0,
+        "treeCanopyChange": 5.0
+      },
+      "baseValue": 9.89,
+      "originalShapValues": [
+        {
+          "feature": "summerAvgMax",
+          "value": 106.58,
+          "shapContribution": 3.124
+        },
+        {
+          "feature": "heatwaveDays",
+          "value": 32.0,
+          "shapContribution": 1.55
+        },
+        {
+          "feature": "consecutiveHotDays",
+          "value": 13.0,
+          "shapContribution": 0.203
+        },
+        {
+          "feature": "warmNightCount",
+          "value": 38.0,
+          "shapContribution": 0.948
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "value": 117.54,
+          "shapContribution": 0.833
+        },
+        {
+          "feature": "elderlyPct",
+          "value": 17.6,
+          "shapContribution": 0.298
+        },
+        {
+          "feature": "povertyPct",
+          "value": 19.17,
+          "shapContribution": 1.192
+        },
+        {
+          "feature": "acCoverage",
+          "value": 74.34,
+          "shapContribution": 0.731
+        },
+        {
+          "feature": "treeCanopy",
+          "value": 4.0,
+          "shapContribution": 0.639
+        }
+      ],
+      "updatedShapValues": [
+        {
+          "feature": "summerAvgMax",
+          "value": 106.58,
+          "shapContribution": 3.018
+        },
+        {
+          "feature": "heatwaveDays",
+          "value": 32.0,
+          "shapContribution": 1.542
+        },
+        {
+          "feature": "consecutiveHotDays",
+          "value": 13.0,
+          "shapContribution": 0.205
+        },
+        {
+          "feature": "warmNightCount",
+          "value": 38.0,
+          "shapContribution": 0.874
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "value": 117.54,
+          "shapContribution": 0.852
+        },
+        {
+          "feature": "elderlyPct",
+          "value": 17.6,
+          "shapContribution": 0.284
+        },
+        {
+          "feature": "povertyPct",
+          "value": 19.17,
+          "shapContribution": 1.04
+        },
+        {
+          "feature": "acCoverage",
+          "value": 79.34,
+          "shapContribution": -0.054
+        },
+        {
+          "feature": "treeCanopy",
+          "value": 9.0,
+          "shapContribution": 0.576
+        }
+      ],
+      "shapDelta": [
+        {
+          "feature": "summerAvgMax",
+          "delta": -0.106
+        },
+        {
+          "feature": "heatwaveDays",
+          "delta": -0.008
+        },
+        {
+          "feature": "consecutiveHotDays",
+          "delta": 0.002
+        },
+        {
+          "feature": "warmNightCount",
+          "delta": -0.074
+        },
+        {
+          "feature": "tailPercentileTemp",
+          "delta": 0.019
+        },
+        {
+          "feature": "elderlyPct",
+          "delta": -0.014
+        },
+        {
+          "feature": "povertyPct",
+          "delta": -0.152
+        },
+        {
+          "feature": "acCoverage",
+          "delta": -0.785
+        },
+        {
+          "feature": "treeCanopy",
+          "delta": -0.062
+        }
+      ]
+    }
+  }
+}
