@@ -1,0 +1,4802 @@
+[
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2017,
+    "predictedEdRate": 6.59,
+    "observedEdRate": 6.85,
+    "climateFeatures": {
+      "summerAvgMax": 81.91,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 5.0,
+      "tailPercentileTemp": 88.86
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.92,
+      "povertyPct": 10.82,
+      "acCoverage": 77.89,
+      "treeCanopy": 27.08
+    }
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2018,
+    "predictedEdRate": 6.58,
+    "observedEdRate": 6.49,
+    "climateFeatures": {
+      "summerAvgMax": 81.44,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 89.29
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.03,
+      "povertyPct": 10.75,
+      "acCoverage": 78.15,
+      "treeCanopy": 27.35
+    }
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2019,
+    "predictedEdRate": 7.08,
+    "observedEdRate": 7.78,
+    "climateFeatures": {
+      "summerAvgMax": 81.0,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 12.0,
+      "tailPercentileTemp": 90.37
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.89,
+      "povertyPct": 10.62,
+      "acCoverage": 77.95,
+      "treeCanopy": 26.87
+    }
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2020,
+    "predictedEdRate": 6.43,
+    "observedEdRate": 5.83,
+    "climateFeatures": {
+      "summerAvgMax": 80.23,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 86.23
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.14,
+      "povertyPct": 10.87,
+      "acCoverage": 79.5,
+      "treeCanopy": 27.07
+    }
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2021,
+    "predictedEdRate": 6.4,
+    "observedEdRate": 6.52,
+    "climateFeatures": {
+      "summerAvgMax": 81.91,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 88.15
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.79,
+      "povertyPct": 10.71,
+      "acCoverage": 81.41,
+      "treeCanopy": 25.68
+    }
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2022,
+    "predictedEdRate": 7.46,
+    "observedEdRate": 7.61,
+    "climateFeatures": {
+      "summerAvgMax": 82.12,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 88.5
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.86,
+      "povertyPct": 11.17,
+      "acCoverage": 78.88,
+      "treeCanopy": 25.35
+    }
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2017,
+    "predictedEdRate": 6.96,
+    "observedEdRate": 7.33,
+    "climateFeatures": {
+      "summerAvgMax": 83.19,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 91.15
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.36,
+      "povertyPct": 8.9,
+      "acCoverage": 84.63,
+      "treeCanopy": 22.82
+    }
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2018,
+    "predictedEdRate": 6.39,
+    "observedEdRate": 6.15,
+    "climateFeatures": {
+      "summerAvgMax": 82.43,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 90.43
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.44,
+      "povertyPct": 8.54,
+      "acCoverage": 85.5,
+      "treeCanopy": 21.76
+    }
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2019,
+    "predictedEdRate": 5.96,
+    "observedEdRate": 6.16,
+    "climateFeatures": {
+      "summerAvgMax": 83.0,
+      "heatwaveDays": 7.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 89.77
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.78,
+      "povertyPct": 8.34,
+      "acCoverage": 85.32,
+      "treeCanopy": 22.35
+    }
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2020,
+    "predictedEdRate": 5.06,
+    "observedEdRate": 4.49,
+    "climateFeatures": {
+      "summerAvgMax": 85.19,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 6.0,
+      "tailPercentileTemp": 92.47
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.27,
+      "povertyPct": 8.81,
+      "acCoverage": 85.66,
+      "treeCanopy": 24.39
+    }
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2021,
+    "predictedEdRate": 6.41,
+    "observedEdRate": 5.5,
+    "climateFeatures": {
+      "summerAvgMax": 83.15,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 92.11
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.01,
+      "povertyPct": 8.46,
+      "acCoverage": 84.23,
+      "treeCanopy": 22.8
+    }
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2022,
+    "predictedEdRate": 8.3,
+    "observedEdRate": 8.88,
+    "climateFeatures": {
+      "summerAvgMax": 85.2,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 94.8
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.65,
+      "povertyPct": 8.88,
+      "acCoverage": 84.14,
+      "treeCanopy": 21.41
+    }
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2017,
+    "predictedEdRate": 11.1,
+    "observedEdRate": 11.71,
+    "climateFeatures": {
+      "summerAvgMax": 88.7,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 96.51
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.52,
+      "povertyPct": 14.34,
+      "acCoverage": 76.38,
+      "treeCanopy": 19.39
+    }
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2018,
+    "predictedEdRate": 10.63,
+    "observedEdRate": 10.75,
+    "climateFeatures": {
+      "summerAvgMax": 89.73,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 100.29
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.6,
+      "povertyPct": 15.35,
+      "acCoverage": 75.76,
+      "treeCanopy": 20.17
+    }
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2019,
+    "predictedEdRate": 10.67,
+    "observedEdRate": 10.8,
+    "climateFeatures": {
+      "summerAvgMax": 89.32,
+      "heatwaveDays": 18.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 95.79
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.0,
+      "povertyPct": 15.64,
+      "acCoverage": 77.35,
+      "treeCanopy": 19.33
+    }
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2020,
+    "predictedEdRate": 10.57,
+    "observedEdRate": 9.41,
+    "climateFeatures": {
+      "summerAvgMax": 90.98,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 99.2
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.44,
+      "povertyPct": 14.46,
+      "acCoverage": 79.59,
+      "treeCanopy": 20.81
+    }
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2021,
+    "predictedEdRate": 9.9,
+    "observedEdRate": 9.62,
+    "climateFeatures": {
+      "summerAvgMax": 88.73,
+      "heatwaveDays": 18.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 96.73
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.86,
+      "povertyPct": 15.15,
+      "acCoverage": 79.22,
+      "treeCanopy": 19.5
+    }
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2022,
+    "predictedEdRate": 11.38,
+    "observedEdRate": 12.2,
+    "climateFeatures": {
+      "summerAvgMax": 90.1,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 99.19
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.4,
+      "povertyPct": 15.02,
+      "acCoverage": 76.39,
+      "treeCanopy": 19.17
+    }
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2017,
+    "predictedEdRate": 14.83,
+    "observedEdRate": 15.8,
+    "climateFeatures": {
+      "summerAvgMax": 97.91,
+      "heatwaveDays": 25.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 31.0,
+      "tailPercentileTemp": 107.13
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.26,
+      "povertyPct": 18.72,
+      "acCoverage": 76.89,
+      "treeCanopy": 20.52
+    }
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2018,
+    "predictedEdRate": 13.08,
+    "observedEdRate": 13.12,
+    "climateFeatures": {
+      "summerAvgMax": 95.48,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 31.0,
+      "tailPercentileTemp": 103.6
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.43,
+      "povertyPct": 17.82,
+      "acCoverage": 76.3,
+      "treeCanopy": 17.66
+    }
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2019,
+    "predictedEdRate": 13.77,
+    "observedEdRate": 13.54,
+    "climateFeatures": {
+      "summerAvgMax": 95.22,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 102.9
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.42,
+      "povertyPct": 19.84,
+      "acCoverage": 74.79,
+      "treeCanopy": 18.21
+    }
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2020,
+    "predictedEdRate": 12.53,
+    "observedEdRate": 11.06,
+    "climateFeatures": {
+      "summerAvgMax": 99.03,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 107.87
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.14,
+      "povertyPct": 18.58,
+      "acCoverage": 76.14,
+      "treeCanopy": 18.69
+    }
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2021,
+    "predictedEdRate": 13.29,
+    "observedEdRate": 12.51,
+    "climateFeatures": {
+      "summerAvgMax": 98.1,
+      "heatwaveDays": 27.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 30.0,
+      "tailPercentileTemp": 106.23
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.82,
+      "povertyPct": 18.64,
+      "acCoverage": 79.68,
+      "treeCanopy": 19.76
+    }
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2022,
+    "predictedEdRate": 13.96,
+    "observedEdRate": 14.58,
+    "climateFeatures": {
+      "summerAvgMax": 100.0,
+      "heatwaveDays": 28.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 110.11
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.87,
+      "povertyPct": 18.23,
+      "acCoverage": 75.84,
+      "treeCanopy": 18.72
+    }
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2017,
+    "predictedEdRate": 3.52,
+    "observedEdRate": 3.79,
+    "climateFeatures": {
+      "summerAvgMax": 76.01,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 0.0,
+      "tailPercentileTemp": 81.92
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.74,
+      "povertyPct": 9.94,
+      "acCoverage": 89.73,
+      "treeCanopy": 31.07
+    }
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2018,
+    "predictedEdRate": 3.42,
+    "observedEdRate": 2.97,
+    "climateFeatures": {
+      "summerAvgMax": 78.92,
+      "heatwaveDays": 0.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 0.0,
+      "tailPercentileTemp": 84.72
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.19,
+      "povertyPct": 10.06,
+      "acCoverage": 92.89,
+      "treeCanopy": 33.42
+    }
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2019,
+    "predictedEdRate": 3.88,
+    "observedEdRate": 4.35,
+    "climateFeatures": {
+      "summerAvgMax": 78.91,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 5.0,
+      "tailPercentileTemp": 86.29
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.2,
+      "povertyPct": 10.14,
+      "acCoverage": 90.0,
+      "treeCanopy": 33.41
+    }
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2020,
+    "predictedEdRate": 3.1,
+    "observedEdRate": 2.65,
+    "climateFeatures": {
+      "summerAvgMax": 77.06,
+      "heatwaveDays": 5.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 6.0,
+      "tailPercentileTemp": 85.08
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.93,
+      "povertyPct": 9.54,
+      "acCoverage": 88.77,
+      "treeCanopy": 32.5
+    }
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2021,
+    "predictedEdRate": 4.27,
+    "observedEdRate": 4.57,
+    "climateFeatures": {
+      "summerAvgMax": 76.75,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 8.0,
+      "tailPercentileTemp": 83.04
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.84,
+      "povertyPct": 10.47,
+      "acCoverage": 87.19,
+      "treeCanopy": 32.0
+    }
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2022,
+    "predictedEdRate": 5.86,
+    "observedEdRate": 6.5,
+    "climateFeatures": {
+      "summerAvgMax": 77.85,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 85.33
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.76,
+      "povertyPct": 9.92,
+      "acCoverage": 90.69,
+      "treeCanopy": 31.78
+    }
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2017,
+    "predictedEdRate": 19.54,
+    "observedEdRate": 20.53,
+    "climateFeatures": {
+      "summerAvgMax": 105.65,
+      "heatwaveDays": 30.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 40.0,
+      "tailPercentileTemp": 114.76
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.58,
+      "povertyPct": 19.81,
+      "acCoverage": 75.02,
+      "treeCanopy": 4.0
+    }
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2018,
+    "predictedEdRate": 18.9,
+    "observedEdRate": 18.96,
+    "climateFeatures": {
+      "summerAvgMax": 106.3,
+      "heatwaveDays": 40.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 31.0,
+      "tailPercentileTemp": 118.23
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.73,
+      "povertyPct": 19.77,
+      "acCoverage": 75.72,
+      "treeCanopy": 4.0
+    }
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2019,
+    "predictedEdRate": 18.47,
+    "observedEdRate": 18.57,
+    "climateFeatures": {
+      "summerAvgMax": 103.75,
+      "heatwaveDays": 32.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 110.98
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.93,
+      "povertyPct": 19.54,
+      "acCoverage": 74.44,
+      "treeCanopy": 4.42
+    }
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2020,
+    "predictedEdRate": 18.25,
+    "observedEdRate": 16.97,
+    "climateFeatures": {
+      "summerAvgMax": 106.18,
+      "heatwaveDays": 31.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 36.0,
+      "tailPercentileTemp": 117.17
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.76,
+      "povertyPct": 19.94,
+      "acCoverage": 73.35,
+      "treeCanopy": 4.0
+    }
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2021,
+    "predictedEdRate": 16.61,
+    "observedEdRate": 15.94,
+    "climateFeatures": {
+      "summerAvgMax": 101.82,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 35.0,
+      "tailPercentileTemp": 111.48
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.99,
+      "povertyPct": 20.16,
+      "acCoverage": 75.74,
+      "treeCanopy": 4.0
+    }
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2022,
+    "predictedEdRate": 19.41,
+    "observedEdRate": 20.07,
+    "climateFeatures": {
+      "summerAvgMax": 106.58,
+      "heatwaveDays": 32.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 38.0,
+      "tailPercentileTemp": 117.54
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.6,
+      "povertyPct": 19.17,
+      "acCoverage": 74.34,
+      "treeCanopy": 4.0
+    }
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2017,
+    "predictedEdRate": 15.17,
+    "observedEdRate": 15.46,
+    "climateFeatures": {
+      "summerAvgMax": 99.61,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 108.03
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.19,
+      "povertyPct": 20.72,
+      "acCoverage": 70.3,
+      "treeCanopy": 10.43
+    }
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2018,
+    "predictedEdRate": 14.86,
+    "observedEdRate": 15.2,
+    "climateFeatures": {
+      "summerAvgMax": 99.51,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 27.0,
+      "tailPercentileTemp": 108.55
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.16,
+      "povertyPct": 21.57,
+      "acCoverage": 72.92,
+      "treeCanopy": 10.2
+    }
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2019,
+    "predictedEdRate": 15.54,
+    "observedEdRate": 16.73,
+    "climateFeatures": {
+      "summerAvgMax": 100.34,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 107.64
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.19,
+      "povertyPct": 20.34,
+      "acCoverage": 69.12,
+      "treeCanopy": 9.91
+    }
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2020,
+    "predictedEdRate": 15.09,
+    "observedEdRate": 15.12,
+    "climateFeatures": {
+      "summerAvgMax": 100.38,
+      "heatwaveDays": 23.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 110.33
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.88,
+      "povertyPct": 21.22,
+      "acCoverage": 68.1,
+      "treeCanopy": 10.15
+    }
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2021,
+    "predictedEdRate": 15.55,
+    "observedEdRate": 14.51,
+    "climateFeatures": {
+      "summerAvgMax": 99.3,
+      "heatwaveDays": 30.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 31.0,
+      "tailPercentileTemp": 107.56
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.19,
+      "povertyPct": 20.45,
+      "acCoverage": 70.81,
+      "treeCanopy": 11.01
+    }
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2022,
+    "predictedEdRate": 16.12,
+    "observedEdRate": 16.46,
+    "climateFeatures": {
+      "summerAvgMax": 100.58,
+      "heatwaveDays": 34.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 34.0,
+      "tailPercentileTemp": 107.39
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.42,
+      "povertyPct": 21.34,
+      "acCoverage": 71.15,
+      "treeCanopy": 9.57
+    }
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2017,
+    "predictedEdRate": 14.37,
+    "observedEdRate": 15.36,
+    "climateFeatures": {
+      "summerAvgMax": 96.47,
+      "heatwaveDays": 25.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 103.6
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.22,
+      "povertyPct": 16.8,
+      "acCoverage": 72.66,
+      "treeCanopy": 11.72
+    }
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2018,
+    "predictedEdRate": 15.07,
+    "observedEdRate": 15.43,
+    "climateFeatures": {
+      "summerAvgMax": 98.89,
+      "heatwaveDays": 27.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 109.49
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.26,
+      "povertyPct": 17.32,
+      "acCoverage": 72.13,
+      "treeCanopy": 12.25
+    }
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2019,
+    "predictedEdRate": 15.17,
+    "observedEdRate": 15.13,
+    "climateFeatures": {
+      "summerAvgMax": 97.47,
+      "heatwaveDays": 25.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 32.0,
+      "tailPercentileTemp": 104.59
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.59,
+      "povertyPct": 16.54,
+      "acCoverage": 74.51,
+      "treeCanopy": 9.17
+    }
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2020,
+    "predictedEdRate": 13.22,
+    "observedEdRate": 12.62,
+    "climateFeatures": {
+      "summerAvgMax": 96.01,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 105.26
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.93,
+      "povertyPct": 17.04,
+      "acCoverage": 73.78,
+      "treeCanopy": 11.39
+    }
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2021,
+    "predictedEdRate": 13.52,
+    "observedEdRate": 12.78,
+    "climateFeatures": {
+      "summerAvgMax": 97.73,
+      "heatwaveDays": 28.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 105.23
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.98,
+      "povertyPct": 16.73,
+      "acCoverage": 73.29,
+      "treeCanopy": 11.13
+    }
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2022,
+    "predictedEdRate": 15.4,
+    "observedEdRate": 15.51,
+    "climateFeatures": {
+      "summerAvgMax": 99.91,
+      "heatwaveDays": 29.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 34.0,
+      "tailPercentileTemp": 107.17
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.31,
+      "povertyPct": 16.86,
+      "acCoverage": 71.44,
+      "treeCanopy": 11.24
+    }
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2017,
+    "predictedEdRate": 10.33,
+    "observedEdRate": 10.27,
+    "climateFeatures": {
+      "summerAvgMax": 89.63,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 97.08
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.76,
+      "povertyPct": 13.43,
+      "acCoverage": 88.03,
+      "treeCanopy": 16.07
+    }
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2018,
+    "predictedEdRate": 9.19,
+    "observedEdRate": 9.3,
+    "climateFeatures": {
+      "summerAvgMax": 87.76,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 94.02
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.02,
+      "povertyPct": 12.94,
+      "acCoverage": 86.26,
+      "treeCanopy": 17.21
+    }
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2019,
+    "predictedEdRate": 10.05,
+    "observedEdRate": 10.38,
+    "climateFeatures": {
+      "summerAvgMax": 90.03,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 98.75
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.37,
+      "povertyPct": 12.47,
+      "acCoverage": 85.84,
+      "treeCanopy": 16.19
+    }
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2020,
+    "predictedEdRate": 8.87,
+    "observedEdRate": 8.29,
+    "climateFeatures": {
+      "summerAvgMax": 86.43,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 93.49
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.77,
+      "povertyPct": 12.97,
+      "acCoverage": 85.09,
+      "treeCanopy": 17.23
+    }
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2021,
+    "predictedEdRate": 9.02,
+    "observedEdRate": 8.8,
+    "climateFeatures": {
+      "summerAvgMax": 88.64,
+      "heatwaveDays": 18.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 98.37
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.21,
+      "povertyPct": 12.98,
+      "acCoverage": 82.13,
+      "treeCanopy": 16.77
+    }
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2022,
+    "predictedEdRate": 10.59,
+    "observedEdRate": 10.48,
+    "climateFeatures": {
+      "summerAvgMax": 90.85,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 101.11
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.26,
+      "povertyPct": 13.01,
+      "acCoverage": 84.82,
+      "treeCanopy": 17.51
+    }
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2017,
+    "predictedEdRate": 14.44,
+    "observedEdRate": 13.93,
+    "climateFeatures": {
+      "summerAvgMax": 97.64,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 107.15
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.9,
+      "povertyPct": 14.61,
+      "acCoverage": 73.35,
+      "treeCanopy": 14.18
+    }
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2018,
+    "predictedEdRate": 13.81,
+    "observedEdRate": 14.54,
+    "climateFeatures": {
+      "summerAvgMax": 93.59,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 100.45
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.96,
+      "povertyPct": 14.75,
+      "acCoverage": 69.23,
+      "treeCanopy": 13.84
+    }
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2019,
+    "predictedEdRate": 13.46,
+    "observedEdRate": 13.88,
+    "climateFeatures": {
+      "summerAvgMax": 95.95,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 105.22
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.7,
+      "povertyPct": 15.29,
+      "acCoverage": 74.02,
+      "treeCanopy": 14.22
+    }
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2020,
+    "predictedEdRate": 13.42,
+    "observedEdRate": 12.6,
+    "climateFeatures": {
+      "summerAvgMax": 96.2,
+      "heatwaveDays": 26.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 105.37
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.67,
+      "povertyPct": 15.34,
+      "acCoverage": 69.7,
+      "treeCanopy": 12.55
+    }
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2021,
+    "predictedEdRate": 13.19,
+    "observedEdRate": 12.58,
+    "climateFeatures": {
+      "summerAvgMax": 92.95,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 100.51
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.75,
+      "povertyPct": 15.38,
+      "acCoverage": 71.62,
+      "treeCanopy": 12.49
+    }
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2022,
+    "predictedEdRate": 15.77,
+    "observedEdRate": 15.79,
+    "climateFeatures": {
+      "summerAvgMax": 97.86,
+      "heatwaveDays": 31.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 32.0,
+      "tailPercentileTemp": 106.4
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.28,
+      "povertyPct": 14.34,
+      "acCoverage": 74.11,
+      "treeCanopy": 12.93
+    }
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2017,
+    "predictedEdRate": 5.06,
+    "observedEdRate": 5.41,
+    "climateFeatures": {
+      "summerAvgMax": 76.08,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 82.82
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.2,
+      "povertyPct": 10.12,
+      "acCoverage": 87.71,
+      "treeCanopy": 24.56
+    }
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2018,
+    "predictedEdRate": 3.3,
+    "observedEdRate": 3.27,
+    "climateFeatures": {
+      "summerAvgMax": 78.77,
+      "heatwaveDays": 5.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 83.23
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.0,
+      "povertyPct": 10.98,
+      "acCoverage": 91.17,
+      "treeCanopy": 23.38
+    }
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2019,
+    "predictedEdRate": 4.75,
+    "observedEdRate": 5.98,
+    "climateFeatures": {
+      "summerAvgMax": 79.54,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 7.0,
+      "tailPercentileTemp": 85.95
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.77,
+      "povertyPct": 10.17,
+      "acCoverage": 92.46,
+      "treeCanopy": 25.63
+    }
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2020,
+    "predictedEdRate": 4.98,
+    "observedEdRate": 4.69,
+    "climateFeatures": {
+      "summerAvgMax": 77.59,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 12.0,
+      "tailPercentileTemp": 84.88
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.15,
+      "povertyPct": 10.72,
+      "acCoverage": 86.71,
+      "treeCanopy": 24.27
+    }
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2021,
+    "predictedEdRate": 5.34,
+    "observedEdRate": 4.75,
+    "climateFeatures": {
+      "summerAvgMax": 78.1,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 84.52
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.98,
+      "povertyPct": 10.14,
+      "acCoverage": 89.98,
+      "treeCanopy": 24.25
+    }
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2022,
+    "predictedEdRate": 5.44,
+    "observedEdRate": 5.59,
+    "climateFeatures": {
+      "summerAvgMax": 81.41,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 87.86
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.81,
+      "povertyPct": 10.15,
+      "acCoverage": 89.16,
+      "treeCanopy": 23.6
+    }
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2017,
+    "predictedEdRate": 6.85,
+    "observedEdRate": 7.46,
+    "climateFeatures": {
+      "summerAvgMax": 78.58,
+      "heatwaveDays": 7.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 13.0,
+      "tailPercentileTemp": 86.41
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.46,
+      "povertyPct": 11.11,
+      "acCoverage": 83.94,
+      "treeCanopy": 29.34
+    }
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2018,
+    "predictedEdRate": 6.9,
+    "observedEdRate": 7.09,
+    "climateFeatures": {
+      "summerAvgMax": 80.68,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 12.0,
+      "tailPercentileTemp": 87.04
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.22,
+      "povertyPct": 11.55,
+      "acCoverage": 84.81,
+      "treeCanopy": 28.56
+    }
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2019,
+    "predictedEdRate": 5.92,
+    "observedEdRate": 6.21,
+    "climateFeatures": {
+      "summerAvgMax": 79.32,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 84.52
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.6,
+      "povertyPct": 10.7,
+      "acCoverage": 85.61,
+      "treeCanopy": 29.09
+    }
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2020,
+    "predictedEdRate": 4.39,
+    "observedEdRate": 4.28,
+    "climateFeatures": {
+      "summerAvgMax": 81.03,
+      "heatwaveDays": 5.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 3.0,
+      "tailPercentileTemp": 86.73
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.09,
+      "povertyPct": 11.32,
+      "acCoverage": 87.7,
+      "treeCanopy": 30.53
+    }
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2021,
+    "predictedEdRate": 5.76,
+    "observedEdRate": 5.31,
+    "climateFeatures": {
+      "summerAvgMax": 82.81,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 93.22
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.79,
+      "povertyPct": 11.16,
+      "acCoverage": 87.02,
+      "treeCanopy": 28.78
+    }
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2022,
+    "predictedEdRate": 8.01,
+    "observedEdRate": 8.38,
+    "climateFeatures": {
+      "summerAvgMax": 82.27,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 86.54
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.71,
+      "povertyPct": 11.05,
+      "acCoverage": 83.4,
+      "treeCanopy": 29.02
+    }
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2017,
+    "predictedEdRate": 12.05,
+    "observedEdRate": 11.5,
+    "climateFeatures": {
+      "summerAvgMax": 92.73,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 101.67
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.4,
+      "povertyPct": 16.41,
+      "acCoverage": 80.62,
+      "treeCanopy": 9.07
+    }
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2018,
+    "predictedEdRate": 12.07,
+    "observedEdRate": 12.4,
+    "climateFeatures": {
+      "summerAvgMax": 94.4,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 27.0,
+      "tailPercentileTemp": 101.67
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.34,
+      "povertyPct": 15.68,
+      "acCoverage": 80.96,
+      "treeCanopy": 11.58
+    }
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2019,
+    "predictedEdRate": 10.63,
+    "observedEdRate": 10.34,
+    "climateFeatures": {
+      "summerAvgMax": 91.33,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 99.56
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.23,
+      "povertyPct": 15.85,
+      "acCoverage": 79.23,
+      "treeCanopy": 10.96
+    }
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2020,
+    "predictedEdRate": 12.46,
+    "observedEdRate": 12.56,
+    "climateFeatures": {
+      "summerAvgMax": 94.77,
+      "heatwaveDays": 26.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 31.0,
+      "tailPercentileTemp": 103.1
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.3,
+      "povertyPct": 16.14,
+      "acCoverage": 78.91,
+      "treeCanopy": 9.98
+    }
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2021,
+    "predictedEdRate": 11.46,
+    "observedEdRate": 10.81,
+    "climateFeatures": {
+      "summerAvgMax": 95.85,
+      "heatwaveDays": 23.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 106.08
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.05,
+      "povertyPct": 15.99,
+      "acCoverage": 79.23,
+      "treeCanopy": 10.68
+    }
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2022,
+    "predictedEdRate": 15.11,
+    "observedEdRate": 15.96,
+    "climateFeatures": {
+      "summerAvgMax": 96.26,
+      "heatwaveDays": 30.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 33.0,
+      "tailPercentileTemp": 104.87
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.99,
+      "povertyPct": 16.58,
+      "acCoverage": 83.0,
+      "treeCanopy": 10.83
+    }
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2017,
+    "predictedEdRate": 6.25,
+    "observedEdRate": 4.67,
+    "climateFeatures": {
+      "summerAvgMax": 80.6,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 13.0,
+      "tailPercentileTemp": 87.99
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.72,
+      "povertyPct": 9.74,
+      "acCoverage": 82.34,
+      "treeCanopy": 26.78
+    }
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2018,
+    "predictedEdRate": 4.42,
+    "observedEdRate": 4.63,
+    "climateFeatures": {
+      "summerAvgMax": 80.0,
+      "heatwaveDays": 2.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 0.0,
+      "tailPercentileTemp": 85.95
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.79,
+      "povertyPct": 9.43,
+      "acCoverage": 86.24,
+      "treeCanopy": 26.51
+    }
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2019,
+    "predictedEdRate": 6.21,
+    "observedEdRate": 6.09,
+    "climateFeatures": {
+      "summerAvgMax": 81.81,
+      "heatwaveDays": 8.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 7.0,
+      "tailPercentileTemp": 88.31
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.94,
+      "povertyPct": 9.99,
+      "acCoverage": 82.93,
+      "treeCanopy": 26.29
+    }
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2020,
+    "predictedEdRate": 6.21,
+    "observedEdRate": 6.09,
+    "climateFeatures": {
+      "summerAvgMax": 80.42,
+      "heatwaveDays": 7.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 85.52
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.42,
+      "povertyPct": 9.81,
+      "acCoverage": 80.58,
+      "treeCanopy": 26.7
+    }
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2021,
+    "predictedEdRate": 6.52,
+    "observedEdRate": 6.3,
+    "climateFeatures": {
+      "summerAvgMax": 80.25,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 88.1
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.83,
+      "povertyPct": 10.34,
+      "acCoverage": 84.85,
+      "treeCanopy": 26.43
+    }
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2022,
+    "predictedEdRate": 7.76,
+    "observedEdRate": 7.8,
+    "climateFeatures": {
+      "summerAvgMax": 83.56,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 89.87
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.49,
+      "povertyPct": 9.62,
+      "acCoverage": 83.38,
+      "treeCanopy": 27.05
+    }
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2017,
+    "predictedEdRate": 8.48,
+    "observedEdRate": 9.36,
+    "climateFeatures": {
+      "summerAvgMax": 85.27,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 91.41
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.74,
+      "povertyPct": 11.68,
+      "acCoverage": 78.4,
+      "treeCanopy": 25.97
+    }
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2018,
+    "predictedEdRate": 8.78,
+    "observedEdRate": 8.87,
+    "climateFeatures": {
+      "summerAvgMax": 86.17,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 90.95
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.17,
+      "povertyPct": 11.66,
+      "acCoverage": 80.38,
+      "treeCanopy": 27.19
+    }
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2019,
+    "predictedEdRate": 7.99,
+    "observedEdRate": 8.51,
+    "climateFeatures": {
+      "summerAvgMax": 84.58,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 92.94
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.42,
+      "povertyPct": 11.28,
+      "acCoverage": 80.28,
+      "treeCanopy": 26.8
+    }
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2020,
+    "predictedEdRate": 8.16,
+    "observedEdRate": 8.13,
+    "climateFeatures": {
+      "summerAvgMax": 84.31,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 90.22
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.07,
+      "povertyPct": 11.7,
+      "acCoverage": 82.48,
+      "treeCanopy": 25.14
+    }
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2021,
+    "predictedEdRate": 8.65,
+    "observedEdRate": 8.44,
+    "climateFeatures": {
+      "summerAvgMax": 85.74,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 92.6
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.6,
+      "povertyPct": 11.4,
+      "acCoverage": 78.73,
+      "treeCanopy": 25.38
+    }
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2022,
+    "predictedEdRate": 9.28,
+    "observedEdRate": 10.23,
+    "climateFeatures": {
+      "summerAvgMax": 88.21,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 94.51
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.24,
+      "povertyPct": 12.19,
+      "acCoverage": 83.03,
+      "treeCanopy": 25.77
+    }
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2017,
+    "predictedEdRate": 10.77,
+    "observedEdRate": 11.52,
+    "climateFeatures": {
+      "summerAvgMax": 89.09,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 95.21
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.22,
+      "povertyPct": 14.44,
+      "acCoverage": 74.09,
+      "treeCanopy": 18.05
+    }
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2018,
+    "predictedEdRate": 12.28,
+    "observedEdRate": 13.08,
+    "climateFeatures": {
+      "summerAvgMax": 88.77,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 97.74
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 19.34,
+      "povertyPct": 14.63,
+      "acCoverage": 75.42,
+      "treeCanopy": 19.0
+    }
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2019,
+    "predictedEdRate": 11.38,
+    "observedEdRate": 11.83,
+    "climateFeatures": {
+      "summerAvgMax": 86.32,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 95.9
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.73,
+      "povertyPct": 13.71,
+      "acCoverage": 74.14,
+      "treeCanopy": 18.61
+    }
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2020,
+    "predictedEdRate": 10.52,
+    "observedEdRate": 9.24,
+    "climateFeatures": {
+      "summerAvgMax": 89.92,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 96.82
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.74,
+      "povertyPct": 14.1,
+      "acCoverage": 74.1,
+      "treeCanopy": 19.94
+    }
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2021,
+    "predictedEdRate": 10.03,
+    "observedEdRate": 9.27,
+    "climateFeatures": {
+      "summerAvgMax": 87.54,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 95.14
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 19.35,
+      "povertyPct": 14.2,
+      "acCoverage": 74.56,
+      "treeCanopy": 18.45
+    }
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2022,
+    "predictedEdRate": 12.35,
+    "observedEdRate": 12.95,
+    "climateFeatures": {
+      "summerAvgMax": 89.93,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 98.3
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.68,
+      "povertyPct": 14.58,
+      "acCoverage": 76.05,
+      "treeCanopy": 18.67
+    }
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2017,
+    "predictedEdRate": 6.81,
+    "observedEdRate": 6.66,
+    "climateFeatures": {
+      "summerAvgMax": 87.83,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 92.49
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.04,
+      "povertyPct": 11.33,
+      "acCoverage": 79.27,
+      "treeCanopy": 26.92
+    }
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2018,
+    "predictedEdRate": 7.15,
+    "observedEdRate": 6.71,
+    "climateFeatures": {
+      "summerAvgMax": 87.98,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 94.2
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.85,
+      "povertyPct": 11.76,
+      "acCoverage": 78.32,
+      "treeCanopy": 27.05
+    }
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2019,
+    "predictedEdRate": 8.67,
+    "observedEdRate": 9.03,
+    "climateFeatures": {
+      "summerAvgMax": 86.53,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 93.17
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.86,
+      "povertyPct": 11.8,
+      "acCoverage": 77.75,
+      "treeCanopy": 26.87
+    }
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2020,
+    "predictedEdRate": 8.33,
+    "observedEdRate": 6.62,
+    "climateFeatures": {
+      "summerAvgMax": 88.84,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 98.76
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.4,
+      "povertyPct": 11.32,
+      "acCoverage": 78.42,
+      "treeCanopy": 28.31
+    }
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2021,
+    "predictedEdRate": 6.86,
+    "observedEdRate": 5.92,
+    "climateFeatures": {
+      "summerAvgMax": 86.01,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 92.76
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.26,
+      "povertyPct": 12.72,
+      "acCoverage": 80.26,
+      "treeCanopy": 27.83
+    }
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2022,
+    "predictedEdRate": 7.55,
+    "observedEdRate": 8.46,
+    "climateFeatures": {
+      "summerAvgMax": 86.77,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 92.93
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.14,
+      "povertyPct": 11.79,
+      "acCoverage": 81.75,
+      "treeCanopy": 27.45
+    }
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2017,
+    "predictedEdRate": 10.73,
+    "observedEdRate": 10.5,
+    "climateFeatures": {
+      "summerAvgMax": 89.68,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 97.02
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.21,
+      "povertyPct": 12.2,
+      "acCoverage": 73.56,
+      "treeCanopy": 20.12
+    }
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2018,
+    "predictedEdRate": 11.21,
+    "observedEdRate": 10.44,
+    "climateFeatures": {
+      "summerAvgMax": 90.52,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 100.54
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.45,
+      "povertyPct": 13.09,
+      "acCoverage": 73.53,
+      "treeCanopy": 19.53
+    }
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2019,
+    "predictedEdRate": 10.28,
+    "observedEdRate": 10.63,
+    "climateFeatures": {
+      "summerAvgMax": 90.6,
+      "heatwaveDays": 18.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 97.73
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.41,
+      "povertyPct": 12.98,
+      "acCoverage": 73.37,
+      "treeCanopy": 21.25
+    }
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2020,
+    "predictedEdRate": 10.95,
+    "observedEdRate": 10.55,
+    "climateFeatures": {
+      "summerAvgMax": 91.64,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 98.63
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.92,
+      "povertyPct": 12.93,
+      "acCoverage": 74.32,
+      "treeCanopy": 21.09
+    }
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2021,
+    "predictedEdRate": 11.32,
+    "observedEdRate": 11.11,
+    "climateFeatures": {
+      "summerAvgMax": 89.13,
+      "heatwaveDays": 18.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 97.56
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.57,
+      "povertyPct": 13.15,
+      "acCoverage": 70.17,
+      "treeCanopy": 18.25
+    }
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2022,
+    "predictedEdRate": 12.47,
+    "observedEdRate": 13.91,
+    "climateFeatures": {
+      "summerAvgMax": 90.98,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 99.18
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.48,
+      "povertyPct": 12.51,
+      "acCoverage": 70.23,
+      "treeCanopy": 20.07
+    }
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2017,
+    "predictedEdRate": 15.99,
+    "observedEdRate": 16.19,
+    "climateFeatures": {
+      "summerAvgMax": 98.0,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 108.14
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.52,
+      "povertyPct": 22.67,
+      "acCoverage": 71.23,
+      "treeCanopy": 11.79
+    }
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2018,
+    "predictedEdRate": 16.95,
+    "observedEdRate": 17.7,
+    "climateFeatures": {
+      "summerAvgMax": 96.78,
+      "heatwaveDays": 29.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 31.0,
+      "tailPercentileTemp": 106.86
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.95,
+      "povertyPct": 22.69,
+      "acCoverage": 75.52,
+      "treeCanopy": 11.4
+    }
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2019,
+    "predictedEdRate": 14.44,
+    "observedEdRate": 14.46,
+    "climateFeatures": {
+      "summerAvgMax": 99.72,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 32.0,
+      "tailPercentileTemp": 109.47
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.58,
+      "povertyPct": 22.72,
+      "acCoverage": 76.07,
+      "treeCanopy": 11.09
+    }
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2020,
+    "predictedEdRate": 14.96,
+    "observedEdRate": 14.36,
+    "climateFeatures": {
+      "summerAvgMax": 101.71,
+      "heatwaveDays": 33.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 33.0,
+      "tailPercentileTemp": 114.36
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.13,
+      "povertyPct": 22.45,
+      "acCoverage": 75.6,
+      "treeCanopy": 12.94
+    }
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2021,
+    "predictedEdRate": 16.0,
+    "observedEdRate": 14.75,
+    "climateFeatures": {
+      "summerAvgMax": 99.73,
+      "heatwaveDays": 30.0,
+      "consecutiveHotDays": 13.0,
+      "warmNightCount": 35.0,
+      "tailPercentileTemp": 108.83
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.44,
+      "povertyPct": 22.25,
+      "acCoverage": 75.48,
+      "treeCanopy": 14.12
+    }
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2022,
+    "predictedEdRate": 18.02,
+    "observedEdRate": 19.0,
+    "climateFeatures": {
+      "summerAvgMax": 101.95,
+      "heatwaveDays": 31.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 37.0,
+      "tailPercentileTemp": 109.27
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.56,
+      "povertyPct": 22.62,
+      "acCoverage": 75.52,
+      "treeCanopy": 11.69
+    }
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2017,
+    "predictedEdRate": 12.16,
+    "observedEdRate": 13.42,
+    "climateFeatures": {
+      "summerAvgMax": 91.53,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 99.7
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.43,
+      "povertyPct": 15.55,
+      "acCoverage": 81.49,
+      "treeCanopy": 16.2
+    }
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2018,
+    "predictedEdRate": 11.03,
+    "observedEdRate": 11.4,
+    "climateFeatures": {
+      "summerAvgMax": 92.47,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 102.17
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.85,
+      "povertyPct": 15.46,
+      "acCoverage": 79.85,
+      "treeCanopy": 15.43
+    }
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2019,
+    "predictedEdRate": 12.0,
+    "observedEdRate": 12.12,
+    "climateFeatures": {
+      "summerAvgMax": 89.46,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 98.35
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.72,
+      "povertyPct": 15.8,
+      "acCoverage": 80.74,
+      "treeCanopy": 15.81
+    }
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2020,
+    "predictedEdRate": 10.98,
+    "observedEdRate": 9.81,
+    "climateFeatures": {
+      "summerAvgMax": 91.12,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 98.82
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.18,
+      "povertyPct": 14.7,
+      "acCoverage": 83.12,
+      "treeCanopy": 17.07
+    }
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2021,
+    "predictedEdRate": 11.61,
+    "observedEdRate": 11.29,
+    "climateFeatures": {
+      "summerAvgMax": 94.51,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 103.17
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.84,
+      "povertyPct": 15.4,
+      "acCoverage": 79.86,
+      "treeCanopy": 16.63
+    }
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2022,
+    "predictedEdRate": 13.1,
+    "observedEdRate": 13.86,
+    "climateFeatures": {
+      "summerAvgMax": 93.68,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 102.16
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.25,
+      "povertyPct": 15.15,
+      "acCoverage": 76.79,
+      "treeCanopy": 14.97
+    }
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2017,
+    "predictedEdRate": 16.53,
+    "observedEdRate": 16.94,
+    "climateFeatures": {
+      "summerAvgMax": 98.72,
+      "heatwaveDays": 32.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 32.0,
+      "tailPercentileTemp": 110.91
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.76,
+      "povertyPct": 14.83,
+      "acCoverage": 72.26,
+      "treeCanopy": 8.62
+    }
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2018,
+    "predictedEdRate": 14.91,
+    "observedEdRate": 15.89,
+    "climateFeatures": {
+      "summerAvgMax": 101.57,
+      "heatwaveDays": 26.0,
+      "consecutiveHotDays": 14.0,
+      "warmNightCount": 30.0,
+      "tailPercentileTemp": 113.11
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.3,
+      "povertyPct": 15.33,
+      "acCoverage": 72.06,
+      "treeCanopy": 8.2
+    }
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2019,
+    "predictedEdRate": 14.6,
+    "observedEdRate": 14.49,
+    "climateFeatures": {
+      "summerAvgMax": 100.46,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 109.99
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.61,
+      "povertyPct": 14.94,
+      "acCoverage": 69.76,
+      "treeCanopy": 8.73
+    }
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2020,
+    "predictedEdRate": 13.68,
+    "observedEdRate": 12.32,
+    "climateFeatures": {
+      "summerAvgMax": 102.28,
+      "heatwaveDays": 29.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 111.82
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.29,
+      "povertyPct": 15.26,
+      "acCoverage": 71.94,
+      "treeCanopy": 9.59
+    }
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2021,
+    "predictedEdRate": 13.01,
+    "observedEdRate": 11.97,
+    "climateFeatures": {
+      "summerAvgMax": 100.34,
+      "heatwaveDays": 28.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 109.31
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.71,
+      "povertyPct": 15.08,
+      "acCoverage": 71.43,
+      "treeCanopy": 9.45
+    }
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2022,
+    "predictedEdRate": 17.14,
+    "observedEdRate": 17.63,
+    "climateFeatures": {
+      "summerAvgMax": 103.22,
+      "heatwaveDays": 32.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 36.0,
+      "tailPercentileTemp": 110.09
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.14,
+      "povertyPct": 15.75,
+      "acCoverage": 73.35,
+      "treeCanopy": 8.94
+    }
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2017,
+    "predictedEdRate": 8.33,
+    "observedEdRate": 8.67,
+    "climateFeatures": {
+      "summerAvgMax": 85.05,
+      "heatwaveDays": 9.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 92.07
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.41,
+      "povertyPct": 14.84,
+      "acCoverage": 79.43,
+      "treeCanopy": 20.43
+    }
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2018,
+    "predictedEdRate": 9.22,
+    "observedEdRate": 9.45,
+    "climateFeatures": {
+      "summerAvgMax": 86.03,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 94.1
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.31,
+      "povertyPct": 15.74,
+      "acCoverage": 81.81,
+      "treeCanopy": 22.22
+    }
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2019,
+    "predictedEdRate": 9.04,
+    "observedEdRate": 9.05,
+    "climateFeatures": {
+      "summerAvgMax": 85.51,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 93.19
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.15,
+      "povertyPct": 15.89,
+      "acCoverage": 83.2,
+      "treeCanopy": 19.19
+    }
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2020,
+    "predictedEdRate": 8.12,
+    "observedEdRate": 7.56,
+    "climateFeatures": {
+      "summerAvgMax": 84.8,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 90.55
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.94,
+      "povertyPct": 15.06,
+      "acCoverage": 84.71,
+      "treeCanopy": 21.26
+    }
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2021,
+    "predictedEdRate": 8.22,
+    "observedEdRate": 7.55,
+    "climateFeatures": {
+      "summerAvgMax": 84.45,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 90.46
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.25,
+      "povertyPct": 15.64,
+      "acCoverage": 81.18,
+      "treeCanopy": 20.64
+    }
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2022,
+    "predictedEdRate": 9.35,
+    "observedEdRate": 10.17,
+    "climateFeatures": {
+      "summerAvgMax": 86.54,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 91.29
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.33,
+      "povertyPct": 15.82,
+      "acCoverage": 83.33,
+      "treeCanopy": 21.06
+    }
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2017,
+    "predictedEdRate": 2.98,
+    "observedEdRate": 2.93,
+    "climateFeatures": {
+      "summerAvgMax": 74.51,
+      "heatwaveDays": 3.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 2.0,
+      "tailPercentileTemp": 79.04
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.87,
+      "povertyPct": 7.95,
+      "acCoverage": 93.93,
+      "treeCanopy": 32.05
+    }
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2018,
+    "predictedEdRate": 3.3,
+    "observedEdRate": 3.17,
+    "climateFeatures": {
+      "summerAvgMax": 78.08,
+      "heatwaveDays": 1.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 85.8
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.86,
+      "povertyPct": 7.9,
+      "acCoverage": 96.0,
+      "treeCanopy": 32.15
+    }
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2019,
+    "predictedEdRate": 3.05,
+    "observedEdRate": 2.7,
+    "climateFeatures": {
+      "summerAvgMax": 76.51,
+      "heatwaveDays": 2.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 6.0,
+      "tailPercentileTemp": 81.9
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.64,
+      "povertyPct": 9.19,
+      "acCoverage": 92.36,
+      "treeCanopy": 32.0
+    }
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2020,
+    "predictedEdRate": 3.28,
+    "observedEdRate": 3.1,
+    "climateFeatures": {
+      "summerAvgMax": 77.69,
+      "heatwaveDays": 7.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 81.07
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.07,
+      "povertyPct": 8.17,
+      "acCoverage": 96.0,
+      "treeCanopy": 30.77
+    }
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2021,
+    "predictedEdRate": 3.18,
+    "observedEdRate": 3.94,
+    "climateFeatures": {
+      "summerAvgMax": 76.87,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 9.0,
+      "tailPercentileTemp": 83.08
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.35,
+      "povertyPct": 7.43,
+      "acCoverage": 95.78,
+      "treeCanopy": 29.81
+    }
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2022,
+    "predictedEdRate": 4.18,
+    "observedEdRate": 3.82,
+    "climateFeatures": {
+      "summerAvgMax": 77.51,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 9.0,
+      "tailPercentileTemp": 83.1
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.94,
+      "povertyPct": 8.24,
+      "acCoverage": 94.44,
+      "treeCanopy": 31.56
+    }
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2017,
+    "predictedEdRate": 12.1,
+    "observedEdRate": 12.65,
+    "climateFeatures": {
+      "summerAvgMax": 93.99,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 102.27
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.07,
+      "povertyPct": 16.75,
+      "acCoverage": 77.01,
+      "treeCanopy": 13.43
+    }
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2018,
+    "predictedEdRate": 11.76,
+    "observedEdRate": 12.26,
+    "climateFeatures": {
+      "summerAvgMax": 93.21,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 101.34
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.71,
+      "povertyPct": 16.67,
+      "acCoverage": 78.6,
+      "treeCanopy": 12.67
+    }
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2019,
+    "predictedEdRate": 12.02,
+    "observedEdRate": 12.17,
+    "climateFeatures": {
+      "summerAvgMax": 91.07,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 98.82
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.45,
+      "povertyPct": 16.21,
+      "acCoverage": 79.36,
+      "treeCanopy": 12.82
+    }
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2020,
+    "predictedEdRate": 11.26,
+    "observedEdRate": 10.1,
+    "climateFeatures": {
+      "summerAvgMax": 90.62,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 96.93
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.44,
+      "povertyPct": 15.82,
+      "acCoverage": 77.31,
+      "treeCanopy": 13.36
+    }
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2021,
+    "predictedEdRate": 12.82,
+    "observedEdRate": 12.49,
+    "climateFeatures": {
+      "summerAvgMax": 92.87,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 100.58
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.44,
+      "povertyPct": 16.53,
+      "acCoverage": 77.88,
+      "treeCanopy": 12.44
+    }
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2022,
+    "predictedEdRate": 13.4,
+    "observedEdRate": 13.67,
+    "climateFeatures": {
+      "summerAvgMax": 95.13,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 102.74
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.12,
+      "povertyPct": 16.72,
+      "acCoverage": 78.2,
+      "treeCanopy": 12.5
+    }
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2017,
+    "predictedEdRate": 6.06,
+    "observedEdRate": 6.27,
+    "climateFeatures": {
+      "summerAvgMax": 84.0,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 90.58
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.82,
+      "povertyPct": 11.04,
+      "acCoverage": 83.18,
+      "treeCanopy": 26.09
+    }
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2018,
+    "predictedEdRate": 6.15,
+    "observedEdRate": 5.95,
+    "climateFeatures": {
+      "summerAvgMax": 84.02,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 90.52
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.58,
+      "povertyPct": 11.39,
+      "acCoverage": 84.8,
+      "treeCanopy": 26.13
+    }
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2019,
+    "predictedEdRate": 6.65,
+    "observedEdRate": 6.26,
+    "climateFeatures": {
+      "summerAvgMax": 84.22,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 90.19
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.48,
+      "povertyPct": 11.12,
+      "acCoverage": 82.29,
+      "treeCanopy": 26.24
+    }
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2020,
+    "predictedEdRate": 6.18,
+    "observedEdRate": 6.46,
+    "climateFeatures": {
+      "summerAvgMax": 81.97,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 88.63
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.48,
+      "povertyPct": 11.07,
+      "acCoverage": 86.02,
+      "treeCanopy": 27.64
+    }
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2021,
+    "predictedEdRate": 6.1,
+    "observedEdRate": 4.81,
+    "climateFeatures": {
+      "summerAvgMax": 81.76,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 86.03
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.06,
+      "povertyPct": 11.86,
+      "acCoverage": 85.28,
+      "treeCanopy": 27.63
+    }
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2022,
+    "predictedEdRate": 7.5,
+    "observedEdRate": 7.86,
+    "climateFeatures": {
+      "summerAvgMax": 84.85,
+      "heatwaveDays": 18.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 89.83
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.32,
+      "povertyPct": 11.46,
+      "acCoverage": 83.24,
+      "treeCanopy": 26.3
+    }
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2017,
+    "predictedEdRate": 2.73,
+    "observedEdRate": 2.11,
+    "climateFeatures": {
+      "summerAvgMax": 77.72,
+      "heatwaveDays": 5.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 3.0,
+      "tailPercentileTemp": 84.69
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.88,
+      "povertyPct": 6.21,
+      "acCoverage": 90.66,
+      "treeCanopy": 22.27
+    }
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2018,
+    "predictedEdRate": 3.88,
+    "observedEdRate": 4.61,
+    "climateFeatures": {
+      "summerAvgMax": 78.41,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 85.39
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.78,
+      "povertyPct": 5.36,
+      "acCoverage": 90.37,
+      "treeCanopy": 24.81
+    }
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2019,
+    "predictedEdRate": 4.41,
+    "observedEdRate": 5.25,
+    "climateFeatures": {
+      "summerAvgMax": 77.81,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 9.0,
+      "tailPercentileTemp": 85.11
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.9,
+      "povertyPct": 5.75,
+      "acCoverage": 89.84,
+      "treeCanopy": 24.29
+    }
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2020,
+    "predictedEdRate": 3.27,
+    "observedEdRate": 2.29,
+    "climateFeatures": {
+      "summerAvgMax": 79.4,
+      "heatwaveDays": 2.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 8.0,
+      "tailPercentileTemp": 86.86
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.28,
+      "povertyPct": 5.67,
+      "acCoverage": 86.16,
+      "treeCanopy": 23.86
+    }
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2021,
+    "predictedEdRate": 3.5,
+    "observedEdRate": 3.0,
+    "climateFeatures": {
+      "summerAvgMax": 77.1,
+      "heatwaveDays": 7.0,
+      "consecutiveHotDays": 2.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 84.07
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.61,
+      "povertyPct": 6.13,
+      "acCoverage": 90.78,
+      "treeCanopy": 24.14
+    }
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2022,
+    "predictedEdRate": 5.09,
+    "observedEdRate": 5.22,
+    "climateFeatures": {
+      "summerAvgMax": 81.52,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 12.0,
+      "tailPercentileTemp": 87.67
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.15,
+      "povertyPct": 6.05,
+      "acCoverage": 89.57,
+      "treeCanopy": 24.53
+    }
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2017,
+    "predictedEdRate": 7.69,
+    "observedEdRate": 7.77,
+    "climateFeatures": {
+      "summerAvgMax": 82.53,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 91.44
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.41,
+      "povertyPct": 12.52,
+      "acCoverage": 85.43,
+      "treeCanopy": 16.36
+    }
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2018,
+    "predictedEdRate": 8.42,
+    "observedEdRate": 8.75,
+    "climateFeatures": {
+      "summerAvgMax": 81.14,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 89.57
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.75,
+      "povertyPct": 11.78,
+      "acCoverage": 80.06,
+      "treeCanopy": 16.51
+    }
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2019,
+    "predictedEdRate": 8.44,
+    "observedEdRate": 9.18,
+    "climateFeatures": {
+      "summerAvgMax": 82.09,
+      "heatwaveDays": 9.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 90.01
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.01,
+      "povertyPct": 12.48,
+      "acCoverage": 81.56,
+      "treeCanopy": 16.75
+    }
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2020,
+    "predictedEdRate": 6.71,
+    "observedEdRate": 5.68,
+    "climateFeatures": {
+      "summerAvgMax": 82.91,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 6.0,
+      "tailPercentileTemp": 91.53
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.84,
+      "povertyPct": 11.98,
+      "acCoverage": 84.84,
+      "treeCanopy": 16.47
+    }
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2021,
+    "predictedEdRate": 8.38,
+    "observedEdRate": 7.84,
+    "climateFeatures": {
+      "summerAvgMax": 81.37,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 12.0,
+      "tailPercentileTemp": 87.87
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.66,
+      "povertyPct": 12.58,
+      "acCoverage": 84.4,
+      "treeCanopy": 15.35
+    }
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2022,
+    "predictedEdRate": 9.23,
+    "observedEdRate": 9.08,
+    "climateFeatures": {
+      "summerAvgMax": 84.4,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 90.79
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.74,
+      "povertyPct": 11.72,
+      "acCoverage": 83.44,
+      "treeCanopy": 15.74
+    }
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2017,
+    "predictedEdRate": 6.46,
+    "observedEdRate": 5.95,
+    "climateFeatures": {
+      "summerAvgMax": 83.02,
+      "heatwaveDays": 5.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 90.29
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.14,
+      "povertyPct": 6.57,
+      "acCoverage": 81.65,
+      "treeCanopy": 22.86
+    }
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2018,
+    "predictedEdRate": 6.33,
+    "observedEdRate": 6.42,
+    "climateFeatures": {
+      "summerAvgMax": 84.68,
+      "heatwaveDays": 7.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 91.55
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.94,
+      "povertyPct": 6.99,
+      "acCoverage": 83.36,
+      "treeCanopy": 22.88
+    }
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2019,
+    "predictedEdRate": 8.22,
+    "observedEdRate": 8.81,
+    "climateFeatures": {
+      "summerAvgMax": 83.38,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 88.97
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.35,
+      "povertyPct": 6.53,
+      "acCoverage": 82.96,
+      "treeCanopy": 23.95
+    }
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2020,
+    "predictedEdRate": 6.63,
+    "observedEdRate": 6.54,
+    "climateFeatures": {
+      "summerAvgMax": 84.2,
+      "heatwaveDays": 9.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 12.0,
+      "tailPercentileTemp": 91.63
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.73,
+      "povertyPct": 6.96,
+      "acCoverage": 80.59,
+      "treeCanopy": 23.0
+    }
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2021,
+    "predictedEdRate": 8.0,
+    "observedEdRate": 7.56,
+    "climateFeatures": {
+      "summerAvgMax": 84.3,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 90.86
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.92,
+      "povertyPct": 7.1,
+      "acCoverage": 81.63,
+      "treeCanopy": 23.03
+    }
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2022,
+    "predictedEdRate": 9.22,
+    "observedEdRate": 9.58,
+    "climateFeatures": {
+      "summerAvgMax": 85.08,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 90.76
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.75,
+      "povertyPct": 7.55,
+      "acCoverage": 82.62,
+      "treeCanopy": 23.96
+    }
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2017,
+    "predictedEdRate": 2.32,
+    "observedEdRate": 2.0,
+    "climateFeatures": {
+      "summerAvgMax": 79.94,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 6.0,
+      "tailPercentileTemp": 86.69
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.49,
+      "povertyPct": 8.25,
+      "acCoverage": 96.0,
+      "treeCanopy": 29.14
+    }
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2018,
+    "predictedEdRate": 2.69,
+    "observedEdRate": 3.55,
+    "climateFeatures": {
+      "summerAvgMax": 80.75,
+      "heatwaveDays": 4.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 7.0,
+      "tailPercentileTemp": 87.49
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.81,
+      "povertyPct": 8.6,
+      "acCoverage": 96.0,
+      "treeCanopy": 27.89
+    }
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2019,
+    "predictedEdRate": 2.85,
+    "observedEdRate": 2.4,
+    "climateFeatures": {
+      "summerAvgMax": 81.96,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 8.0,
+      "tailPercentileTemp": 89.35
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.72,
+      "povertyPct": 8.83,
+      "acCoverage": 96.0,
+      "treeCanopy": 29.3
+    }
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2020,
+    "predictedEdRate": 4.01,
+    "observedEdRate": 4.41,
+    "climateFeatures": {
+      "summerAvgMax": 80.95,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 10.0,
+      "tailPercentileTemp": 86.83
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.08,
+      "povertyPct": 8.21,
+      "acCoverage": 96.0,
+      "treeCanopy": 28.91
+    }
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2021,
+    "predictedEdRate": 2.63,
+    "observedEdRate": 2.0,
+    "climateFeatures": {
+      "summerAvgMax": 79.96,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 3.0,
+      "warmNightCount": 9.0,
+      "tailPercentileTemp": 86.15
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 10.96,
+      "povertyPct": 8.0,
+      "acCoverage": 96.0,
+      "treeCanopy": 28.73
+    }
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2022,
+    "predictedEdRate": 4.5,
+    "observedEdRate": 4.59,
+    "climateFeatures": {
+      "summerAvgMax": 79.75,
+      "heatwaveDays": 9.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 84.97
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.58,
+      "povertyPct": 9.2,
+      "acCoverage": 96.0,
+      "treeCanopy": 28.61
+    }
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2017,
+    "predictedEdRate": 13.39,
+    "observedEdRate": 14.42,
+    "climateFeatures": {
+      "summerAvgMax": 92.53,
+      "heatwaveDays": 23.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 101.04
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.29,
+      "povertyPct": 17.31,
+      "acCoverage": 75.25,
+      "treeCanopy": 17.07
+    }
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2018,
+    "predictedEdRate": 11.2,
+    "observedEdRate": 11.34,
+    "climateFeatures": {
+      "summerAvgMax": 92.69,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 102.77
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.55,
+      "povertyPct": 16.64,
+      "acCoverage": 76.77,
+      "treeCanopy": 18.83
+    }
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2019,
+    "predictedEdRate": 12.05,
+    "observedEdRate": 12.23,
+    "climateFeatures": {
+      "summerAvgMax": 94.3,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 102.96
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.28,
+      "povertyPct": 17.18,
+      "acCoverage": 76.52,
+      "treeCanopy": 17.87
+    }
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2020,
+    "predictedEdRate": 11.08,
+    "observedEdRate": 10.28,
+    "climateFeatures": {
+      "summerAvgMax": 94.74,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 27.0,
+      "tailPercentileTemp": 103.25
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.91,
+      "povertyPct": 16.81,
+      "acCoverage": 76.94,
+      "treeCanopy": 17.88
+    }
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2021,
+    "predictedEdRate": 11.74,
+    "observedEdRate": 11.75,
+    "climateFeatures": {
+      "summerAvgMax": 93.5,
+      "heatwaveDays": 25.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 105.15
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.13,
+      "povertyPct": 16.68,
+      "acCoverage": 75.41,
+      "treeCanopy": 17.77
+    }
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2022,
+    "predictedEdRate": 12.93,
+    "observedEdRate": 12.88,
+    "climateFeatures": {
+      "summerAvgMax": 94.73,
+      "heatwaveDays": 27.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 25.0,
+      "tailPercentileTemp": 103.4
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.21,
+      "povertyPct": 17.1,
+      "acCoverage": 75.24,
+      "treeCanopy": 19.06
+    }
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2017,
+    "predictedEdRate": 9.36,
+    "observedEdRate": 9.6,
+    "climateFeatures": {
+      "summerAvgMax": 87.52,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 98.49
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.44,
+      "povertyPct": 14.86,
+      "acCoverage": 77.4,
+      "treeCanopy": 17.47
+    }
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2018,
+    "predictedEdRate": 9.33,
+    "observedEdRate": 9.37,
+    "climateFeatures": {
+      "summerAvgMax": 86.97,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 95.29
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.97,
+      "povertyPct": 16.0,
+      "acCoverage": 78.68,
+      "treeCanopy": 16.66
+    }
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2019,
+    "predictedEdRate": 8.9,
+    "observedEdRate": 8.53,
+    "climateFeatures": {
+      "summerAvgMax": 85.16,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 93.63
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.75,
+      "povertyPct": 14.75,
+      "acCoverage": 78.38,
+      "treeCanopy": 18.29
+    }
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2020,
+    "predictedEdRate": 9.2,
+    "observedEdRate": 9.09,
+    "climateFeatures": {
+      "summerAvgMax": 86.65,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 94.36
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.36,
+      "povertyPct": 15.58,
+      "acCoverage": 77.88,
+      "treeCanopy": 17.78
+    }
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2021,
+    "predictedEdRate": 9.62,
+    "observedEdRate": 8.53,
+    "climateFeatures": {
+      "summerAvgMax": 88.24,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 94.8
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.13,
+      "povertyPct": 15.16,
+      "acCoverage": 78.18,
+      "treeCanopy": 17.63
+    }
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2022,
+    "predictedEdRate": 10.88,
+    "observedEdRate": 10.61,
+    "climateFeatures": {
+      "summerAvgMax": 89.12,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 96.91
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.35,
+      "povertyPct": 16.03,
+      "acCoverage": 78.74,
+      "treeCanopy": 18.53
+    }
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2017,
+    "predictedEdRate": 8.31,
+    "observedEdRate": 9.57,
+    "climateFeatures": {
+      "summerAvgMax": 80.47,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 86.39
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.08,
+      "povertyPct": 12.48,
+      "acCoverage": 85.22,
+      "treeCanopy": 19.35
+    }
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2018,
+    "predictedEdRate": 7.32,
+    "observedEdRate": 6.86,
+    "climateFeatures": {
+      "summerAvgMax": 81.73,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 87.48
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.17,
+      "povertyPct": 12.26,
+      "acCoverage": 82.86,
+      "treeCanopy": 21.29
+    }
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2019,
+    "predictedEdRate": 7.4,
+    "observedEdRate": 7.93,
+    "climateFeatures": {
+      "summerAvgMax": 83.7,
+      "heatwaveDays": 11.0,
+      "consecutiveHotDays": 1.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 90.87
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.13,
+      "povertyPct": 12.18,
+      "acCoverage": 87.62,
+      "treeCanopy": 20.95
+    }
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2020,
+    "predictedEdRate": 5.17,
+    "observedEdRate": 4.49,
+    "climateFeatures": {
+      "summerAvgMax": 80.99,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 88.14
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.98,
+      "povertyPct": 11.48,
+      "acCoverage": 89.26,
+      "treeCanopy": 20.03
+    }
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2021,
+    "predictedEdRate": 8.2,
+    "observedEdRate": 8.29,
+    "climateFeatures": {
+      "summerAvgMax": 84.62,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 92.46
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.12,
+      "povertyPct": 12.38,
+      "acCoverage": 84.06,
+      "treeCanopy": 20.82
+    }
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2022,
+    "predictedEdRate": 9.11,
+    "observedEdRate": 9.39,
+    "climateFeatures": {
+      "summerAvgMax": 86.15,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 15.0,
+      "tailPercentileTemp": 92.54
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.08,
+      "povertyPct": 11.8,
+      "acCoverage": 85.1,
+      "treeCanopy": 18.25
+    }
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2017,
+    "predictedEdRate": 14.04,
+    "observedEdRate": 14.2,
+    "climateFeatures": {
+      "summerAvgMax": 96.42,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 106.01
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.87,
+      "povertyPct": 15.42,
+      "acCoverage": 78.98,
+      "treeCanopy": 15.46
+    }
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2018,
+    "predictedEdRate": 14.16,
+    "observedEdRate": 15.69,
+    "climateFeatures": {
+      "summerAvgMax": 96.0,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 105.97
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.77,
+      "povertyPct": 13.92,
+      "acCoverage": 79.67,
+      "treeCanopy": 13.29
+    }
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2019,
+    "predictedEdRate": 13.56,
+    "observedEdRate": 14.52,
+    "climateFeatures": {
+      "summerAvgMax": 93.95,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 101.96
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.8,
+      "povertyPct": 15.98,
+      "acCoverage": 80.15,
+      "treeCanopy": 15.9
+    }
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2020,
+    "predictedEdRate": 12.68,
+    "observedEdRate": 11.79,
+    "climateFeatures": {
+      "summerAvgMax": 94.34,
+      "heatwaveDays": 21.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 102.72
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.49,
+      "povertyPct": 15.47,
+      "acCoverage": 80.02,
+      "treeCanopy": 15.58
+    }
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2021,
+    "predictedEdRate": 12.33,
+    "observedEdRate": 11.8,
+    "climateFeatures": {
+      "summerAvgMax": 93.51,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 26.0,
+      "tailPercentileTemp": 103.57
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 19.39,
+      "povertyPct": 15.5,
+      "acCoverage": 77.4,
+      "treeCanopy": 14.78
+    }
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2022,
+    "predictedEdRate": 14.11,
+    "observedEdRate": 13.83,
+    "climateFeatures": {
+      "summerAvgMax": 98.91,
+      "heatwaveDays": 28.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 34.0,
+      "tailPercentileTemp": 106.19
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.67,
+      "povertyPct": 14.83,
+      "acCoverage": 81.29,
+      "treeCanopy": 14.78
+    }
+  },
+  {
+    "countyName": "Sutter",
+    "countyFips": "06101",
+    "year": 2017,
+    "predictedEdRate": 11.18,
+    "observedEdRate": 11.58,
+    "climateFeatures": {
+      "summerAvgMax": 92.04,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 98.4
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.45,
+      "povertyPct": 13.28,
+      "acCoverage": 80.04,
+      "treeCanopy": 15.3
+    }
+  },
+  {
+    "countyName": "Sutter",
+    "countyFips": "06101",
+    "year": 2018,
+    "predictedEdRate": 10.91,
+    "observedEdRate": 11.76,
+    "climateFeatures": {
+      "summerAvgMax": 91.05,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 98.19
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.19,
+      "povertyPct": 12.83,
+      "acCoverage": 80.68,
+      "treeCanopy": 16.07
+    }
+  },
+  {
+    "countyName": "Sutter",
+    "countyFips": "06101",
+    "year": 2019,
+    "predictedEdRate": 11.14,
+    "observedEdRate": 12.0,
+    "climateFeatures": {
+      "summerAvgMax": 91.28,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 99.83
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.51,
+      "povertyPct": 12.05,
+      "acCoverage": 80.16,
+      "treeCanopy": 15.86
+    }
+  },
+  {
+    "countyName": "Sutter",
+    "countyFips": "06101",
+    "year": 2020,
+    "predictedEdRate": 9.47,
+    "observedEdRate": 8.21,
+    "climateFeatures": {
+      "summerAvgMax": 90.69,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 99.62
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.73,
+      "povertyPct": 12.26,
+      "acCoverage": 80.54,
+      "treeCanopy": 17.82
+    }
+  },
+  {
+    "countyName": "Sutter",
+    "countyFips": "06101",
+    "year": 2021,
+    "predictedEdRate": 10.35,
+    "observedEdRate": 9.46,
+    "climateFeatures": {
+      "summerAvgMax": 93.29,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 99.66
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.07,
+      "povertyPct": 12.6,
+      "acCoverage": 81.11,
+      "treeCanopy": 16.39
+    }
+  },
+  {
+    "countyName": "Sutter",
+    "countyFips": "06101",
+    "year": 2022,
+    "predictedEdRate": 11.9,
+    "observedEdRate": 12.22,
+    "climateFeatures": {
+      "summerAvgMax": 93.71,
+      "heatwaveDays": 24.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 100.74
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.95,
+      "povertyPct": 13.33,
+      "acCoverage": 84.87,
+      "treeCanopy": 16.28
+    }
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2017,
+    "predictedEdRate": 10.81,
+    "observedEdRate": 10.28,
+    "climateFeatures": {
+      "summerAvgMax": 91.84,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 99.55
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.9,
+      "povertyPct": 16.69,
+      "acCoverage": 79.33,
+      "treeCanopy": 20.49
+    }
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2018,
+    "predictedEdRate": 9.95,
+    "observedEdRate": 9.93,
+    "climateFeatures": {
+      "summerAvgMax": 90.12,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 97.79
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.39,
+      "povertyPct": 16.56,
+      "acCoverage": 80.26,
+      "treeCanopy": 21.6
+    }
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2019,
+    "predictedEdRate": 11.66,
+    "observedEdRate": 12.2,
+    "climateFeatures": {
+      "summerAvgMax": 91.1,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 100.22
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.75,
+      "povertyPct": 17.02,
+      "acCoverage": 78.92,
+      "treeCanopy": 22.14
+    }
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2020,
+    "predictedEdRate": 11.63,
+    "observedEdRate": 11.85,
+    "climateFeatures": {
+      "summerAvgMax": 91.49,
+      "heatwaveDays": 20.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 100.66
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.58,
+      "povertyPct": 16.6,
+      "acCoverage": 79.1,
+      "treeCanopy": 22.84
+    }
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2021,
+    "predictedEdRate": 10.09,
+    "observedEdRate": 9.61,
+    "climateFeatures": {
+      "summerAvgMax": 90.94,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 18.0,
+      "tailPercentileTemp": 100.35
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 16.05,
+      "povertyPct": 16.78,
+      "acCoverage": 81.62,
+      "treeCanopy": 23.18
+    }
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2022,
+    "predictedEdRate": 12.07,
+    "observedEdRate": 12.28,
+    "climateFeatures": {
+      "summerAvgMax": 93.56,
+      "heatwaveDays": 27.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 101.91
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 15.63,
+      "povertyPct": 16.29,
+      "acCoverage": 82.39,
+      "treeCanopy": 22.41
+    }
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2017,
+    "predictedEdRate": 13.21,
+    "observedEdRate": 13.18,
+    "climateFeatures": {
+      "summerAvgMax": 95.61,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 12.0,
+      "warmNightCount": 32.0,
+      "tailPercentileTemp": 104.33
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.83,
+      "povertyPct": 10.84,
+      "acCoverage": 76.52,
+      "treeCanopy": 16.53
+    }
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2018,
+    "predictedEdRate": 12.82,
+    "observedEdRate": 13.18,
+    "climateFeatures": {
+      "summerAvgMax": 96.1,
+      "heatwaveDays": 26.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 105.64
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.23,
+      "povertyPct": 10.6,
+      "acCoverage": 77.94,
+      "treeCanopy": 15.36
+    }
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2019,
+    "predictedEdRate": 12.71,
+    "observedEdRate": 12.86,
+    "climateFeatures": {
+      "summerAvgMax": 95.7,
+      "heatwaveDays": 27.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 27.0,
+      "tailPercentileTemp": 102.49
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.94,
+      "povertyPct": 10.23,
+      "acCoverage": 74.2,
+      "treeCanopy": 15.93
+    }
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2020,
+    "predictedEdRate": 12.31,
+    "observedEdRate": 12.02,
+    "climateFeatures": {
+      "summerAvgMax": 95.05,
+      "heatwaveDays": 28.0,
+      "consecutiveHotDays": 10.0,
+      "warmNightCount": 28.0,
+      "tailPercentileTemp": 105.44
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.65,
+      "povertyPct": 10.86,
+      "acCoverage": 75.92,
+      "treeCanopy": 15.78
+    }
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2021,
+    "predictedEdRate": 12.47,
+    "observedEdRate": 12.0,
+    "climateFeatures": {
+      "summerAvgMax": 96.01,
+      "heatwaveDays": 26.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 27.0,
+      "tailPercentileTemp": 104.72
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.13,
+      "povertyPct": 10.08,
+      "acCoverage": 75.88,
+      "treeCanopy": 16.63
+    }
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2022,
+    "predictedEdRate": 15.96,
+    "observedEdRate": 16.76,
+    "climateFeatures": {
+      "summerAvgMax": 97.34,
+      "heatwaveDays": 30.0,
+      "consecutiveHotDays": 11.0,
+      "warmNightCount": 35.0,
+      "tailPercentileTemp": 106.24
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.55,
+      "povertyPct": 10.53,
+      "acCoverage": 78.27,
+      "treeCanopy": 14.95
+    }
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2017,
+    "predictedEdRate": 11.39,
+    "observedEdRate": 12.17,
+    "climateFeatures": {
+      "summerAvgMax": 89.18,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 94.89
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.31,
+      "povertyPct": 15.51,
+      "acCoverage": 82.49,
+      "treeCanopy": 17.77
+    }
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2018,
+    "predictedEdRate": 10.57,
+    "observedEdRate": 10.61,
+    "climateFeatures": {
+      "summerAvgMax": 90.38,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 96.38
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.23,
+      "povertyPct": 15.49,
+      "acCoverage": 79.78,
+      "treeCanopy": 16.35
+    }
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2019,
+    "predictedEdRate": 12.54,
+    "observedEdRate": 14.21,
+    "climateFeatures": {
+      "summerAvgMax": 89.38,
+      "heatwaveDays": 23.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 99.22
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.98,
+      "povertyPct": 15.51,
+      "acCoverage": 80.14,
+      "treeCanopy": 18.92
+    }
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2020,
+    "predictedEdRate": 10.37,
+    "observedEdRate": 9.35,
+    "climateFeatures": {
+      "summerAvgMax": 89.26,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 98.62
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.38,
+      "povertyPct": 15.6,
+      "acCoverage": 80.05,
+      "treeCanopy": 18.37
+    }
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2021,
+    "predictedEdRate": 9.82,
+    "observedEdRate": 8.14,
+    "climateFeatures": {
+      "summerAvgMax": 89.81,
+      "heatwaveDays": 14.0,
+      "consecutiveHotDays": 9.0,
+      "warmNightCount": 19.0,
+      "tailPercentileTemp": 99.78
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 17.69,
+      "povertyPct": 15.85,
+      "acCoverage": 83.96,
+      "treeCanopy": 16.99
+    }
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2022,
+    "predictedEdRate": 11.45,
+    "observedEdRate": 11.39,
+    "climateFeatures": {
+      "summerAvgMax": 92.76,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 21.0,
+      "tailPercentileTemp": 100.54
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 18.08,
+      "povertyPct": 15.33,
+      "acCoverage": 79.32,
+      "treeCanopy": 17.56
+    }
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2017,
+    "predictedEdRate": 6.9,
+    "observedEdRate": 7.88,
+    "climateFeatures": {
+      "summerAvgMax": 84.76,
+      "heatwaveDays": 12.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 92.99
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.62,
+      "povertyPct": 9.73,
+      "acCoverage": 86.78,
+      "treeCanopy": 17.94
+    }
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2018,
+    "predictedEdRate": 7.47,
+    "observedEdRate": 7.9,
+    "climateFeatures": {
+      "summerAvgMax": 85.65,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 94.24
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.77,
+      "povertyPct": 9.32,
+      "acCoverage": 86.26,
+      "treeCanopy": 16.73
+    }
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2019,
+    "predictedEdRate": 5.53,
+    "observedEdRate": 5.43,
+    "climateFeatures": {
+      "summerAvgMax": 85.76,
+      "heatwaveDays": 6.0,
+      "consecutiveHotDays": 4.0,
+      "warmNightCount": 11.0,
+      "tailPercentileTemp": 94.84
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.43,
+      "povertyPct": 10.12,
+      "acCoverage": 86.27,
+      "treeCanopy": 18.45
+    }
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2020,
+    "predictedEdRate": 6.89,
+    "observedEdRate": 6.86,
+    "climateFeatures": {
+      "summerAvgMax": 87.03,
+      "heatwaveDays": 13.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 13.0,
+      "tailPercentileTemp": 94.91
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.9,
+      "povertyPct": 10.04,
+      "acCoverage": 85.88,
+      "treeCanopy": 18.09
+    }
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2021,
+    "predictedEdRate": 6.25,
+    "observedEdRate": 6.18,
+    "climateFeatures": {
+      "summerAvgMax": 85.31,
+      "heatwaveDays": 10.0,
+      "consecutiveHotDays": 5.0,
+      "warmNightCount": 14.0,
+      "tailPercentileTemp": 93.96
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.61,
+      "povertyPct": 9.99,
+      "acCoverage": 87.98,
+      "treeCanopy": 16.74
+    }
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2022,
+    "predictedEdRate": 7.84,
+    "observedEdRate": 8.27,
+    "climateFeatures": {
+      "summerAvgMax": 86.42,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 92.42
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.52,
+      "povertyPct": 10.61,
+      "acCoverage": 85.36,
+      "treeCanopy": 18.11
+    }
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2017,
+    "predictedEdRate": 11.18,
+    "observedEdRate": 10.71,
+    "climateFeatures": {
+      "summerAvgMax": 92.52,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 99.72
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.75,
+      "povertyPct": 12.04,
+      "acCoverage": 85.39,
+      "treeCanopy": 15.36
+    }
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2018,
+    "predictedEdRate": 10.77,
+    "observedEdRate": 11.59,
+    "climateFeatures": {
+      "summerAvgMax": 91.65,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 23.0,
+      "tailPercentileTemp": 101.14
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.99,
+      "povertyPct": 11.89,
+      "acCoverage": 84.14,
+      "treeCanopy": 15.13
+    }
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2019,
+    "predictedEdRate": 10.25,
+    "observedEdRate": 10.52,
+    "climateFeatures": {
+      "summerAvgMax": 90.38,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 16.0,
+      "tailPercentileTemp": 96.39
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 14.17,
+      "povertyPct": 11.96,
+      "acCoverage": 84.8,
+      "treeCanopy": 15.3
+    }
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2020,
+    "predictedEdRate": 11.16,
+    "observedEdRate": 10.71,
+    "climateFeatures": {
+      "summerAvgMax": 90.91,
+      "heatwaveDays": 25.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 99.67
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.06,
+      "povertyPct": 12.23,
+      "acCoverage": 82.65,
+      "treeCanopy": 14.93
+    }
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2021,
+    "predictedEdRate": 10.4,
+    "observedEdRate": 9.42,
+    "climateFeatures": {
+      "summerAvgMax": 91.89,
+      "heatwaveDays": 19.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 101.87
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.42,
+      "povertyPct": 11.32,
+      "acCoverage": 82.87,
+      "treeCanopy": 15.41
+    }
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2022,
+    "predictedEdRate": 11.06,
+    "observedEdRate": 10.07,
+    "climateFeatures": {
+      "summerAvgMax": 94.29,
+      "heatwaveDays": 22.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 29.0,
+      "tailPercentileTemp": 103.54
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 13.07,
+      "povertyPct": 11.29,
+      "acCoverage": 83.81,
+      "treeCanopy": 15.91
+    }
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2017,
+    "predictedEdRate": 9.82,
+    "observedEdRate": 10.12,
+    "climateFeatures": {
+      "summerAvgMax": 91.27,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 17.0,
+      "tailPercentileTemp": 99.48
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.35,
+      "povertyPct": 14.5,
+      "acCoverage": 78.94,
+      "treeCanopy": 19.85
+    }
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2018,
+    "predictedEdRate": 10.57,
+    "observedEdRate": 11.18,
+    "climateFeatures": {
+      "summerAvgMax": 90.5,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 100.91
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.33,
+      "povertyPct": 14.42,
+      "acCoverage": 81.51,
+      "treeCanopy": 18.51
+    }
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2019,
+    "predictedEdRate": 10.46,
+    "observedEdRate": 10.81,
+    "climateFeatures": {
+      "summerAvgMax": 92.87,
+      "heatwaveDays": 16.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 20.0,
+      "tailPercentileTemp": 102.5
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 11.59,
+      "povertyPct": 15.02,
+      "acCoverage": 79.42,
+      "treeCanopy": 19.71
+    }
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2020,
+    "predictedEdRate": 10.02,
+    "observedEdRate": 10.08,
+    "climateFeatures": {
+      "summerAvgMax": 90.38,
+      "heatwaveDays": 15.0,
+      "consecutiveHotDays": 8.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 98.4
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.13,
+      "povertyPct": 15.64,
+      "acCoverage": 78.14,
+      "treeCanopy": 18.59
+    }
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2021,
+    "predictedEdRate": 10.8,
+    "observedEdRate": 10.44,
+    "climateFeatures": {
+      "summerAvgMax": 91.17,
+      "heatwaveDays": 17.0,
+      "consecutiveHotDays": 6.0,
+      "warmNightCount": 24.0,
+      "tailPercentileTemp": 98.43
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 12.79,
+      "povertyPct": 14.65,
+      "acCoverage": 75.89,
+      "treeCanopy": 19.65
+    }
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2022,
+    "predictedEdRate": 11.74,
+    "observedEdRate": 11.71,
+    "climateFeatures": {
+      "summerAvgMax": 92.06,
+      "heatwaveDays": 23.0,
+      "consecutiveHotDays": 7.0,
+      "warmNightCount": 22.0,
+      "tailPercentileTemp": 100.4
+    },
+    "vulnerabilityFeatures": {
+      "elderlyPct": 10.67,
+      "povertyPct": 14.56,
+      "acCoverage": 76.97,
+      "treeCanopy": 18.58
+    }
+  }
+]
