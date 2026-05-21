@@ -98,6 +98,15 @@ body {
   color: #e6edf3;
 }
 
+.help-button,
+.help-close-button {
+  padding: 0.42rem 0.7rem;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+  cursor: pointer;
+}
+
 .toolbar-summary {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +120,59 @@ body {
   grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.92fr) minmax(300px, 1fr);
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   min-height: 0;
+}
+
+.help-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  justify-items: end;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 30;
+}
+
+.help-panel {
+  width: min(440px, 100vw);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: #11161d;
+  border-left: 1px solid #30363d;
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border-bottom: 1px solid #21262d;
+}
+
+.help-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.help-content {
+  overflow: auto;
+  padding: 1rem;
+}
+
+.help-section + .help-section {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #21262d;
+}
+
+.help-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+}
+
+.help-section p {
+  margin-top: 0;
+  color: #c9d1d9;
 }
 
 .workspace-pane {

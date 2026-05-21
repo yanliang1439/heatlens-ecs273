@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CountySelect from "./components/CountySelect";
+import HelpPanel from "./components/HelpPanel";
 import YearSelect from "./components/YearSelect";
 import {
   getAvailableYears,
@@ -21,6 +22,7 @@ function App() {
   const defaultSelection = getDefaultSelection();
 
   const [selection, setSelection] = useState<AppSelection>(defaultSelection);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
 
   const dashboardData = getDashboardData(selection);
 
@@ -81,6 +83,13 @@ function App() {
               selectedCountyFips={selectedCounty.countyFips}
               onChange={handleCountyChange}
             />
+            <button
+              type="button"
+              className="help-button"
+              onClick={() => setIsHelpOpen(true)}
+            >
+              Help
+            </button>
           </div>
 
           <div className="toolbar-summary">
@@ -126,6 +135,13 @@ function App() {
           />
         </div>
       </section>
+
+      <HelpPanel
+        isOpen={isHelpOpen}
+        onClose={() => {
+          setIsHelpOpen(false);
+        }}
+      />
     </main>
   );
 }
