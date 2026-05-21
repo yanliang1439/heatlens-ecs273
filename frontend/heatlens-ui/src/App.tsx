@@ -5,6 +5,7 @@ import {
   getAvailableYears,
   getCountyOptions,
   getCountySummaries,
+  getCurrentDataSource,
   getDashboardData,
   getDefaultSelection,
   getFirstCountyForYear,
@@ -33,6 +34,7 @@ function App() {
   const yearOptions = getAvailableYears();
   const countyOptions = getCountyOptions(selection.selectedYear);
   const visibleCountySummaries = getCountySummaries(selectedCounty.year);
+  const currentDataSource = getCurrentDataSource();
 
   function handleCountyChange(nextCountyFips: string) {
     if (!isCountyAvailable(nextCountyFips, selection.selectedYear)) {
@@ -82,6 +84,9 @@ function App() {
           </div>
 
           <div className="toolbar-summary">
+            <span>
+              Source <strong>{currentDataSource === "mlExport" ? "ML export" : "Mock data"}</strong>
+            </span>
             <span>
               County <strong>{selectedCounty.countyName}</strong>
             </span>

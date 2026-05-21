@@ -1,3 +1,6 @@
+import countyDetailsMl from "../data/mlOutputs/county_details.json";
+import countySummariesMl from "../data/mlOutputs/county_summaries.json";
+import shapBreakdownsMl from "../data/mlOutputs/shap_breakdowns.json";
 import {
   countyDetailsMock,
   countySummariesMock,
@@ -21,19 +24,61 @@ type DashboardData = {
   selectedShapBreakdown: ShapBreakdownRecord;
 };
 
+type DataBundle = {
+  countyDetails: CountyDetailRecord[];
+  countySummaries: CountySummaryRecord[];
+  shapBreakdowns: ShapBreakdownRecord[];
+};
+
+type DataSourceKey = "mock" | "mlExport";
+
+const mockBundle: DataBundle = {
+  countyDetails: countyDetailsMock,
+  countySummaries: countySummariesMock,
+  shapBreakdowns: shapBreakdownsMock,
+};
+
+const mlExportBundle: DataBundle = {
+  countyDetails: countyDetailsMl as CountyDetailRecord[],
+  countySummaries: countySummariesMl as CountySummaryRecord[],
+  shapBreakdowns: shapBreakdownsMl as ShapBreakdownRecord[],
+};
+
+// Keeping the source choice in one place makes it easy to switch while the
+// rest of the frontend keeps the same view/component code.
+const currentDataSource: DataSourceKey = "mlExport";
+
+function getBundle(): DataBundle {
+  if (currentDataSource === "mlExport") {
+    return mlExportBundle;
+  }
+
+  return mockBundle;
+}
+
+export function getCurrentDataSource(): DataSourceKey {
+  return currentDataSource;
+}
+
 export function getDefaultSelection(): AppSelection {
+  const { countySummaries } = getBundle();
+
   return {
-    selectedCountyFips: countySummariesMock[0].countyFips,
-    selectedYear: countySummariesMock[0].year,
+    selectedCountyFips: countySummaries[0].countyFips,
+    selectedYear: countySummaries[0].year,
   };
 }
 
 export function getAvailableYears(): number[] {
-  return Array.from(new Set(countySummariesMock.map((county) => county.year))).sort();
+  const { countySummaries } = getBundle();
+
+  return Array.from(new Set(countySummaries.map((county) => county.year))).sort();
 }
 
 export function getCountyOptions(year: number): CountyOption[] {
-  return countySummariesMock
+  const { countySummaries } = getBundle();
+
+  return countySummaries
     .filter((county) => county.year === year)
     .map((county) => ({
       countyFips: county.countyFips,
@@ -42,36 +87,44 @@ export function getCountyOptions(year: number): CountyOption[] {
 }
 
 export function getCountySummaries(year: number): CountySummaryRecord[] {
-  return countySummariesMock.filter((county) => county.year === year);
+  const { countySummaries } = getBundle();
+
+  return countySummaries.filter((county) => county.year === year);
 }
 
 export function isCountyAvailable(countyFips: string, year: number): boolean {
-  return countySummariesMock.some((county) => {
+  const { countySummaries } = getBundle();
+
+  return countySummaries.some((county) => {
     return county.countyFips === countyFips && county.year === year;
   });
 }
 
 export function getFirstCountyForYear(year: number): CountySummaryRecord | undefined {
-  return countySummariesMock.find((county) => county.year === year);
+  const { countySummaries } = getBundle();
+
+  return countySummaries.find((county) => county.year === year);
 }
 
 export function getDashboardData(selection: AppSelection): DashboardData | null {
+  const { countyDetails, countySummaries, shapBreakdowns } = getBundle();
+
   const selectedCounty =
-    countySummariesMock.find((county) => {
+    countySummaries.find((county) => {
       return (
         county.countyFips === selection.selectedCountyFips &&
         county.year === selection.selectedYear
       );
-    }) ?? getFirstCountyForYear(selection.selectedYear) ?? countySummariesMock[0];
+    }) ?? getFirstCountyForYear(selection.selectedYear) ?? countySummaries[0];
 
-  const selectedCountyDetail = countyDetailsMock.find((county) => {
+  const selectedCountyDetail = countyDetails.find((county) => {
     return (
       county.countyFips === selectedCounty.countyFips &&
       county.year === selectedCounty.year
     );
   });
 
-  const selectedShapBreakdown = shapBreakdownsMock.find((county) => {
+  const selectedShapBreakdown = shapBreakdowns.find((county) => {
     return (
       county.countyFips === selectedCounty.countyFips &&
       county.year === selectedCounty.year
