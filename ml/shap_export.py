@@ -53,7 +53,9 @@ def _risk_level(p: float, low_cut: float, high_cut: float) -> str:
 
 
 def _round(x, n=2):
-    """JSON-safe rounding that also strips numpy types."""
+    """JSON-safe rounding that also strips numpy types. NaN -> None (JSON null)."""
+    if pd.isna(x):
+        return None
     return round(float(x), n)
 
 

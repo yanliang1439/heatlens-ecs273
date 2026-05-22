@@ -1,476 +1,656 @@
 {
   "heatwaveYear": 2022,
   "baselineYears": [
-    2017,
-    2018,
-    2019
+    2020,
+    2021,
+    2023,
+    2024
   ],
-  "nCounties": 40,
-  "headline": {
-    "meanPredictedLift": 1.25,
-    "meanObservedLift": 1.31,
-    "pctCountiesWithPositiveLift": 0.975,
-    "topCountyByLift": "Merced",
-    "topCountyLiftPredicted": 3.53,
-    "dominantDriver": "heatwaveDays",
-    "dominantDriverShapDelta": 0.427
+  "heterogeneityStats": {
+    "predictedLift_mean": 0.69,
+    "predictedLift_median": 0.61,
+    "predictedLift_std": 4.37,
+    "predictedLift_q25": -1.47,
+    "predictedLift_q75": 2.55,
+    "predictedLift_min": -8.95,
+    "predictedLift_max": 21.13,
+    "predictedLift_range": 30.08,
+    "observedLift_mean": 0.27,
+    "observedLift_min": -22.07,
+    "observedLift_max": 19.48,
+    "pctCountiesWithPositivePredLift": 0.596,
+    "pctCountiesWithLiftAbove5": 0.053,
+    "pctCountiesWithLiftBelowMinus5": 0.053,
+    "nCounties": 57,
+    "nCountiesWithObserved2022": 46,
+    "corr_predictedLift_vs_predictedBaseline": -0.06
   },
   "countyDeltas": [
     {
-      "countyFips": "06047",
-      "countyName": "Merced",
-      "predicted2022": 15.11,
-      "observed2022": 15.96,
-      "predictedBaseline": 11.58,
-      "observedBaseline": 11.41,
-      "predictedDelta": 3.53,
-      "observedDelta": 4.55
+      "countyFips": "06005",
+      "countyName": "Amador",
+      "predicted2022": 70.76,
+      "observed2022": 69.0,
+      "predictedBaseline": 49.62,
+      "observedBaseline": 58.71,
+      "predictedDelta": 21.13,
+      "observedDelta": 10.29
     },
     {
-      "countyFips": "06107",
-      "countyName": "Tulare",
-      "predicted2022": 15.96,
-      "observed2022": 16.76,
-      "predictedBaseline": 12.91,
-      "observedBaseline": 13.07,
-      "predictedDelta": 3.04,
-      "observedDelta": 3.69
+      "countyFips": "06021",
+      "countyName": "Glenn",
+      "predicted2022": 69.19,
+      "observed2022": 76.31,
+      "predictedBaseline": 58.65,
+      "observedBaseline": 56.84,
+      "predictedDelta": 10.53,
+      "observedDelta": 19.48
     },
     {
-      "countyFips": "06023",
-      "countyName": "Humboldt",
-      "predicted2022": 5.86,
-      "observed2022": 6.5,
-      "predictedBaseline": 3.61,
-      "observedBaseline": 3.7,
-      "predictedDelta": 2.26,
-      "observedDelta": 2.8
-    },
-    {
-      "countyFips": "06065",
-      "countyName": "Riverside",
-      "predicted2022": 18.02,
-      "observed2022": 19.0,
-      "predictedBaseline": 15.79,
-      "observedBaseline": 16.12,
-      "predictedDelta": 2.23,
-      "observedDelta": 2.88
-    },
-    {
-      "countyFips": "06085",
-      "countyName": "Santa Clara",
-      "predicted2022": 9.22,
-      "observed2022": 9.58,
-      "predictedBaseline": 7.0,
-      "observedBaseline": 7.06,
-      "predictedDelta": 2.22,
-      "observedDelta": 2.52
-    },
-    {
-      "countyFips": "06053",
-      "countyName": "Monterey",
-      "predicted2022": 7.76,
-      "observed2022": 7.8,
-      "predictedBaseline": 5.63,
-      "observedBaseline": 5.13,
-      "predictedDelta": 2.13,
-      "observedDelta": 2.67
-    },
-    {
-      "countyFips": "06087",
-      "countyName": "Santa Cruz",
-      "predicted2022": 4.5,
-      "observed2022": 4.59,
-      "predictedBaseline": 2.62,
-      "observedBaseline": 2.65,
-      "predictedDelta": 1.88,
-      "observedDelta": 1.94
-    },
-    {
-      "countyFips": "06013",
-      "countyName": "Contra Costa",
-      "predicted2022": 8.3,
-      "observed2022": 8.88,
-      "predictedBaseline": 6.44,
-      "observedBaseline": 6.55,
-      "predictedDelta": 1.87,
-      "observedDelta": 2.33
-    },
-    {
-      "countyFips": "06039",
-      "countyName": "Madera",
-      "predicted2022": 15.77,
-      "observed2022": 15.79,
-      "predictedBaseline": 13.9,
-      "observedBaseline": 14.12,
-      "predictedDelta": 1.86,
-      "observedDelta": 1.67
-    },
-    {
-      "countyFips": "06071",
-      "countyName": "San Bernardino",
-      "predicted2022": 17.14,
-      "observed2022": 17.63,
-      "predictedBaseline": 15.35,
-      "observedBaseline": 15.77,
-      "predictedDelta": 1.79,
-      "observedDelta": 1.86
-    },
-    {
-      "countyFips": "06061",
-      "countyName": "Placer",
-      "predicted2022": 12.47,
-      "observed2022": 13.91,
-      "predictedBaseline": 10.74,
-      "observedBaseline": 10.52,
-      "predictedDelta": 1.73,
-      "observedDelta": 3.39
-    },
-    {
-      "countyFips": "06095",
-      "countyName": "Solano",
-      "predicted2022": 10.88,
-      "observed2022": 10.61,
-      "predictedBaseline": 9.19,
-      "observedBaseline": 9.17,
-      "predictedDelta": 1.69,
-      "observedDelta": 1.44
-    },
-    {
-      "countyFips": "06045",
-      "countyName": "Mendocino",
-      "predicted2022": 8.01,
-      "observed2022": 8.38,
-      "predictedBaseline": 6.56,
-      "observedBaseline": 6.92,
-      "predictedDelta": 1.46,
-      "observedDelta": 1.46
+      "countyFips": "06069",
+      "countyName": "San Benito",
+      "predicted2022": 23.37,
+      "observed2022": null,
+      "predictedBaseline": 18.01,
+      "observedBaseline": 19.54,
+      "predictedDelta": 5.36,
+      "observedDelta": null
     },
     {
       "countyFips": "06077",
       "countyName": "San Joaquin",
-      "predicted2022": 13.4,
-      "observed2022": 13.67,
-      "predictedBaseline": 11.96,
-      "observedBaseline": 12.36,
-      "predictedDelta": 1.45,
-      "observedDelta": 1.31
-    },
-    {
-      "countyFips": "06115",
-      "countyName": "Yuba",
-      "predicted2022": 11.74,
-      "observed2022": 11.71,
-      "predictedBaseline": 10.28,
-      "observedBaseline": 10.7,
-      "predictedDelta": 1.45,
-      "observedDelta": 1.01
+      "predicted2022": 25.52,
+      "observed2022": 23.34,
+      "predictedBaseline": 20.71,
+      "observedBaseline": 22.77,
+      "predictedDelta": 4.81,
+      "observedDelta": 0.57
     },
     {
       "countyFips": "06097",
       "countyName": "Sonoma",
-      "predicted2022": 9.11,
-      "observed2022": 9.39,
-      "predictedBaseline": 7.68,
-      "observedBaseline": 8.12,
-      "predictedDelta": 1.43,
-      "observedDelta": 1.27
+      "predicted2022": 14.93,
+      "observed2022": 13.38,
+      "predictedBaseline": 10.44,
+      "observedBaseline": 13.8,
+      "predictedDelta": 4.5,
+      "observedDelta": -0.42
     },
     {
-      "countyFips": "06081",
-      "countyName": "San Mateo",
-      "predicted2022": 5.09,
-      "observed2022": 5.22,
-      "predictedBaseline": 3.67,
-      "observedBaseline": 3.99,
-      "predictedDelta": 1.41,
-      "observedDelta": 1.23
-    },
-    {
-      "countyFips": "06067",
-      "countyName": "Sacramento",
-      "predicted2022": 13.1,
-      "observed2022": 13.86,
-      "predictedBaseline": 11.73,
-      "observedBaseline": 12.31,
-      "predictedDelta": 1.37,
-      "observedDelta": 1.55
-    },
-    {
-      "countyFips": "06103",
-      "countyName": "Tehama",
-      "predicted2022": 12.07,
-      "observed2022": 12.28,
-      "predictedBaseline": 10.81,
-      "observedBaseline": 10.8,
-      "predictedDelta": 1.27,
-      "observedDelta": 1.48
-    },
-    {
-      "countyFips": "06079",
-      "countyName": "San Luis Obispo",
-      "predicted2022": 7.5,
-      "observed2022": 7.86,
-      "predictedBaseline": 6.28,
-      "observedBaseline": 6.16,
-      "predictedDelta": 1.21,
-      "observedDelta": 1.7
-    },
-    {
-      "countyFips": "06111",
-      "countyName": "Ventura",
-      "predicted2022": 7.84,
-      "observed2022": 8.27,
-      "predictedBaseline": 6.63,
-      "observedBaseline": 7.07,
-      "predictedDelta": 1.21,
-      "observedDelta": 1.2
-    },
-    {
-      "countyFips": "06041",
-      "countyName": "Marin",
-      "predicted2022": 5.44,
-      "observed2022": 5.59,
-      "predictedBaseline": 4.37,
-      "observedBaseline": 4.89,
-      "predictedDelta": 1.07,
-      "observedDelta": 0.7
-    },
-    {
-      "countyFips": "06075",
-      "countyName": "San Francisco",
-      "predicted2022": 4.18,
-      "observed2022": 3.82,
-      "predictedBaseline": 3.11,
-      "observedBaseline": 2.93,
-      "predictedDelta": 1.07,
-      "observedDelta": 0.89
-    },
-    {
-      "countyFips": "06083",
-      "countyName": "Santa Barbara",
-      "predicted2022": 9.23,
-      "observed2022": 9.08,
-      "predictedBaseline": 8.18,
-      "observedBaseline": 8.57,
-      "predictedDelta": 1.05,
-      "observedDelta": 0.51
-    },
-    {
-      "countyFips": "06029",
-      "countyName": "Kern",
-      "predicted2022": 16.12,
-      "observed2022": 16.46,
-      "predictedBaseline": 15.19,
-      "observedBaseline": 15.8,
-      "predictedDelta": 0.93,
-      "observedDelta": 0.66
-    },
-    {
-      "countyFips": "06057",
-      "countyName": "Nevada",
-      "predicted2022": 12.35,
-      "observed2022": 12.95,
-      "predictedBaseline": 11.48,
-      "observedBaseline": 12.14,
-      "predictedDelta": 0.87,
-      "observedDelta": 0.81
+      "countyFips": "06071",
+      "countyName": "San Bernardino",
+      "predicted2022": 29.33,
+      "observed2022": 23.66,
+      "predictedBaseline": 24.91,
+      "observedBaseline": 23.27,
+      "predictedDelta": 4.42,
+      "observedDelta": 0.39
     },
     {
       "countyFips": "06055",
       "countyName": "Napa",
-      "predicted2022": 9.28,
-      "observed2022": 10.23,
-      "predictedBaseline": 8.41,
-      "observedBaseline": 8.91,
-      "predictedDelta": 0.86,
-      "observedDelta": 1.32
+      "predicted2022": 20.27,
+      "observed2022": 18.01,
+      "predictedBaseline": 16.19,
+      "observedBaseline": 16.82,
+      "predictedDelta": 4.08,
+      "observedDelta": 1.19
     },
     {
-      "countyFips": "06101",
-      "countyName": "Sutter",
-      "predicted2022": 11.9,
-      "observed2022": 12.22,
-      "predictedBaseline": 11.08,
-      "observedBaseline": 11.78,
-      "predictedDelta": 0.82,
-      "observedDelta": 0.44
+      "countyFips": "06087",
+      "countyName": "Santa Cruz",
+      "predicted2022": 10.55,
+      "observed2022": 11.3,
+      "predictedBaseline": 6.51,
+      "observedBaseline": 6.38,
+      "predictedDelta": 4.04,
+      "observedDelta": 4.92
     },
     {
-      "countyFips": "06037",
-      "countyName": "Los Angeles",
-      "predicted2022": 10.59,
-      "observed2022": 10.48,
-      "predictedBaseline": 9.86,
-      "observedBaseline": 9.98,
-      "predictedDelta": 0.73,
-      "observedDelta": 0.5
+      "countyFips": "06009",
+      "countyName": "Calaveras",
+      "predicted2022": 54.0,
+      "observed2022": 60.39,
+      "predictedBaseline": 50.15,
+      "observedBaseline": 42.37,
+      "predictedDelta": 3.85,
+      "observedDelta": 18.02
+    },
+    {
+      "countyFips": "06103",
+      "countyName": "Tehama",
+      "predicted2022": 48.97,
+      "observed2022": 51.52,
+      "predictedBaseline": 45.25,
+      "observedBaseline": 41.55,
+      "predictedDelta": 3.72,
+      "observedDelta": 9.97
+    },
+    {
+      "countyFips": "06079",
+      "countyName": "San Luis Obispo",
+      "predicted2022": 18.38,
+      "observed2022": 19.2,
+      "predictedBaseline": 14.76,
+      "observedBaseline": 13.96,
+      "predictedDelta": 3.62,
+      "observedDelta": 5.24
     },
     {
       "countyFips": "06089",
       "countyName": "Shasta",
-      "predicted2022": 12.93,
-      "observed2022": 12.88,
-      "predictedBaseline": 12.21,
-      "observedBaseline": 12.66,
-      "predictedDelta": 0.72,
-      "observedDelta": 0.22
+      "predicted2022": 45.13,
+      "observed2022": 40.64,
+      "predictedBaseline": 41.94,
+      "observedBaseline": 41.89,
+      "predictedDelta": 3.19,
+      "observedDelta": -1.25
     },
     {
-      "countyFips": "06001",
-      "countyName": "Alameda",
-      "predicted2022": 7.46,
-      "observed2022": 7.61,
-      "predictedBaseline": 6.75,
-      "observedBaseline": 7.04,
-      "predictedDelta": 0.71,
-      "observedDelta": 0.57
+      "countyFips": "06107",
+      "countyName": "Tulare",
+      "predicted2022": 31.38,
+      "observed2022": 31.27,
+      "predictedBaseline": 28.27,
+      "observedBaseline": 32.83,
+      "predictedDelta": 3.11,
+      "observedDelta": -1.56
+    },
+    {
+      "countyFips": "06037",
+      "countyName": "Los Angeles",
+      "predicted2022": 12.68,
+      "observed2022": 11.86,
+      "predictedBaseline": 10.12,
+      "observedBaseline": 9.34,
+      "predictedDelta": 2.56,
+      "observedDelta": 2.52
     },
     {
       "countyFips": "06017",
       "countyName": "El Dorado",
-      "predicted2022": 11.38,
-      "observed2022": 12.2,
-      "predictedBaseline": 10.8,
-      "observedBaseline": 11.09,
-      "predictedDelta": 0.57,
-      "observedDelta": 1.11
+      "predicted2022": 27.68,
+      "observed2022": 33.87,
+      "predictedBaseline": 25.13,
+      "observedBaseline": 27.27,
+      "predictedDelta": 2.55,
+      "observedDelta": 6.6
     },
     {
-      "countyFips": "06031",
-      "countyName": "Kings",
-      "predicted2022": 15.4,
-      "observed2022": 15.51,
-      "predictedBaseline": 14.87,
-      "observedBaseline": 15.31,
-      "predictedDelta": 0.53,
-      "observedDelta": 0.2
+      "countyFips": "06041",
+      "countyName": "Marin",
+      "predicted2022": 10.12,
+      "observed2022": 5.83,
+      "predictedBaseline": 7.74,
+      "observedBaseline": 6.58,
+      "predictedDelta": 2.37,
+      "observedDelta": -0.75
     },
     {
-      "countyFips": "06073",
-      "countyName": "San Diego",
-      "predicted2022": 9.35,
-      "observed2022": 10.17,
-      "predictedBaseline": 8.86,
-      "observedBaseline": 9.06,
-      "predictedDelta": 0.49,
-      "observedDelta": 1.11
+      "countyFips": "06061",
+      "countyName": "Placer",
+      "predicted2022": 20.94,
+      "observed2022": 20.27,
+      "predictedBaseline": 18.67,
+      "observedBaseline": 21.95,
+      "predictedDelta": 2.26,
+      "observedDelta": -1.68
     },
     {
-      "countyFips": "06025",
-      "countyName": "Imperial",
-      "predicted2022": 19.41,
-      "observed2022": 20.07,
-      "predictedBaseline": 18.97,
-      "observedBaseline": 19.35,
-      "predictedDelta": 0.44,
-      "observedDelta": 0.72
+      "countyFips": "06085",
+      "countyName": "Santa Clara",
+      "predicted2022": 10.47,
+      "observed2022": 8.84,
+      "predictedBaseline": 8.38,
+      "observedBaseline": 7.54,
+      "predictedDelta": 2.09,
+      "observedDelta": 1.3
     },
     {
-      "countyFips": "06113",
-      "countyName": "Yolo",
-      "predicted2022": 11.06,
-      "observed2022": 10.07,
-      "predictedBaseline": 10.73,
-      "observedBaseline": 10.94,
-      "predictedDelta": 0.32,
-      "observedDelta": -0.87
+      "countyFips": "06013",
+      "countyName": "Contra Costa",
+      "predicted2022": 12.3,
+      "observed2022": 13.84,
+      "predictedBaseline": 10.63,
+      "observedBaseline": 11.57,
+      "predictedDelta": 1.67,
+      "observedDelta": 2.27
     },
     {
-      "countyFips": "06099",
-      "countyName": "Stanislaus",
-      "predicted2022": 14.11,
-      "observed2022": 13.83,
-      "predictedBaseline": 13.92,
-      "observedBaseline": 14.8,
-      "predictedDelta": 0.19,
-      "observedDelta": -0.97
+      "countyFips": "06111",
+      "countyName": "Ventura",
+      "predicted2022": 11.12,
+      "observed2022": 13.21,
+      "predictedBaseline": 9.49,
+      "observedBaseline": 10.25,
+      "predictedDelta": 1.63,
+      "observedDelta": 2.96
+    },
+    {
+      "countyFips": "06095",
+      "countyName": "Solano",
+      "predicted2022": 18.6,
+      "observed2022": 16.65,
+      "predictedBaseline": 17.05,
+      "observedBaseline": 16.12,
+      "predictedDelta": 1.55,
+      "observedDelta": 0.53
+    },
+    {
+      "countyFips": "06001",
+      "countyName": "Alameda",
+      "predicted2022": 9.53,
+      "observed2022": 8.26,
+      "predictedBaseline": 8.09,
+      "observedBaseline": 7.08,
+      "predictedDelta": 1.44,
+      "observedDelta": 1.17
+    },
+    {
+      "countyFips": "06051",
+      "countyName": "Mono",
+      "predicted2022": 20.85,
+      "observed2022": null,
+      "predictedBaseline": 19.58,
+      "observedBaseline": null,
+      "predictedDelta": 1.27,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06067",
+      "countyName": "Sacramento",
+      "predicted2022": 18.21,
+      "observed2022": 17.69,
+      "predictedBaseline": 17.13,
+      "observedBaseline": 19.23,
+      "predictedDelta": 1.08,
+      "observedDelta": -1.54
     },
     {
       "countyFips": "06019",
       "countyName": "Fresno",
-      "predicted2022": 13.96,
-      "observed2022": 14.58,
-      "predictedBaseline": 13.89,
-      "observedBaseline": 14.15,
-      "predictedDelta": 0.06,
-      "observedDelta": 0.43
+      "predicted2022": 30.31,
+      "observed2022": 30.51,
+      "predictedBaseline": 29.45,
+      "observedBaseline": 30.9,
+      "predictedDelta": 0.86,
+      "observedDelta": -0.39
     },
     {
-      "countyFips": "06059",
-      "countyName": "Orange",
-      "predicted2022": 7.55,
-      "observed2022": 8.46,
-      "predictedBaseline": 7.54,
-      "observedBaseline": 7.47,
-      "predictedDelta": 0.01,
-      "observedDelta": 0.99
+      "countyFips": "06015",
+      "countyName": "Del Norte",
+      "predicted2022": 16.23,
+      "observed2022": null,
+      "predictedBaseline": 15.4,
+      "observedBaseline": null,
+      "predictedDelta": 0.83,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06113",
+      "countyName": "Yolo",
+      "predicted2022": 30.99,
+      "observed2022": 29.98,
+      "predictedBaseline": 30.23,
+      "observedBaseline": 28.54,
+      "predictedDelta": 0.76,
+      "observedDelta": 1.44
+    },
+    {
+      "countyFips": "06025",
+      "countyName": "Imperial",
+      "predicted2022": 109.33,
+      "observed2022": 103.85,
+      "predictedBaseline": 108.62,
+      "observedBaseline": 115.17,
+      "predictedDelta": 0.72,
+      "observedDelta": -11.32
+    },
+    {
+      "countyFips": "06083",
+      "countyName": "Santa Barbara",
+      "predicted2022": 7.66,
+      "observed2022": 9.59,
+      "predictedBaseline": 7.05,
+      "observedBaseline": 5.31,
+      "predictedDelta": 0.61,
+      "observedDelta": 4.28
+    },
+    {
+      "countyFips": "06035",
+      "countyName": "Lassen",
+      "predicted2022": 16.8,
+      "observed2022": null,
+      "predictedBaseline": 16.3,
+      "observedBaseline": null,
+      "predictedDelta": 0.5,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06039",
+      "countyName": "Madera",
+      "predicted2022": 32.08,
+      "observed2022": 31.12,
+      "predictedBaseline": 31.62,
+      "observedBaseline": 29.03,
+      "predictedDelta": 0.46,
+      "observedDelta": 2.09
     },
     {
       "countyFips": "06109",
       "countyName": "Tuolumne",
-      "predicted2022": 11.45,
-      "observed2022": 11.39,
-      "predictedBaseline": 11.5,
-      "observedBaseline": 12.33,
-      "predictedDelta": -0.05,
-      "observedDelta": -0.94
+      "predicted2022": 39.73,
+      "observed2022": 33.28,
+      "predictedBaseline": 39.32,
+      "observedBaseline": 41.96,
+      "predictedDelta": 0.41,
+      "observedDelta": -8.68
+    },
+    {
+      "countyFips": "06099",
+      "countyName": "Stanislaus",
+      "predicted2022": 32.02,
+      "observed2022": 34.23,
+      "predictedBaseline": 31.84,
+      "observedBaseline": 31.72,
+      "predictedDelta": 0.18,
+      "observedDelta": 2.51
+    },
+    {
+      "countyFips": "06081",
+      "countyName": "San Mateo",
+      "predicted2022": 5.65,
+      "observed2022": 7.32,
+      "predictedBaseline": 5.55,
+      "observedBaseline": 4.46,
+      "predictedDelta": 0.1,
+      "observedDelta": 2.86
+    },
+    {
+      "countyFips": "06075",
+      "countyName": "San Francisco",
+      "predicted2022": 5.15,
+      "observed2022": 3.46,
+      "predictedBaseline": 5.15,
+      "observedBaseline": 4.03,
+      "predictedDelta": 0.0,
+      "observedDelta": -0.57
+    },
+    {
+      "countyFips": "06065",
+      "countyName": "Riverside",
+      "predicted2022": 32.65,
+      "observed2022": 33.43,
+      "predictedBaseline": 32.79,
+      "observedBaseline": 31.41,
+      "predictedDelta": -0.13,
+      "observedDelta": 2.02
+    },
+    {
+      "countyFips": "06049",
+      "countyName": "Modoc",
+      "predicted2022": 24.28,
+      "observed2022": null,
+      "predictedBaseline": 24.46,
+      "observedBaseline": null,
+      "predictedDelta": -0.18,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06047",
+      "countyName": "Merced",
+      "predicted2022": 30.07,
+      "observed2022": 34.69,
+      "predictedBaseline": 30.44,
+      "observedBaseline": 30.66,
+      "predictedDelta": -0.36,
+      "observedDelta": 4.03
+    },
+    {
+      "countyFips": "06053",
+      "countyName": "Monterey",
+      "predicted2022": 8.39,
+      "observed2022": 11.11,
+      "predictedBaseline": 8.89,
+      "observedBaseline": 8.34,
+      "predictedDelta": -0.5,
+      "observedDelta": 2.77
+    },
+    {
+      "countyFips": "06059",
+      "countyName": "Orange",
+      "predicted2022": 7.29,
+      "observed2022": 8.63,
+      "predictedBaseline": 7.87,
+      "observedBaseline": 7.04,
+      "predictedDelta": -0.58,
+      "observedDelta": 1.59
+    },
+    {
+      "countyFips": "06045",
+      "countyName": "Mendocino",
+      "predicted2022": 26.11,
+      "observed2022": 24.65,
+      "predictedBaseline": 27.01,
+      "observedBaseline": 26.25,
+      "predictedDelta": -0.9,
+      "observedDelta": -1.6
+    },
+    {
+      "countyFips": "06007",
+      "countyName": "Butte",
+      "predicted2022": 42.78,
+      "observed2022": 34.89,
+      "predictedBaseline": 44.16,
+      "observedBaseline": 45.16,
+      "predictedDelta": -1.39,
+      "observedDelta": -10.27
+    },
+    {
+      "countyFips": "06043",
+      "countyName": "Mariposa",
+      "predicted2022": 68.69,
+      "observed2022": null,
+      "predictedBaseline": 70.16,
+      "observedBaseline": 120.14,
+      "predictedDelta": -1.47,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06073",
+      "countyName": "San Diego",
+      "predicted2022": 8.62,
+      "observed2022": 9.97,
+      "predictedBaseline": 10.14,
+      "observedBaseline": 9.13,
+      "predictedDelta": -1.52,
+      "observedDelta": 0.84
+    },
+    {
+      "countyFips": "06033",
+      "countyName": "Lake",
+      "predicted2022": 39.1,
+      "observed2022": 36.66,
+      "predictedBaseline": 41.37,
+      "observedBaseline": 41.38,
+      "predictedDelta": -2.27,
+      "observedDelta": -4.72
+    },
+    {
+      "countyFips": "06029",
+      "countyName": "Kern",
+      "predicted2022": 34.81,
+      "observed2022": 31.16,
+      "predictedBaseline": 37.51,
+      "observedBaseline": 37.17,
+      "predictedDelta": -2.7,
+      "observedDelta": -6.01
+    },
+    {
+      "countyFips": "06057",
+      "countyName": "Nevada",
+      "predicted2022": 22.33,
+      "observed2022": 15.16,
+      "predictedBaseline": 25.12,
+      "observedBaseline": 24.2,
+      "predictedDelta": -2.79,
+      "observedDelta": -9.04
+    },
+    {
+      "countyFips": "06031",
+      "countyName": "Kings",
+      "predicted2022": 30.86,
+      "observed2022": 26.35,
+      "predictedBaseline": 33.82,
+      "observedBaseline": 33.01,
+      "predictedDelta": -2.96,
+      "observedDelta": -6.66
+    },
+    {
+      "countyFips": "06011",
+      "countyName": "Colusa",
+      "predicted2022": 50.89,
+      "observed2022": 55.13,
+      "predictedBaseline": 53.91,
+      "observedBaseline": 54.86,
+      "predictedDelta": -3.02,
+      "observedDelta": 0.27
+    },
+    {
+      "countyFips": "06023",
+      "countyName": "Humboldt",
+      "predicted2022": 10.2,
+      "observed2022": 15.18,
+      "predictedBaseline": 13.29,
+      "observedBaseline": 13.72,
+      "predictedDelta": -3.09,
+      "observedDelta": 1.46
+    },
+    {
+      "countyFips": "06105",
+      "countyName": "Trinity",
+      "predicted2022": 32.13,
+      "observed2022": null,
+      "predictedBaseline": 35.5,
+      "observedBaseline": null,
+      "predictedDelta": -3.37,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06091",
+      "countyName": "Sierra",
+      "predicted2022": 21.29,
+      "observed2022": null,
+      "predictedBaseline": 24.94,
+      "observedBaseline": null,
+      "predictedDelta": -3.65,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06027",
+      "countyName": "Inyo",
+      "predicted2022": 74.71,
+      "observed2022": null,
+      "predictedBaseline": 78.88,
+      "observedBaseline": 73.15,
+      "predictedDelta": -4.17,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06115",
+      "countyName": "Yuba",
+      "predicted2022": 32.02,
+      "observed2022": 28.67,
+      "predictedBaseline": 36.52,
+      "observedBaseline": 41.42,
+      "predictedDelta": -4.5,
+      "observedDelta": -12.75
+    },
+    {
+      "countyFips": "06063",
+      "countyName": "Plumas",
+      "predicted2022": 43.14,
+      "observed2022": null,
+      "predictedBaseline": 48.63,
+      "observedBaseline": 59.82,
+      "predictedDelta": -5.49,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06003",
+      "countyName": "Alpine",
+      "predicted2022": 16.24,
+      "observed2022": null,
+      "predictedBaseline": 25.19,
+      "observedBaseline": null,
+      "predictedDelta": -8.94,
+      "observedDelta": null
+    },
+    {
+      "countyFips": "06093",
+      "countyName": "Siskiyou",
+      "predicted2022": 35.85,
+      "observed2022": 33.01,
+      "predictedBaseline": 44.8,
+      "observedBaseline": 55.08,
+      "predictedDelta": -8.95,
+      "observedDelta": -22.07
     }
   ],
   "featureAttribution": [
     {
-      "feature": "heatwaveDays",
-      "shap2022Mean": 0.36,
-      "shapBaselineMean": -0.067,
-      "shapDelta": 0.427
-    },
-    {
-      "feature": "summerAvgMax",
-      "shap2022Mean": 0.273,
-      "shapBaselineMean": -0.106,
-      "shapDelta": 0.379
-    },
-    {
-      "feature": "warmNightCount",
-      "shap2022Mean": 0.27,
-      "shapBaselineMean": -0.013,
-      "shapDelta": 0.283
-    },
-    {
       "feature": "tailPercentileTemp",
-      "shap2022Mean": 0.048,
-      "shapBaselineMean": -0.049,
-      "shapDelta": 0.097
-    },
-    {
-      "feature": "elderlyPct",
-      "shap2022Mean": 0.058,
-      "shapBaselineMean": 0.016,
-      "shapDelta": 0.042
-    },
-    {
-      "feature": "povertyPct",
-      "shap2022Mean": 0.028,
-      "shapBaselineMean": 0.066,
-      "shapDelta": -0.038
+      "shap2022Mean": 0.018,
+      "shapBaselineMean": -0.597,
+      "shapDelta": 0.615
     },
     {
       "feature": "consecutiveHotDays",
-      "shap2022Mean": 0.019,
-      "shapBaselineMean": -0.012,
-      "shapDelta": 0.031
-    },
-    {
-      "feature": "acCoverage",
-      "shap2022Mean": 0.085,
-      "shapBaselineMean": 0.07,
-      "shapDelta": 0.016
+      "shap2022Mean": -0.145,
+      "shapBaselineMean": -0.659,
+      "shapDelta": 0.514
     },
     {
       "feature": "treeCanopy",
-      "shap2022Mean": 0.016,
-      "shapBaselineMean": 0.007,
-      "shapDelta": 0.009
+      "shap2022Mean": 0.236,
+      "shapBaselineMean": 0.591,
+      "shapDelta": -0.355
+    },
+    {
+      "feature": "acCoverage",
+      "shap2022Mean": 0.995,
+      "shapBaselineMean": 1.155,
+      "shapDelta": -0.161
+    },
+    {
+      "feature": "warmNightCount",
+      "shap2022Mean": -0.061,
+      "shapBaselineMean": -0.2,
+      "shapDelta": 0.138
+    },
+    {
+      "feature": "elderlyPct",
+      "shap2022Mean": 1.057,
+      "shapBaselineMean": 0.927,
+      "shapDelta": 0.13
+    },
+    {
+      "feature": "summerAvgMax",
+      "shap2022Mean": -0.118,
+      "shapBaselineMean": 0.002,
+      "shapDelta": -0.12
+    },
+    {
+      "feature": "povertyPct",
+      "shap2022Mean": -0.095,
+      "shapBaselineMean": -0.036,
+      "shapDelta": -0.059
+    },
+    {
+      "feature": "heatwaveDays",
+      "shap2022Mean": -0.087,
+      "shapBaselineMean": -0.074,
+      "shapDelta": -0.013
     }
   ]
 }

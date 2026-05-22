@@ -42,6 +42,10 @@ SEED = 42
 
 def main():
     df = pd.read_csv(PANEL_PATH, dtype={"countyFips": str})
+    n_raw = len(df)
+    df = df[df[TARGET_COLUMN].notna()].reset_index(drop=True)
+    if len(df) < n_raw:
+        print(f"Filtered out {n_raw - len(df)} rows with missing {TARGET_COLUMN}")
     X = df[FEATURE_COLUMNS]
     y = df[TARGET_COLUMN]
     print(f"Loaded {len(df)} rows. Running {N_BOOTSTRAPS} bootstrap resamples...")
