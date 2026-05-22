@@ -132,6 +132,10 @@ def _print_table(title: str, results: list[dict]) -> None:
 
 if __name__ == "__main__":
     df = pd.read_csv(PANEL_PATH, dtype={"countyFips": str})
+    n_raw = len(df)
+    df = df[df[TARGET_COLUMN].notna()].reset_index(drop=True)
+    if len(df) < n_raw:
+        print(f"Filtered out {n_raw - len(df)} rows with missing {TARGET_COLUMN}")
     print(f"Loaded {len(df)} rows, {df['countyFips'].nunique()} counties, "
           f"years {sorted(df['year'].unique())}")
 

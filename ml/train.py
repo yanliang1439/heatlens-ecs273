@@ -30,9 +30,15 @@ PANEL_PATH = HERE / "data" / "panel.csv"
 MODEL_PATH = HERE / "models" / "xgb_model.pkl"
 
 
-def load_panel() -> pd.DataFrame:
+def load_panel(labeled_only: bool = True) -> pd.DataFrame:
     # Read countyFips as string to preserve leading zero (frontend expects "06067").
-    return pd.read_csv(PANEL_PATH, dtype={"countyFips": str})
+    df = pd.read_csv(PANEL_PATH, dtype={"countyFips": str})
+    if labeled_only:
+        before = len(df)
+        df = df[df[TARGET_COLUMN].notna()].reset_index(drop=True)
+        if len(df) < before:
+            print(f"  filtered out {before - len(df)} rows with missing {TARGET_COLUMN}")
+    return df
 
 
 def make_model() -> xgb.XGBRegressor:
