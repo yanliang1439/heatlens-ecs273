@@ -1,0 +1,10 @@
+pandas
+numpy
+flask
+flask-cors
+geopandas
+rasterio
+rasterstats
+openpyxl
+requests
+scikit-learn
