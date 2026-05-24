@@ -162,7 +162,9 @@ def get_map_data():
         "median_household_income",
         "pct_65_plus",
         "pct_poverty",
-        "tree_canopy_pct"
+        "tree_canopy_pct",
+        "ac_coverage_pct",
+        "no_ac_pct"
     ]
 
     existing_cols = [col for col in columns_to_keep if col in df.columns]
