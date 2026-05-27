@@ -184,26 +184,30 @@ CANNED_SCENARIOS = [
         "interventions": {"acCoverageChange": 0, "treeCanopyChange": 0},
     },
     {
-        "label": "imperial_2022_ac_plus_10",
-        "description": "Case study 1: massive AC expansion (+10 pp) in hottest, lowest-AC county.",
-        "fips": "06025", "year": 2022,
-        "interventions": {"acCoverageChange": 10, "treeCanopyChange": 0},
-    },
-    {
         "label": "imperial_2022_tree_plus_5",
-        "description": "Imperial 2022 modest tree canopy expansion (+5 pp) in a desert county that starts near 4%.",
+        "description": "Imperial 2022 tree canopy +5pp. Imperial's AC is already ~99% (saturated), so "
+                       "tree canopy is the actionable physical lever here.",
         "fips": "06025", "year": 2022,
         "interventions": {"acCoverageChange": 0, "treeCanopyChange": 5},
     },
     {
-        "label": "imperial_2022_combined",
-        "description": "Imperial 2022 combined: AC +5, trees +3.",
+        "label": "imperial_2022_tree_plus_10",
+        "description": "Imperial 2022 tree canopy +10pp — larger push, shows dose-response of the tree lever.",
         "fips": "06025", "year": 2022,
-        "interventions": {"acCoverageChange": 5, "treeCanopyChange": 3},
+        "interventions": {"acCoverageChange": 0, "treeCanopyChange": 10},
     },
     {
-        "label": "sacramento_2022_ac_plus_5",
-        "description": "Sacramento 2022 + AC +5pp. Sacramento already has ~77% AC, expect smaller drop.",
+        "label": "slo_2022_ac_plus_10",
+        "description": "San Luis Obispo 2022 AC +10pp. SLO has real AC headroom (~57%), yet the effect is "
+                       "negligible: acCoverage is a low-importance, lumpy feature, so AC is a weak marginal "
+                       "lever even where it could expand. Climate exposure dominates predicted ED.",
+        "fips": "06079", "year": 2022,
+        "interventions": {"acCoverageChange": 10, "treeCanopyChange": 0},
+    },
+    {
+        "label": "sacramento_2022_ac_saturated",
+        "description": "Sacramento 2022 AC +5pp. Sacramento is already ~99.9% AC, so this clips to 100 and "
+                       "barely moves — demonstrates AC saturation / no headroom in CA's hot interior counties.",
         "fips": "06067", "year": 2022,
         "interventions": {"acCoverageChange": 5, "treeCanopyChange": 0},
     },
@@ -245,10 +249,15 @@ def main():
     # Spot-check that the headline scenario (Imperial AC+10) gives a sensible
     # signed shapDelta. The intervention raises acCoverage, so acCoverage's
     # SHAP contribution should move DOWN (it's a protective feature).
-    headline = next(r for r in results if r["scenarioLabel"] == "imperial_2022_ac_plus_10")
-    ac_delta = next(d["delta"] for d in headline["shapDelta"] if d["feature"] == "acCoverage")
-    print(f"\nSanity: Imperial 2022 AC+10 -> acCoverage shapDelta = {ac_delta:+.3f}  "
-          f"(expect negative — more AC reduces predicted ED)")
+    # Monotonicity sanity: every canned scenario is a "protective" intervention
+    # (more tree canopy / more AC), so with the monotone constraints from train.py
+    # no scenario should ever RAISE predicted ED. Effects can be ~0 (AC where it is
+    # saturated or low-importance) but must never be positive.
+    violations = [r["scenarioLabel"] for r in results if r["predictionDelta"] > 1e-6]
+    if violations:
+        print(f"\nWARNING: monotonicity violated by {violations}")
+    else:
+        print(f"\nSanity OK: all {len(results)} protective scenarios have predictionDelta <= 0.")
 
 
 if __name__ == "__main__":

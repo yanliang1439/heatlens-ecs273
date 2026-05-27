@@ -25,7 +25,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import LeaveOneGroupOut
 
-from schema import FEATURE_COLUMNS, TARGET_COLUMN
+from schema import FEATURE_COLUMNS, TARGET_COLUMN, monotone_constraints_tuple
 
 PANEL_PATH = HERE / "data" / "panel.csv"
 METRICS_PATH = HERE / "outputs" / "metrics.json"
@@ -46,6 +46,7 @@ def _xgb_factory():
         reg_lambda=2.0,
         random_state=42,
         eval_metric="rmse",
+        monotone_constraints=monotone_constraints_tuple(),
     )
 
 

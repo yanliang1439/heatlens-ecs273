@@ -24,7 +24,7 @@ import pandas as pd
 import xgboost as xgb
 from sklearn.metrics import mean_absolute_error, r2_score
 
-from schema import FEATURE_COLUMNS, TARGET_COLUMN
+from schema import FEATURE_COLUMNS, TARGET_COLUMN, monotone_constraints_tuple
 
 PANEL_PATH = HERE / "data" / "panel.csv"
 MODEL_PATH = HERE / "models" / "xgb_model.pkl"
@@ -53,6 +53,7 @@ def make_model() -> xgb.XGBRegressor:
         reg_lambda=2.0,
         random_state=42,
         eval_metric="rmse",
+        monotone_constraints=monotone_constraints_tuple(),
     )
 
 

@@ -3,8 +3,8 @@
     "countyName": "Imperial",
     "countyFips": "06025",
     "year": 2022,
-    "originalPrediction": 109.33,
-    "updatedPrediction": 109.33,
+    "originalPrediction": 120.86,
+    "updatedPrediction": 120.86,
     "predictionDelta": 0.0,
     "interventions": {
       "acCoverageChange": 0.0,
@@ -15,94 +15,94 @@
       {
         "feature": "summerAvgMax",
         "value": 105.84,
-        "shapContribution": 10.255
+        "shapContribution": 55.372
       },
       {
         "feature": "heatwaveDays",
         "value": 868.0,
-        "shapContribution": 0.201
+        "shapContribution": 0.552
       },
       {
         "feature": "consecutiveHotDays",
         "value": 100.0,
-        "shapContribution": 14.904
+        "shapContribution": 24.343
       },
       {
         "feature": "warmNightCount",
         "value": 763.0,
-        "shapContribution": 11.232
+        "shapContribution": 6.034
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 0.593
+        "shapContribution": 0.826
       },
       {
         "feature": "elderlyPct",
         "value": 13.18,
-        "shapContribution": 2.435
+        "shapContribution": -3.062
       },
       {
         "feature": "povertyPct",
         "value": 20.1,
-        "shapContribution": -3.524
+        "shapContribution": 8.028
       },
       {
         "feature": "acCoverage",
-        "value": 58.64,
-        "shapContribution": 29.718
+        "value": 99.4,
+        "shapContribution": -0.311
       },
       {
         "feature": "treeCanopy",
-        "value": 14.87,
-        "shapContribution": 16.321
+        "value": 0.08,
+        "shapContribution": 1.887
       }
     ],
     "updatedShapValues": [
       {
         "feature": "summerAvgMax",
         "value": 105.84,
-        "shapContribution": 10.255
+        "shapContribution": 55.372
       },
       {
         "feature": "heatwaveDays",
         "value": 868.0,
-        "shapContribution": 0.201
+        "shapContribution": 0.552
       },
       {
         "feature": "consecutiveHotDays",
         "value": 100.0,
-        "shapContribution": 14.904
+        "shapContribution": 24.343
       },
       {
         "feature": "warmNightCount",
         "value": 763.0,
-        "shapContribution": 11.232
+        "shapContribution": 6.034
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 0.593
+        "shapContribution": 0.826
       },
       {
         "feature": "elderlyPct",
         "value": 13.18,
-        "shapContribution": 2.435
+        "shapContribution": -3.062
       },
       {
         "feature": "povertyPct",
         "value": 20.1,
-        "shapContribution": -3.524
+        "shapContribution": 8.028
       },
       {
         "feature": "acCoverage",
-        "value": 58.64,
-        "shapContribution": 29.718
+        "value": 99.4,
+        "shapContribution": -0.311
       },
       {
         "feature": "treeCanopy",
-        "value": 14.87,
-        "shapContribution": 16.321
+        "value": 0.08,
+        "shapContribution": 1.887
       }
     ],
     "shapDelta": [
@@ -150,156 +150,9 @@
     "countyName": "Imperial",
     "countyFips": "06025",
     "year": 2022,
-    "originalPrediction": 109.33,
-    "updatedPrediction": 71.29,
-    "predictionDelta": -38.04,
-    "interventions": {
-      "acCoverageChange": 10.0,
-      "treeCanopyChange": 0.0
-    },
-    "baseValue": 27.19,
-    "originalShapValues": [
-      {
-        "feature": "summerAvgMax",
-        "value": 105.84,
-        "shapContribution": 10.255
-      },
-      {
-        "feature": "heatwaveDays",
-        "value": 868.0,
-        "shapContribution": 0.201
-      },
-      {
-        "feature": "consecutiveHotDays",
-        "value": 100.0,
-        "shapContribution": 14.904
-      },
-      {
-        "feature": "warmNightCount",
-        "value": 763.0,
-        "shapContribution": 11.232
-      },
-      {
-        "feature": "tailPercentileTemp",
-        "value": 114.98,
-        "shapContribution": 0.593
-      },
-      {
-        "feature": "elderlyPct",
-        "value": 13.18,
-        "shapContribution": 2.435
-      },
-      {
-        "feature": "povertyPct",
-        "value": 20.1,
-        "shapContribution": -3.524
-      },
-      {
-        "feature": "acCoverage",
-        "value": 58.64,
-        "shapContribution": 29.718
-      },
-      {
-        "feature": "treeCanopy",
-        "value": 14.87,
-        "shapContribution": 16.321
-      }
-    ],
-    "updatedShapValues": [
-      {
-        "feature": "summerAvgMax",
-        "value": 105.84,
-        "shapContribution": 11.494
-      },
-      {
-        "feature": "heatwaveDays",
-        "value": 868.0,
-        "shapContribution": -0.521
-      },
-      {
-        "feature": "consecutiveHotDays",
-        "value": 100.0,
-        "shapContribution": 14.165
-      },
-      {
-        "feature": "warmNightCount",
-        "value": 763.0,
-        "shapContribution": 7.143
-      },
-      {
-        "feature": "tailPercentileTemp",
-        "value": 114.98,
-        "shapContribution": 0.767
-      },
-      {
-        "feature": "elderlyPct",
-        "value": 13.18,
-        "shapContribution": 1.976
-      },
-      {
-        "feature": "povertyPct",
-        "value": 20.1,
-        "shapContribution": -2.375
-      },
-      {
-        "feature": "acCoverage",
-        "value": 68.64,
-        "shapContribution": -3.283
-      },
-      {
-        "feature": "treeCanopy",
-        "value": 14.87,
-        "shapContribution": 14.728
-      }
-    ],
-    "shapDelta": [
-      {
-        "feature": "summerAvgMax",
-        "delta": 1.239
-      },
-      {
-        "feature": "heatwaveDays",
-        "delta": -0.723
-      },
-      {
-        "feature": "consecutiveHotDays",
-        "delta": -0.739
-      },
-      {
-        "feature": "warmNightCount",
-        "delta": -4.089
-      },
-      {
-        "feature": "tailPercentileTemp",
-        "delta": 0.174
-      },
-      {
-        "feature": "elderlyPct",
-        "delta": -0.459
-      },
-      {
-        "feature": "povertyPct",
-        "delta": 1.149
-      },
-      {
-        "feature": "acCoverage",
-        "delta": -33.001
-      },
-      {
-        "feature": "treeCanopy",
-        "delta": -1.593
-      }
-    ],
-    "scenarioLabel": "imperial_2022_ac_plus_10",
-    "scenarioDescription": "Case study 1: massive AC expansion (+10 pp) in hottest, lowest-AC county."
-  },
-  {
-    "countyName": "Imperial",
-    "countyFips": "06025",
-    "year": 2022,
-    "originalPrediction": 109.33,
-    "updatedPrediction": 91.49,
-    "predictionDelta": -17.84,
+    "originalPrediction": 120.86,
+    "updatedPrediction": 119.55,
+    "predictionDelta": -1.31,
     "interventions": {
       "acCoverageChange": 0.0,
       "treeCanopyChange": 5.0
@@ -309,291 +162,438 @@
       {
         "feature": "summerAvgMax",
         "value": 105.84,
-        "shapContribution": 10.255
+        "shapContribution": 55.372
       },
       {
         "feature": "heatwaveDays",
         "value": 868.0,
-        "shapContribution": 0.201
+        "shapContribution": 0.552
       },
       {
         "feature": "consecutiveHotDays",
         "value": 100.0,
-        "shapContribution": 14.904
+        "shapContribution": 24.343
       },
       {
         "feature": "warmNightCount",
         "value": 763.0,
-        "shapContribution": 11.232
+        "shapContribution": 6.034
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 0.593
+        "shapContribution": 0.826
       },
       {
         "feature": "elderlyPct",
         "value": 13.18,
-        "shapContribution": 2.435
+        "shapContribution": -3.062
       },
       {
         "feature": "povertyPct",
         "value": 20.1,
-        "shapContribution": -3.524
+        "shapContribution": 8.028
       },
       {
         "feature": "acCoverage",
-        "value": 58.64,
-        "shapContribution": 29.718
+        "value": 99.4,
+        "shapContribution": -0.311
       },
       {
         "feature": "treeCanopy",
-        "value": 14.87,
-        "shapContribution": 16.321
+        "value": 0.08,
+        "shapContribution": 1.887
       }
     ],
     "updatedShapValues": [
       {
         "feature": "summerAvgMax",
         "value": 105.84,
-        "shapContribution": 9.684
+        "shapContribution": 55.372
       },
       {
         "feature": "heatwaveDays",
         "value": 868.0,
-        "shapContribution": 0.513
+        "shapContribution": 0.552
       },
       {
         "feature": "consecutiveHotDays",
         "value": 100.0,
-        "shapContribution": 13.87
+        "shapContribution": 24.358
       },
       {
         "feature": "warmNightCount",
         "value": 763.0,
-        "shapContribution": 10.59
+        "shapContribution": 6.034
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 0.74
+        "shapContribution": 0.828
       },
       {
         "feature": "elderlyPct",
         "value": 13.18,
-        "shapContribution": 2.322
+        "shapContribution": -3.094
       },
       {
         "feature": "povertyPct",
         "value": 20.1,
-        "shapContribution": -4.35
+        "shapContribution": 8.059
       },
       {
         "feature": "acCoverage",
-        "value": 58.64,
-        "shapContribution": 28.512
+        "value": 99.4,
+        "shapContribution": -0.303
       },
       {
         "feature": "treeCanopy",
-        "value": 19.87,
-        "shapContribution": 2.417
+        "value": 5.08,
+        "shapContribution": 0.555
       }
     ],
     "shapDelta": [
       {
         "feature": "summerAvgMax",
-        "delta": -0.571
+        "delta": 0.0
       },
       {
         "feature": "heatwaveDays",
-        "delta": 0.311
+        "delta": 0.0
       },
       {
         "feature": "consecutiveHotDays",
-        "delta": -1.034
+        "delta": 0.015
       },
       {
         "feature": "warmNightCount",
-        "delta": -0.642
+        "delta": 0.0
       },
       {
         "feature": "tailPercentileTemp",
-        "delta": 0.146
+        "delta": 0.003
       },
       {
         "feature": "elderlyPct",
-        "delta": -0.113
+        "delta": -0.033
       },
       {
         "feature": "povertyPct",
-        "delta": -0.826
+        "delta": 0.031
       },
       {
         "feature": "acCoverage",
-        "delta": -1.206
+        "delta": 0.009
       },
       {
         "feature": "treeCanopy",
-        "delta": -13.904
+        "delta": -1.332
       }
     ],
     "scenarioLabel": "imperial_2022_tree_plus_5",
-    "scenarioDescription": "Imperial 2022 modest tree canopy expansion (+5 pp) in a desert county that starts near 4%."
+    "scenarioDescription": "Imperial 2022 tree canopy +5pp. Imperial's AC is already ~99% (saturated), so tree canopy is the actionable physical lever here."
   },
   {
     "countyName": "Imperial",
     "countyFips": "06025",
     "year": 2022,
-    "originalPrediction": 109.33,
-    "updatedPrediction": 69.28,
-    "predictionDelta": -40.05,
+    "originalPrediction": 120.86,
+    "updatedPrediction": 119.42,
+    "predictionDelta": -1.44,
     "interventions": {
-      "acCoverageChange": 5.0,
-      "treeCanopyChange": 3.0
+      "acCoverageChange": 0.0,
+      "treeCanopyChange": 10.0
     },
     "baseValue": 27.19,
     "originalShapValues": [
       {
         "feature": "summerAvgMax",
         "value": 105.84,
-        "shapContribution": 10.255
+        "shapContribution": 55.372
       },
       {
         "feature": "heatwaveDays",
         "value": 868.0,
-        "shapContribution": 0.201
+        "shapContribution": 0.552
       },
       {
         "feature": "consecutiveHotDays",
         "value": 100.0,
-        "shapContribution": 14.904
+        "shapContribution": 24.343
       },
       {
         "feature": "warmNightCount",
         "value": 763.0,
-        "shapContribution": 11.232
+        "shapContribution": 6.034
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 0.593
+        "shapContribution": 0.826
       },
       {
         "feature": "elderlyPct",
         "value": 13.18,
-        "shapContribution": 2.435
+        "shapContribution": -3.062
       },
       {
         "feature": "povertyPct",
         "value": 20.1,
-        "shapContribution": -3.524
+        "shapContribution": 8.028
       },
       {
         "feature": "acCoverage",
-        "value": 58.64,
-        "shapContribution": 29.718
+        "value": 99.4,
+        "shapContribution": -0.311
       },
       {
         "feature": "treeCanopy",
-        "value": 14.87,
-        "shapContribution": 16.321
+        "value": 0.08,
+        "shapContribution": 1.887
       }
     ],
     "updatedShapValues": [
       {
         "feature": "summerAvgMax",
         "value": 105.84,
-        "shapContribution": 11.33
+        "shapContribution": 55.372
       },
       {
         "feature": "heatwaveDays",
         "value": 868.0,
-        "shapContribution": -0.481
+        "shapContribution": 0.552
       },
       {
         "feature": "consecutiveHotDays",
         "value": 100.0,
-        "shapContribution": 13.945
+        "shapContribution": 24.362
       },
       {
         "feature": "warmNightCount",
         "value": 763.0,
-        "shapContribution": 6.576
+        "shapContribution": 6.034
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 1.106
+        "shapContribution": 0.828
       },
       {
         "feature": "elderlyPct",
         "value": 13.18,
-        "shapContribution": 2.522
+        "shapContribution": -3.111
       },
       {
         "feature": "povertyPct",
         "value": 20.1,
-        "shapContribution": -2.991
+        "shapContribution": 8.043
       },
       {
         "feature": "acCoverage",
-        "value": 63.64,
-        "shapContribution": 0.477
+        "value": 99.4,
+        "shapContribution": -0.303
       },
       {
         "feature": "treeCanopy",
-        "value": 17.87,
-        "shapContribution": 9.607
+        "value": 10.08,
+        "shapContribution": 0.455
       }
     ],
     "shapDelta": [
       {
         "feature": "summerAvgMax",
-        "delta": 1.076
+        "delta": 0.0
       },
       {
         "feature": "heatwaveDays",
-        "delta": -0.683
+        "delta": 0.0
       },
       {
         "feature": "consecutiveHotDays",
-        "delta": -0.959
+        "delta": 0.019
       },
       {
         "feature": "warmNightCount",
-        "delta": -4.656
+        "delta": 0.0
       },
       {
         "feature": "tailPercentileTemp",
-        "delta": 0.512
+        "delta": 0.003
       },
       {
         "feature": "elderlyPct",
-        "delta": 0.087
+        "delta": -0.049
       },
       {
         "feature": "povertyPct",
-        "delta": 0.532
+        "delta": 0.015
       },
       {
         "feature": "acCoverage",
-        "delta": -29.241
+        "delta": 0.009
       },
       {
         "feature": "treeCanopy",
-        "delta": -6.715
+        "delta": -1.432
       }
     ],
-    "scenarioLabel": "imperial_2022_combined",
-    "scenarioDescription": "Imperial 2022 combined: AC +5, trees +3."
+    "scenarioLabel": "imperial_2022_tree_plus_10",
+    "scenarioDescription": "Imperial 2022 tree canopy +10pp — larger push, shows dose-response of the tree lever."
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2022,
+    "originalPrediction": 29.66,
+    "updatedPrediction": 29.66,
+    "predictionDelta": 0.0,
+    "interventions": {
+      "acCoverageChange": 10.0,
+      "treeCanopyChange": 0.0
+    },
+    "baseValue": 27.19,
+    "originalShapValues": [
+      {
+        "feature": "summerAvgMax",
+        "value": 89.1,
+        "shapContribution": 0.67
+      },
+      {
+        "feature": "heatwaveDays",
+        "value": 372.0,
+        "shapContribution": 0.258
+      },
+      {
+        "feature": "consecutiveHotDays",
+        "value": 9.0,
+        "shapContribution": -0.777
+      },
+      {
+        "feature": "warmNightCount",
+        "value": 48.0,
+        "shapContribution": 0.898
+      },
+      {
+        "feature": "tailPercentileTemp",
+        "value": 109.94,
+        "shapContribution": -0.03
+      },
+      {
+        "feature": "elderlyPct",
+        "value": 21.1,
+        "shapContribution": 4.159
+      },
+      {
+        "feature": "povertyPct",
+        "value": 11.97,
+        "shapContribution": -3.915
+      },
+      {
+        "feature": "acCoverage",
+        "value": 57.1,
+        "shapContribution": 0.711
+      },
+      {
+        "feature": "treeCanopy",
+        "value": 9.31,
+        "shapContribution": 0.496
+      }
+    ],
+    "updatedShapValues": [
+      {
+        "feature": "summerAvgMax",
+        "value": 89.1,
+        "shapContribution": 0.67
+      },
+      {
+        "feature": "heatwaveDays",
+        "value": 372.0,
+        "shapContribution": 0.258
+      },
+      {
+        "feature": "consecutiveHotDays",
+        "value": 9.0,
+        "shapContribution": -0.777
+      },
+      {
+        "feature": "warmNightCount",
+        "value": 48.0,
+        "shapContribution": 0.898
+      },
+      {
+        "feature": "tailPercentileTemp",
+        "value": 109.94,
+        "shapContribution": -0.03
+      },
+      {
+        "feature": "elderlyPct",
+        "value": 21.1,
+        "shapContribution": 4.159
+      },
+      {
+        "feature": "povertyPct",
+        "value": 11.97,
+        "shapContribution": -3.915
+      },
+      {
+        "feature": "acCoverage",
+        "value": 67.1,
+        "shapContribution": 0.711
+      },
+      {
+        "feature": "treeCanopy",
+        "value": 9.31,
+        "shapContribution": 0.496
+      }
+    ],
+    "shapDelta": [
+      {
+        "feature": "summerAvgMax",
+        "delta": 0.0
+      },
+      {
+        "feature": "heatwaveDays",
+        "delta": 0.0
+      },
+      {
+        "feature": "consecutiveHotDays",
+        "delta": 0.0
+      },
+      {
+        "feature": "warmNightCount",
+        "delta": 0.0
+      },
+      {
+        "feature": "tailPercentileTemp",
+        "delta": 0.0
+      },
+      {
+        "feature": "elderlyPct",
+        "delta": 0.0
+      },
+      {
+        "feature": "povertyPct",
+        "delta": 0.0
+      },
+      {
+        "feature": "acCoverage",
+        "delta": 0.0
+      },
+      {
+        "feature": "treeCanopy",
+        "delta": 0.0
+      }
+    ],
+    "scenarioLabel": "slo_2022_ac_plus_10",
+    "scenarioDescription": "San Luis Obispo 2022 AC +10pp. SLO has real AC headroom (~57%), yet the effect is negligible: acCoverage is a low-importance, lumpy feature, so AC is a weak marginal lever even where it could expand. Climate exposure dominates predicted ED."
   },
   {
     "countyName": "Sacramento",
     "countyFips": "06067",
     "year": 2022,
-    "originalPrediction": 18.21,
-    "updatedPrediction": 16.85,
-    "predictionDelta": -1.36,
+    "originalPrediction": 27.89,
+    "updatedPrediction": 27.89,
+    "predictionDelta": 0.0,
     "interventions": {
       "acCoverageChange": 5.0,
       "treeCanopyChange": 0.0
@@ -603,94 +603,94 @@
       {
         "feature": "summerAvgMax",
         "value": 94.31,
-        "shapContribution": 0.452
+        "shapContribution": 3.851
       },
       {
         "feature": "heatwaveDays",
         "value": 186.0,
-        "shapContribution": 0.283
+        "shapContribution": 0.188
       },
       {
         "feature": "consecutiveHotDays",
         "value": 12.0,
-        "shapContribution": 3.33
+        "shapContribution": 8.658
       },
       {
         "feature": "warmNightCount",
         "value": 4.0,
-        "shapContribution": -0.719
+        "shapContribution": -1.29
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.08,
-        "shapContribution": 1.188
+        "shapContribution": 0.27
       },
       {
         "feature": "elderlyPct",
         "value": 14.59,
-        "shapContribution": -0.968
+        "shapContribution": -2.392
       },
       {
         "feature": "povertyPct",
         "value": 12.94,
-        "shapContribution": -0.556
+        "shapContribution": -2.74
       },
       {
         "feature": "acCoverage",
-        "value": 70.98,
-        "shapContribution": -5.587
+        "value": 99.9,
+        "shapContribution": -6.346
       },
       {
         "feature": "treeCanopy",
-        "value": 24.63,
-        "shapContribution": -6.405
+        "value": 3.4,
+        "shapContribution": 0.498
       }
     ],
     "updatedShapValues": [
       {
         "feature": "summerAvgMax",
         "value": 94.31,
-        "shapContribution": 0.452
+        "shapContribution": 3.851
       },
       {
         "feature": "heatwaveDays",
         "value": 186.0,
-        "shapContribution": 0.283
+        "shapContribution": 0.188
       },
       {
         "feature": "consecutiveHotDays",
         "value": 12.0,
-        "shapContribution": 3.277
+        "shapContribution": 8.658
       },
       {
         "feature": "warmNightCount",
         "value": 4.0,
-        "shapContribution": -0.719
+        "shapContribution": -1.29
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.08,
-        "shapContribution": 1.188
+        "shapContribution": 0.27
       },
       {
         "feature": "elderlyPct",
         "value": 14.59,
-        "shapContribution": -0.968
+        "shapContribution": -2.392
       },
       {
         "feature": "povertyPct",
         "value": 12.94,
-        "shapContribution": -0.556
+        "shapContribution": -2.74
       },
       {
         "feature": "acCoverage",
-        "value": 75.98,
-        "shapContribution": -6.646
+        "value": 100.0,
+        "shapContribution": -6.346
       },
       {
         "feature": "treeCanopy",
-        "value": 24.63,
-        "shapContribution": -6.654
+        "value": 3.4,
+        "shapContribution": 0.498
       }
     ],
     "shapDelta": [
@@ -704,7 +704,7 @@
       },
       {
         "feature": "consecutiveHotDays",
-        "delta": -0.053
+        "delta": 0.0
       },
       {
         "feature": "warmNightCount",
@@ -724,23 +724,23 @@
       },
       {
         "feature": "acCoverage",
-        "delta": -1.059
+        "delta": 0.0
       },
       {
         "feature": "treeCanopy",
-        "delta": -0.249
+        "delta": 0.0
       }
     ],
-    "scenarioLabel": "sacramento_2022_ac_plus_5",
-    "scenarioDescription": "Sacramento 2022 + AC +5pp. Sacramento already has ~77% AC, expect smaller drop."
+    "scenarioLabel": "sacramento_2022_ac_saturated",
+    "scenarioDescription": "Sacramento 2022 AC +5pp. Sacramento is already ~99.9% AC, so this clips to 100 and barely moves — demonstrates AC saturation / no headroom in CA's hot interior counties."
   },
   {
     "countyName": "Yolo",
     "countyFips": "06113",
     "year": 2022,
-    "originalPrediction": 30.99,
-    "updatedPrediction": 26.0,
-    "predictionDelta": -4.99,
+    "originalPrediction": 33.38,
+    "updatedPrediction": 33.25,
+    "predictionDelta": -0.13,
     "interventions": {
       "acCoverageChange": 0.0,
       "treeCanopyChange": 8.0
@@ -750,112 +750,112 @@
       {
         "feature": "summerAvgMax",
         "value": 95.4,
-        "shapContribution": -0.261
+        "shapContribution": 4.089
       },
       {
         "feature": "heatwaveDays",
         "value": 280.0,
-        "shapContribution": 0.303
+        "shapContribution": 0.17
       },
       {
         "feature": "consecutiveHotDays",
         "value": 22.0,
-        "shapContribution": 2.785
+        "shapContribution": 7.803
       },
       {
         "feature": "warmNightCount",
         "value": 6.0,
-        "shapContribution": -0.998
+        "shapContribution": -1.223
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 1.009
+        "shapContribution": 0.588
       },
       {
         "feature": "elderlyPct",
         "value": 13.04,
-        "shapContribution": -0.233
+        "shapContribution": -6.62
       },
       {
         "feature": "povertyPct",
         "value": 16.82,
-        "shapContribution": 1.878
+        "shapContribution": 7.585
       },
       {
         "feature": "acCoverage",
-        "value": 65.53,
-        "shapContribution": 0.517
+        "value": 99.7,
+        "shapContribution": -6.776
       },
       {
         "feature": "treeCanopy",
-        "value": 20.49,
-        "shapContribution": -1.207
+        "value": 3.9,
+        "shapContribution": 0.573
       }
     ],
     "updatedShapValues": [
       {
         "feature": "summerAvgMax",
         "value": 95.4,
-        "shapContribution": 0.191
+        "shapContribution": 4.089
       },
       {
         "feature": "heatwaveDays",
         "value": 280.0,
-        "shapContribution": 0.138
+        "shapContribution": 0.17
       },
       {
         "feature": "consecutiveHotDays",
         "value": 22.0,
-        "shapContribution": 3.481
+        "shapContribution": 7.807
       },
       {
         "feature": "warmNightCount",
         "value": 6.0,
-        "shapContribution": -1.065
+        "shapContribution": -1.223
       },
       {
         "feature": "tailPercentileTemp",
         "value": 114.98,
-        "shapContribution": 1.009
+        "shapContribution": 0.588
       },
       {
         "feature": "elderlyPct",
         "value": 13.04,
-        "shapContribution": -0.092
+        "shapContribution": -6.637
       },
       {
         "feature": "povertyPct",
         "value": 16.82,
-        "shapContribution": 1.9
+        "shapContribution": 7.57
       },
       {
         "feature": "acCoverage",
-        "value": 65.53,
-        "shapContribution": 0.757
+        "value": 99.7,
+        "shapContribution": -6.776
       },
       {
         "feature": "treeCanopy",
-        "value": 28.49,
-        "shapContribution": -7.516
+        "value": 11.9,
+        "shapContribution": 0.473
       }
     ],
     "shapDelta": [
       {
         "feature": "summerAvgMax",
-        "delta": 0.451
+        "delta": 0.0
       },
       {
         "feature": "heatwaveDays",
-        "delta": -0.165
+        "delta": 0.0
       },
       {
         "feature": "consecutiveHotDays",
-        "delta": 0.696
+        "delta": 0.004
       },
       {
         "feature": "warmNightCount",
-        "delta": -0.067
+        "delta": 0.0
       },
       {
         "feature": "tailPercentileTemp",
@@ -863,19 +863,19 @@
       },
       {
         "feature": "elderlyPct",
-        "delta": 0.141
+        "delta": -0.016
       },
       {
         "feature": "povertyPct",
-        "delta": 0.022
+        "delta": -0.016
       },
       {
         "feature": "acCoverage",
-        "delta": 0.241
+        "delta": 0.0
       },
       {
         "feature": "treeCanopy",
-        "delta": -6.309
+        "delta": -0.099
       }
     ],
     "scenarioLabel": "yolo_2022_tree_plus_8",
