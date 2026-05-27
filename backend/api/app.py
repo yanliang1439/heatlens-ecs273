@@ -1,29 +1,78 @@
 from pathlib import Path
+import sys
+import json
+
 import pandas as pd
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-# =========================
-# Flask setup
-# =========================
-app = Flask(__name__)
-CORS(app)
-
-# =========================
-# Data paths
-# =========================
+# ============================================================
+# Paths
+# ============================================================
 BASE_DIR = Path(__file__).resolve().parents[2]
+
+# Allow import from project root
+sys.path.insert(0, str(BASE_DIR))
 
 PANEL_FILE = BASE_DIR / "data" / "processed" / "county_year_panel_with_tree_canopy_ac.csv"
 
-# ML output files
-PREDICTION_FILE = BASE_DIR / "ml" / "outputs" / "predictions.csv"
-SHAP_FILE = BASE_DIR / "ml" / "outputs" / "shap_values.csv"
+COUNTY_SUMMARIES_FILE = BASE_DIR / "ml" / "outputs" / "county_summaries.json"
+SHAP_BREAKDOWNS_FILE = BASE_DIR / "ml" / "outputs" / "shap_breakdowns.json"
+
+# ============================================================
+# ML import and artifact loading
+# ============================================================
+try:
+    from ml.counterfactual_shap import counterfactual_shap, _load_artifacts
+
+    # Load once at startup, not per request
+    ml_panel_df, ml_model, ml_explainer = _load_artifacts()
+    COUNTERFACTUAL_AVAILABLE = True
+
+except Exception as e:
+    counterfactual_shap = None
+    ml_panel_df = None
+    ml_model = None
+    ml_explainer = None
+    COUNTERFACTUAL_AVAILABLE = False
+    COUNTERFACTUAL_IMPORT_ERROR = str(e)
+
+# ============================================================
+# Flask setup
+# ============================================================
+app = Flask(__name__)
+CORS(app)
+
+# ============================================================
+# Helper functions
+# ============================================================
+def clean_json_value(value):
+    """Convert NaN values into None for valid JSON."""
+    if isinstance(value, dict):
+        return {k: clean_json_value(v) for k, v in value.items()}
+
+    if isinstance(value, list):
+        return [clean_json_value(v) for v in value]
+
+    try:
+        if pd.isna(value):
+            return None
+    except Exception:
+        pass
+
+    return value
 
 
-# =========================
-# Load data
-# =========================
+def dataframe_to_json_records(df):
+    records = df.to_dict(orient="records")
+    return [clean_json_value(row) for row in records]
+
+
+def clean_county_fips(value):
+    """Keep leading zero, e.g. 6025 -> 06025."""
+    return str(value).strip().zfill(5)
+
+
 def load_panel():
     if not PANEL_FILE.exists():
         raise FileNotFoundError(f"Cannot find panel file: {PANEL_FILE}")
@@ -33,100 +82,123 @@ def load_panel():
     if "year" in df.columns:
         df["year"] = df["year"].astype(int)
 
+    # Normalize FIPS column if available
+    if "countyFips" in df.columns:
+        df["countyFips"] = df["countyFips"].apply(clean_county_fips)
+
+    elif "county_fips" in df.columns:
+        df["countyFips"] = df["county_fips"].apply(clean_county_fips)
+
+    elif "county_fips_acs" in df.columns:
+        df["countyFips"] = df["county_fips_acs"].apply(clean_county_fips)
+
     return df
 
 
-def load_optional_csv(path: Path):
-    """
-    Load optional ML output files.
-    If the file does not exist yet, return an empty DataFrame.
-    """
-    if path.exists():
-        df = pd.read_csv(path)
+def load_json_records(path: Path):
+    if not path.exists():
+        return []
 
-        if "year" in df.columns:
-            df["year"] = df["year"].astype(int)
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-        return df
+    if isinstance(data, list):
+        return data
 
-    return pd.DataFrame()
+    if isinstance(data, dict):
+        for key in ["data", "records", "results"]:
+            if key in data and isinstance(data[key], list):
+                return data[key]
+
+    return []
 
 
+def find_json_record(records, county_fips, year):
+    county_fips = clean_county_fips(county_fips)
+    year = int(year)
+
+    for record in records:
+        record_fips = clean_county_fips(record.get("countyFips", ""))
+        record_year = int(record.get("year"))
+
+        if record_fips == county_fips and record_year == year:
+            return clean_json_value(record)
+
+    return None
+
+
+# ============================================================
+# Load data once at startup
+# ============================================================
 panel_df = load_panel()
-prediction_df = load_optional_csv(PREDICTION_FILE)
-shap_df = load_optional_csv(SHAP_FILE)
+county_summaries = load_json_records(COUNTY_SUMMARIES_FILE)
+shap_breakdowns = load_json_records(SHAP_BREAKDOWNS_FILE)
 
-
-# =========================
-# Helper functions
-# =========================
-def clean_json_value(value):
-    """
-    Convert NaN values to None so Flask can safely return JSON.
-    """
-    if pd.isna(value):
-        return None
-    return value
-
-
-def dataframe_to_json_records(df):
-    records = df.to_dict(orient="records")
-
-    cleaned_records = []
-    for row in records:
-        cleaned_row = {k: clean_json_value(v) for k, v in row.items()}
-        cleaned_records.append(cleaned_row)
-
-    return cleaned_records
-
-
-def filter_county_year(df, county_name, year):
-    return df[
-        (df["county_name"].str.lower() == county_name.lower())
-        & (df["year"] == int(year))
-    ].copy()
-
-
-# =========================
-# Basic API endpoints
-# =========================
+# ============================================================
+# Basic endpoints
+# ============================================================
 @app.route("/")
 def home():
     return jsonify({
         "message": "HeatLens Flask backend API is running",
-        "available_endpoints": [
+        "availableEndpoints": [
             "/api/health",
             "/api/counties",
             "/api/years",
             "/api/panel",
-            "/api/county/<county_name>",
             "/api/map?year=2024",
-            "/api/features/<county_name>/<year>",
-            "/api/summary",
-            "/api/prediction/<county_name>/<year>",
-            "/api/shap/<county_name>/<year>",
-            "/api/whatif"
+            "/api/features/<countyFips>/<year>",
+            "/api/prediction/<countyFips>/<year>",
+            "/api/shap/<countyFips>/<year>",
+            "/api/whatif",
+            "/api/summary"
         ]
     })
 
 
 @app.route("/api/health")
 def health():
-    return jsonify({
+    result = {
         "status": "ok",
-        "panel_file": str(PANEL_FILE),
-        "prediction_file_exists": PREDICTION_FILE.exists(),
-        "shap_file_exists": SHAP_FILE.exists(),
+        "panelFile": str(PANEL_FILE),
+        "countySummariesFile": str(COUNTY_SUMMARIES_FILE),
+        "shapBreakdownsFile": str(SHAP_BREAKDOWNS_FILE),
+        "countySummariesLoaded": len(county_summaries),
+        "shapBreakdownsLoaded": len(shap_breakdowns),
+        "counterfactualAvailable": COUNTERFACTUAL_AVAILABLE,
         "rows": int(len(panel_df)),
-        "counties": int(panel_df["county_name"].nunique()) if "county_name" in panel_df.columns else None,
-        "years": sorted(panel_df["year"].dropna().unique().astype(int).tolist()) if "year" in panel_df.columns else []
-    })
+        "years": sorted(panel_df["year"].dropna().unique().astype(int).tolist())
+        if "year" in panel_df.columns else [],
+    }
+
+    if "countyFips" in panel_df.columns:
+        result["counties"] = int(panel_df["countyFips"].nunique())
+
+    if not COUNTERFACTUAL_AVAILABLE:
+        result["counterfactualImportError"] = COUNTERFACTUAL_IMPORT_ERROR
+
+    return jsonify(result)
 
 
 @app.route("/api/counties")
 def get_counties():
-    counties = sorted(panel_df["county_name"].dropna().unique().tolist())
-    return jsonify(counties)
+    cols = []
+
+    for col in ["countyFips", "county_fips", "county_name", "countyName"]:
+        if col in panel_df.columns:
+            cols.append(col)
+
+    if cols:
+        df = panel_df[cols].drop_duplicates()
+
+        if "countyFips" in df.columns:
+            df = df.sort_values("countyFips")
+        elif "county_name" in df.columns:
+            df = df.sort_values("county_name")
+
+        return jsonify(dataframe_to_json_records(df))
+
+    return jsonify([])
 
 
 @app.route("/api/years")
@@ -138,52 +210,27 @@ def get_years():
 @app.route("/api/panel")
 def get_panel():
     """
-    Return full county-year panel.
-    Optional query params:
+    Optional:
       /api/panel?year=2024
-      /api/panel?county=Sacramento
-      /api/panel?year=2024&county=Sacramento
+      /api/panel?countyFips=06025
     """
     df = panel_df.copy()
 
     year = request.args.get("year")
-    county = request.args.get("county")
+    county_fips = request.args.get("countyFips")
 
     if year is not None:
         df = df[df["year"] == int(year)]
 
-    if county is not None:
-        df = df[df["county_name"].str.lower() == county.lower()]
-
-    return jsonify(dataframe_to_json_records(df))
-
-
-@app.route("/api/county/<county_name>")
-def get_county_data(county_name):
-    """
-    Return all years for one county.
-    Example:
-      /api/county/Sacramento
-    """
-    df = panel_df[
-        panel_df["county_name"].str.lower() == county_name.lower()
-    ].copy()
-
-    if df.empty:
-        return jsonify({"error": f"County not found: {county_name}"}), 404
-
-    df = df.sort_values("year")
+    if county_fips is not None and "countyFips" in df.columns:
+        county_fips = clean_county_fips(county_fips)
+        df = df[df["countyFips"] == county_fips]
 
     return jsonify(dataframe_to_json_records(df))
 
 
 @app.route("/api/map")
 def get_map_data():
-    """
-    Return county-level data for map visualization.
-    Example:
-      /api/map?year=2024
-    """
     year = request.args.get("year")
 
     if year is None:
@@ -194,9 +241,14 @@ def get_map_data():
     df = panel_df[panel_df["year"] == year].copy()
 
     columns_to_keep = [
+        "countyFips",
         "county_name",
+        "countyName",
         "year",
         "heat_ed_rate",
+        "predictedEdRate",
+        "observedEdRate",
+        "riskLevel",
         "avg_summer_tmax_f",
         "heatwave_days",
         "hot_nights",
@@ -210,244 +262,177 @@ def get_map_data():
     ]
 
     existing_cols = [col for col in columns_to_keep if col in df.columns]
-    df = df[existing_cols]
-
-    return jsonify(dataframe_to_json_records(df))
+    return jsonify(dataframe_to_json_records(df[existing_cols]))
 
 
-@app.route("/api/features/<county_name>/<int:year>")
-def get_features(county_name, year):
-    """
-    Return one county-year row.
-    Example:
-      /api/features/Sacramento/2024
-    """
-    df = filter_county_year(panel_df, county_name, year)
+@app.route("/api/features/<county_fips>/<int:year>")
+def get_features(county_fips, year):
+    county_fips = clean_county_fips(county_fips)
+
+    if "countyFips" not in panel_df.columns:
+        return jsonify({
+            "error": "countyFips column not found in panel file"
+        }), 500
+
+    df = panel_df[
+        (panel_df["countyFips"] == county_fips)
+        & (panel_df["year"] == int(year))
+    ].copy()
 
     if df.empty:
         return jsonify({
-            "error": f"No data found for {county_name}, {year}"
+            "error": f"No feature data found for countyFips={county_fips}, year={year}"
         }), 404
 
-    row = df.iloc[0].to_dict()
-    row = {k: clean_json_value(v) for k, v in row.items()}
-
-    return jsonify(row)
+    return jsonify(clean_json_value(df.iloc[0].to_dict()))
 
 
 @app.route("/api/summary")
 def get_summary():
-    """
-    Return basic summary statistics for dashboard.
-    """
     summary = {
-        "num_rows": int(len(panel_df)),
-        "num_counties": int(panel_df["county_name"].nunique()),
+        "numRows": int(len(panel_df)),
         "years": sorted(panel_df["year"].dropna().unique().astype(int).tolist()),
     }
 
-    if "heat_ed_rate" in panel_df.columns:
-        summary["heat_ed_rate"] = {
-            "min": clean_json_value(panel_df["heat_ed_rate"].min()),
-            "max": clean_json_value(panel_df["heat_ed_rate"].max()),
-            "mean": clean_json_value(panel_df["heat_ed_rate"].mean())
-        }
+    if "countyFips" in panel_df.columns:
+        summary["numCounties"] = int(panel_df["countyFips"].nunique())
 
-    if "tree_canopy_pct" in panel_df.columns:
-        summary["tree_canopy_pct"] = {
-            "min": clean_json_value(panel_df["tree_canopy_pct"].min()),
-            "max": clean_json_value(panel_df["tree_canopy_pct"].max()),
-            "mean": clean_json_value(panel_df["tree_canopy_pct"].mean())
-        }
-
-    if "ac_coverage_pct" in panel_df.columns:
-        summary["ac_coverage_pct"] = {
-            "min": clean_json_value(panel_df["ac_coverage_pct"].min()),
-            "max": clean_json_value(panel_df["ac_coverage_pct"].max()),
-            "mean": clean_json_value(panel_df["ac_coverage_pct"].mean())
-        }
+    for col in [
+        "heat_ed_rate",
+        "tree_canopy_pct",
+        "ac_coverage_pct",
+        "avg_summer_tmax_f",
+        "heatwave_days",
+    ]:
+        if col in panel_df.columns:
+            summary[col] = {
+                "min": clean_json_value(panel_df[col].min()),
+                "max": clean_json_value(panel_df[col].max()),
+                "mean": clean_json_value(panel_df[col].mean()),
+            }
 
     return jsonify(summary)
 
 
-# =========================
+# ============================================================
 # ML endpoints
-# =========================
-@app.route("/api/prediction/<county_name>/<int:year>")
-def get_prediction(county_name, year):
+# ============================================================
+@app.route("/api/prediction/<county_fips>/<int:year>")
+def get_prediction(county_fips, year):
     """
-    Return ML prediction for one county-year.
-    Expected file:
-      ml/outputs/predictions.csv
+    Reads:
+      ml/outputs/county_summaries.json
 
-    Expected columns:
-      county_name, year, predicted_ed_rate, risk_level
+    Expected fields:
+      countyName, countyFips, year, predictedEdRate, observedEdRate, riskLevel
     """
-    if prediction_df.empty:
+    if not county_summaries:
         return jsonify({
-            "error": "Prediction file not found or empty. Please run the ML pipeline first.",
-            "expected_file": str(PREDICTION_FILE)
+            "error": "county_summaries.json not found or empty",
+            "expectedFile": str(COUNTY_SUMMARIES_FILE)
         }), 404
 
-    df = filter_county_year(prediction_df, county_name, year)
+    record = find_json_record(county_summaries, county_fips, year)
 
-    if df.empty:
+    if record is None:
         return jsonify({
-            "error": f"No prediction found for {county_name}, {year}"
+            "error": f"No prediction found for countyFips={clean_county_fips(county_fips)}, year={year}"
         }), 404
 
-    row = df.iloc[0].to_dict()
-    row = {k: clean_json_value(v) for k, v in row.items()}
-
-    return jsonify(row)
+    return jsonify(record)
 
 
-@app.route("/api/shap/<county_name>/<int:year>")
-def get_shap_values(county_name, year):
+@app.route("/api/shap/<county_fips>/<int:year>")
+def get_shap(county_fips, year):
     """
-    Return SHAP values for one county-year.
-    Expected file:
-      ml/outputs/shap_values.csv
+    Reads:
+      ml/outputs/shap_breakdowns.json
 
-    Expected columns:
-      county_name, year, feature, shap_value, feature_value
+    Expected fields:
+      countyName, countyFips, year, baseValue, prediction, shapValues[]
     """
-    if shap_df.empty:
+    if not shap_breakdowns:
         return jsonify({
-            "error": "SHAP file not found or empty. Please run the ML pipeline first.",
-            "expected_file": str(SHAP_FILE)
+            "error": "shap_breakdowns.json not found or empty",
+            "expectedFile": str(SHAP_BREAKDOWNS_FILE)
         }), 404
 
-    df = filter_county_year(shap_df, county_name, year)
+    record = find_json_record(shap_breakdowns, county_fips, year)
 
-    if df.empty:
+    if record is None:
         return jsonify({
-            "error": f"No SHAP values found for {county_name}, {year}"
+            "error": f"No SHAP breakdown found for countyFips={clean_county_fips(county_fips)}, year={year}"
         }), 404
 
-    if "shap_value" in df.columns:
-        df = df.sort_values(
-            by="shap_value",
-            key=lambda x: x.abs(),
-            ascending=False
-        )
-
-    return jsonify(dataframe_to_json_records(df))
+    return jsonify(record)
 
 
 @app.route("/api/whatif", methods=["POST"])
 def run_whatif():
     """
-    Placeholder what-if endpoint.
+    Expected request:
 
-    Frontend sends:
     {
-      "county_name": "Sacramento",
-      "year": 2024,
-      "changes": {
-        "tree_canopy_pct": 10,
-        "ac_coverage_pct": 5
+      "countyFips": "06025",
+      "year": 2022,
+      "interventions": {
+        "acCoverageChange": 0,
+        "treeCanopyChange": 5
       }
     }
 
-    This version modifies feature values and returns the modified record.
-    Later, this endpoint can call the real ML counterfactual pipeline.
+    Response is exactly what counterfactual_shap() returns.
     """
-    payload = request.get_json()
+    if not COUNTERFACTUAL_AVAILABLE:
+        return jsonify({
+            "error": "counterfactual_shap is not available",
+            "details": COUNTERFACTUAL_IMPORT_ERROR
+        }), 500
 
-    if payload is None:
+    body = request.get_json()
+
+    if body is None:
         return jsonify({"error": "Missing JSON body"}), 400
 
-    county_name = payload.get("county_name")
-    year = payload.get("year")
-    changes = payload.get("changes", {})
-
-    if county_name is None or year is None:
+    try:
+        fips = clean_county_fips(body["countyFips"])
+        year = int(body["year"])
+    except KeyError as e:
         return jsonify({
-            "error": "county_name and year are required"
+            "error": f"Missing required field: {str(e)}"
         }), 400
 
-    if not isinstance(changes, dict):
-        return jsonify({
-            "error": "changes must be a dictionary of feature deltas"
-        }), 400
+    interventions = body.get("interventions", {})
 
-    base_df = filter_county_year(panel_df, county_name, int(year))
+    rows = ml_panel_df[
+        (ml_panel_df.countyFips.astype(str).str.zfill(5) == fips)
+        & (ml_panel_df.year.astype(int) == year)
+    ]
 
-    if base_df.empty:
+    if rows.empty:
         return jsonify({
-            "error": f"No data found for {county_name}, {year}"
+            "error": f"No row for {fips} {year}"
         }), 404
 
-    base_record = base_df.iloc[0].to_dict()
-
-    # Try to get base prediction from ML output
-    base_prediction = None
-
-    if not prediction_df.empty:
-        pred_df = filter_county_year(prediction_df, county_name, int(year))
-
-        if not pred_df.empty:
-            if "predicted_ed_rate" in pred_df.columns:
-                base_prediction = pred_df.iloc[0]["predicted_ed_rate"]
-            elif "prediction" in pred_df.columns:
-                base_prediction = pred_df.iloc[0]["prediction"]
-
-    # Fallback to observed heat ED rate
-    if base_prediction is None:
-        base_prediction = base_record.get("heat_ed_rate", None)
-
-    modified_record = base_record.copy()
-
-    changed_features = {}
-
-    for feature, delta in changes.items():
-        if feature not in modified_record:
-            changed_features[feature] = {
-                "status": "not_found",
-                "old_value": None,
-                "new_value": None,
-                "delta": delta
-            }
-            continue
-
-        old_value = modified_record[feature]
-
-        if pd.isna(old_value):
-            changed_features[feature] = {
-                "status": "missing_value",
-                "old_value": None,
-                "new_value": None,
-                "delta": delta
-            }
-            continue
-
-        new_value = old_value + delta
-        modified_record[feature] = new_value
-
-        changed_features[feature] = {
-            "status": "updated",
-            "old_value": clean_json_value(old_value),
-            "new_value": clean_json_value(new_value),
-            "delta": delta
-        }
-
-    return jsonify({
-        "county_name": county_name,
-        "year": int(year),
-        "base_prediction": clean_json_value(base_prediction),
-        "changed_features": changed_features,
-        "modified_record": {
-            key: clean_json_value(value)
-            for key, value in modified_record.items()
-        },
-        "note": (
-            "This is a placeholder what-if endpoint. "
-            "It updates input feature values but does not yet rerun the ML model. "
-            "Connect this endpoint to the final ML counterfactual pipeline later."
+    try:
+        result = counterfactual_shap(
+            ml_model,
+            ml_explainer,
+            rows.iloc[0],
+            interventions
         )
-    })
+
+        return jsonify(clean_json_value(result))
+
+    except Exception as e:
+        return jsonify({
+            "error": "counterfactual_shap failed",
+            "details": str(e)
+        }), 500
 
 
+# ============================================================
+# Run app
+# ============================================================
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

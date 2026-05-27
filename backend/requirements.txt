@@ -8,3 +8,6 @@ rasterstats
 openpyxl
 requests
 scikit-learn
+joblib
+shap
+xgboost
