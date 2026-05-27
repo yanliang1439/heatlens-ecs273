@@ -1,7 +1,7 @@
 pandas
 numpy
-fastapi
-uvicorn
+flask
+flask-cors
 geopandas
 rasterio
 rasterstats
