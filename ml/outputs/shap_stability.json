@@ -4,87 +4,76 @@
   "panelRows": 226,
   "featureStability": [
     {
-      "feature": "treeCanopy",
-      "meanAbsShap": 6.4069,
-      "stdAbsShap": 1.401,
-      "cv": 0.2187,
+      "feature": "elderlyPct",
+      "meanAbsShap": 7.5976,
+      "stdAbsShap": 0.6383,
+      "cv": 0.084,
       "rankRange": [
         1,
-        2
-      ],
-      "rankMode": 1
-    },
-    {
-      "feature": "acCoverage",
-      "meanAbsShap": 5.6802,
-      "stdAbsShap": 1.242,
-      "cv": 0.2187,
-      "rankRange": [
-        1,
-        2
+        3
       ],
       "rankMode": 2
     },
     {
       "feature": "consecutiveHotDays",
-      "meanAbsShap": 2.9766,
-      "stdAbsShap": 0.7175,
-      "cv": 0.241,
+      "meanAbsShap": 7.5677,
+      "stdAbsShap": 1.6063,
+      "cv": 0.2123,
       "rankRange": [
-        3,
+        1,
+        4
+      ],
+      "rankMode": 1
+    },
+    {
+      "feature": "summerAvgMax",
+      "meanAbsShap": 5.6294,
+      "stdAbsShap": 1.0891,
+      "cv": 0.1935,
+      "rankRange": [
+        1,
         4
       ],
       "rankMode": 3
     },
     {
-      "feature": "elderlyPct",
-      "meanAbsShap": 1.9526,
-      "stdAbsShap": 0.3832,
-      "cv": 0.1963,
+      "feature": "povertyPct",
+      "meanAbsShap": 4.9725,
+      "stdAbsShap": 1.0147,
+      "cv": 0.2041,
       "rankRange": [
-        3,
-        6
+        2,
+        4
       ],
       "rankMode": 4
     },
     {
-      "feature": "tailPercentileTemp",
-      "meanAbsShap": 1.2465,
-      "stdAbsShap": 0.3526,
-      "cv": 0.2829,
-      "rankRange": [
-        4,
-        9
-      ],
-      "rankMode": 5
-    },
-    {
-      "feature": "summerAvgMax",
-      "meanAbsShap": 1.2082,
-      "stdAbsShap": 0.5594,
-      "cv": 0.463,
-      "rankRange": [
-        3,
-        9
-      ],
-      "rankMode": 7
-    },
-    {
       "feature": "warmNightCount",
-      "meanAbsShap": 1.0824,
-      "stdAbsShap": 0.4576,
-      "cv": 0.4227,
+      "meanAbsShap": 1.3376,
+      "stdAbsShap": 0.4055,
+      "cv": 0.3032,
       "rankRange": [
-        4,
-        9
+        5,
+        8
       ],
       "rankMode": 5
     },
     {
-      "feature": "povertyPct",
-      "meanAbsShap": 0.9866,
-      "stdAbsShap": 0.2078,
-      "cv": 0.2106,
+      "feature": "treeCanopy",
+      "meanAbsShap": 1.2357,
+      "stdAbsShap": 0.4306,
+      "cv": 0.3484,
+      "rankRange": [
+        5,
+        8
+      ],
+      "rankMode": 5
+    },
+    {
+      "feature": "acCoverage",
+      "meanAbsShap": 1.0182,
+      "stdAbsShap": 0.3056,
+      "cv": 0.3001,
       "rankRange": [
         5,
         9
@@ -92,10 +81,21 @@
       "rankMode": 6
     },
     {
+      "feature": "tailPercentileTemp",
+      "meanAbsShap": 0.7648,
+      "stdAbsShap": 0.383,
+      "cv": 0.5008,
+      "rankRange": [
+        5,
+        9
+      ],
+      "rankMode": 8
+    },
+    {
       "feature": "heatwaveDays",
-      "meanAbsShap": 0.6745,
-      "stdAbsShap": 0.2522,
-      "cv": 0.3739,
+      "meanAbsShap": 0.4263,
+      "stdAbsShap": 0.18,
+      "cv": 0.4223,
       "rankRange": [
         7,
         9

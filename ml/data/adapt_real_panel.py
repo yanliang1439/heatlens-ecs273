@@ -1,22 +1,24 @@
 """Adapt A's real-data panel into the schema downstream ML scripts expect.
 
-Reads:  data/processed/county_year_panel.csv   (A's output, 285 rows)
-Writes: ml/data/panel.csv                       (the contract path)
+Reads:  data/processed/county_year_panel_with_tree_canopy_ac.csv  (A's output)
+Writes: ml/data/panel.csv                                         (contract path)
 
 What this script does:
   1. Rename columns to camelCase per schema.py
   2. Convert county_fips int (6001) -> 5-char string with leading zero ("06001")
-  3. Synthesize acCoverage and treeCanopy (not in A's data) from climate +
-     income heuristics, so the What-if simulator's intervention sliders work
-  4. Preserve rows with missing heat_ed_rate (target) so the frontend can
+  3. Preserve rows with missing heat_ed_rate (target) so the frontend can
      still show predictions for unlabeled counties
 
+All features are now REAL data — no synthesis. treeCanopy from NLCD,
+acCoverage from US Census LACE (Local Air Conditioning Estimates, 2023).
+
 Caveats to disclose in the report:
-  - acCoverage and treeCanopy are ESTIMATED, not measured. Better sources
-    exist (AHS for AC, USDA NLCD Tree Canopy Cover for trees) but require
-    additional pipeline work outside the scope of this sprint.
-  - Years 2020-2024 only; 2017-2019 not available. Some pandemic-baseline
-    case-study logic needs to be reworked.
+  - acCoverage is from LACE, an EXPERIMENTAL modeled product, 2023 only, so the
+    2023 value is broadcast across all panel years (AC saturation is ~time-
+    invariant over 2020-2024). AC is strongly confounded with climate
+    (corr ~0.73 with summer max temp) so it is kept as a predictive feature
+    but NOT exposed as a What-if intervention slider.
+  - Years 2020-2024 only; 2017-2019 not available.
 
 Run from ml/:
     python data/adapt_real_panel.py
@@ -28,12 +30,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(HERE))
 
-import numpy as np
 import pandas as pd
 
 from schema import CLIMATE_FEATURES, FEATURE_COLUMNS, ID_COLUMNS, TARGET_COLUMN, VULNERABILITY_FEATURES
 
-REAL_CSV_PATH = HERE.parent / "data" / "processed" / "county_year_panel.csv"
+REAL_CSV_PATH = HERE.parent / "data" / "processed" / "county_year_panel_with_tree_canopy_ac.csv"
 OUT_PATH = HERE / "data" / "panel.csv"
 
 # Maps A's column names -> our schema. Bonus columns (median_income, pct_renter,
@@ -49,50 +50,10 @@ COLUMN_RENAMES = {
     "max_consecutive_hot_days": "consecutiveHotDays",
     "pct_65_plus":              "elderlyPct",
     "pct_poverty":              "povertyPct",
+    "tree_canopy_pct":          "treeCanopy",
+    "ac_coverage_pct":          "acCoverage",
     "heat_ed_rate":             "observedEdRate",
 }
-
-
-def synthesize_ac_and_tree(df_raw: pd.DataFrame, seed: int = 42) -> pd.DataFrame:
-    """Generate acCoverage and treeCanopy values that are decorrelated from
-    climate but ANTI-CORRELATED with observed ED rate, so the model can learn
-    a protective effect for the What-if simulator demo.
-
-    Why this construction:
-      - The original v1 used climate-driven synthesis (hot county -> high AC),
-        which made AC and summerAvgMax collinear. The trained XGBoost learned
-        "AC↑ ↔ hot climate ↔ ED↑" and the counterfactual simulator gave
-        wrong-direction predictions (more AC -> higher predicted ED).
-      - This v2 anchors AC/tree to each county's mean observed-ED rank across
-        labeled years (high-ED counties get LOW AC, low-ED counties get HIGH
-        AC). Plus a small per-row noise so the values aren't identical across
-        years within a county.
-      - AC and tree canopy are still INDEPENDENT of climate features, so the
-        model can attribute climate effects to climate features and protective
-        effects to AC/tree separately.
-
-    Disclosed in the report: actual values are not interpretable. The
-    directional signal (AC↑ ⇒ ED↓) is engineered, not measured. Replace this
-    function once A delivers a real AC source (AHS / RECS / CalEPA).
-    """
-    rng = np.random.default_rng(seed)
-
-    # Per-county mean observed ED rank (across labeled years only).
-    obs_per_county = df_raw.groupby("county_name")["heat_ed_rate"].mean()
-    rank = obs_per_county.rank(pct=True)  # 0..1, NaN-counties also rank-NaN
-    rank = rank.fillna(0.5)  # unlabeled counties -> median rank
-    county_rank = df_raw["county_name"].map(rank)
-
-    # AC: county_rank=0 (lowest ED) -> ~78%; county_rank=1 (highest ED) -> ~58%.
-    # Per-row noise so values vary slightly year-to-year (realistic AC churn).
-    ac = 78 - 20 * county_rank + rng.normal(0, 1.5, size=len(df_raw))
-    ac = ac.clip(48, 92).round(2)
-
-    # Tree canopy: same direction, weaker amplitude.
-    tree = 28 - 14 * county_rank + rng.normal(0, 1.0, size=len(df_raw))
-    tree = tree.clip(5, 38).round(2)
-
-    return pd.DataFrame({"acCoverage": ac.values, "treeCanopy": tree.values})
 
 
 def main():
@@ -105,13 +66,11 @@ def main():
     # countyFips: int -> zero-padded string ("06001")
     df["countyFips"] = df_raw["county_fips"].astype(int).astype(str).str.zfill(5)
 
-    # Synthesized AC + tree canopy. v2: anchored to per-county mean observed
-    # ED rank instead of climate intensity, so the model can learn protective
-    # effects without confounding with summerAvgMax. See docstring on
-    # synthesize_ac_and_tree() for the full rationale.
-    synth = synthesize_ac_and_tree(df_raw)
-    df["acCoverage"] = synth["acCoverage"].values
-    df["treeCanopy"] = synth["treeCanopy"].values
+    # treeCanopy and acCoverage now come from REAL data via COLUMN_RENAMES
+    # (tree_canopy_pct from NLCD; ac_coverage_pct from US Census LACE 2023, an
+    # experimental modeled product). LACE is 2023-only, so the same value is
+    # broadcast across panel years 2020-2024 — AC saturation is ~time-invariant
+    # over this span, unlike climate. No more synthesis.
 
     # Reorder per schema contract
     df = df[ID_COLUMNS + [TARGET_COLUMN] + FEATURE_COLUMNS]
@@ -127,7 +86,12 @@ def main():
     print(f"observedEdRate: {n_obs}/{len(df)} non-null, "
           f"range {df[TARGET_COLUMN].min():.2f} - {df[TARGET_COLUMN].max():.2f}")
 
-    print("\nSynthesized AC/tree by climate type (first row per county):")
+    n_ac = df["acCoverage"].notna().sum()
+    n_tree = df["treeCanopy"].notna().sum()
+    print(f"acCoverage:  {n_ac}/{len(df)} non-null")
+    print(f"treeCanopy:  {n_tree}/{len(df)} non-null")
+
+    print("\nReal AC/tree by climate type (first row per county):")
     sample = (
         df.drop_duplicates("countyFips")
           .sort_values("summerAvgMax")

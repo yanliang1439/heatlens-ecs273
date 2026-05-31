@@ -1,10 +1,13 @@
 pandas
 numpy
-fastapi
-uvicorn
+flask
+flask-cors
 geopandas
 rasterio
 rasterstats
 openpyxl
 requests
 scikit-learn
+joblib
+shap
+xgboost

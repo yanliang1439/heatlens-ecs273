@@ -1,14 +1,17 @@
 """Case Study 1 — Imperial County (FIPS 06025).
 
-Imperial is the hottest, lowest-AC, lowest-tree-canopy county in the panel,
-so it's the natural extreme case for testing whether mitigation interventions
-move the needle. This script produces:
+Imperial is the hottest county in the panel with the highest ED rates, making it
+the natural extreme case for testing mitigation levers. A key (and honest) finding:
+its two physical levers are both constrained — AC is already saturated (~99.4%, real
+LACE data) so there is no headroom to expand it, and tree canopy starts near 0%
+(desert). The AC sweep below therefore demonstrates *saturation*, while tree canopy
+is the residual actionable lever. This script produces:
 
-  1. Imperial's predicted ED rate trajectory 2017-2022
+  1. Imperial's predicted ED rate trajectory 2020-2024
   2. Average SHAP attribution across those years -> top drivers
-  3. AC intervention sweep on 2022 (the headline year)
-  4. Tree canopy intervention sweep on 2022
-  5. Combined low-cost intervention (AC+5, Tree+5)
+  3. AC intervention sweep on 2022 — expected to be FLAT (saturation, no headroom)
+  4. Tree canopy intervention sweep on 2022 — the actionable lever
+  5. Combined intervention (AC+5, Tree+5)
 
 Output: ml/outputs/case_imperial.json
         Report §6 (Case Studies) consumes this directly.
@@ -70,7 +73,7 @@ def trajectory(df, model, explainer):
 
 
 def average_drivers(imp_df: pd.DataFrame, shap_vals: np.ndarray):
-    """Mean SHAP per feature across Imperial's 6 years.
+    """Mean SHAP per feature across Imperial's 5 years (2020-2024).
 
     Ranks features by how much they push Imperial's risk above the panel
     baseline, on average. Stable across years -> structural driver, not
@@ -119,7 +122,7 @@ def main():
 
     # 2. Averaged drivers — structural story for the report
     drivers = average_drivers(imp_df, imp_shap)
-    print("\nAveraged SHAP drivers (2017-2022 mean):")
+    print("\nAveraged SHAP drivers (2020-2024 mean):")
     for d in drivers[:5]:
         print(f"  {d['feature']:<22} meanShap={d['meanShap']:+.3f}   meanValue={d['meanValue']}")
 
