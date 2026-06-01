@@ -64,6 +64,8 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
       }
     }
 
+    // Use the live route when it is available, but do not let the whole panel fail if it is down.
+    // This is the intervention path: same selected county, new simulated inputs.
     loadWhatIf();
 
     return () => {
@@ -98,6 +100,8 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
     ],
   };
 
+  // Fall back to the simple local estimate if the API request does not come back.
+  // That way the simulator still demonstrates the workflow even if the backend is temporarily unavailable.
   const simulation = liveSimulation
     ? {
         updatedPrediction: liveSimulation.updatedPrediction,

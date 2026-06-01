@@ -24,7 +24,9 @@ function FeatureDetail(props: FeatureDetailProps) {
     value,
   }));
 
+  // This panel splits the selected county into climate drivers and vulnerability drivers.
   const allFeatureValues = [...climateFeatures, ...vulnerabilityFeatures];
+  // Use one scale so the bars stay visually comparable across both groups.
   const maxValue = Math.max(...allFeatureValues.map((feature) => feature.value));
 
   return (

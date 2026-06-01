@@ -34,6 +34,7 @@ type LiveDashboardData = {
   selectedShapBreakdown: ShapBreakdownRecord;
 };
 
+// Keep the API base flexible so local dev can use Vite proxying without hardcoding URLs.
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "";
 
 async function fetchJson<T>(path: string): Promise<T> {
@@ -54,6 +55,7 @@ export async function getPrediction(
   countyFips: string,
   year: number
 ): Promise<CountySummaryRecord> {
+  // View 1 and the summary chips both depend on this county-year prediction record.
   return fetchJson<CountySummaryRecord>(`/api/prediction/${countyFips}/${year}`);
 }
 
@@ -61,6 +63,7 @@ export async function getShap(
   countyFips: string,
   year: number
 ): Promise<ShapBreakdownRecord> {
+  // View 3 reads the backend SHAP export through this route.
   return fetchJson<ShapBreakdownRecord>(`/api/shap/${countyFips}/${year}`);
 }
 
@@ -68,6 +71,7 @@ export async function getFeatures(
   countyFips: string,
   year: number
 ): Promise<BackendFeatureRow> {
+  // View 2 uses the flatter backend feature row and then reshapes it for the UI.
   return fetchJson<BackendFeatureRow>(`/api/features/${countyFips}/${year}`);
 }
 
@@ -79,6 +83,7 @@ function buildCountyDetail(
   summary: CountySummaryRecord,
   featureRow: BackendFeatureRow
 ): CountyDetailRecord {
+  // The backend returns one flatter row here, so map it back into the view shape the UI already uses.
   return {
     countyName: featureRow.countyName ?? featureRow.county_name ?? summary.countyName,
     countyFips: summary.countyFips,
@@ -105,6 +110,7 @@ function buildCountyDetail(
 export async function getLiveDashboardData(
   selection: AppSelection
 ): Promise<LiveDashboardData> {
+  // These three requests describe the same selected county-year, so fetch them together.
   const [summary, featureRow, shapBreakdown] = await Promise.all([
     getPrediction(selection.selectedCountyFips, selection.selectedYear),
     getFeatures(selection.selectedCountyFips, selection.selectedYear),
@@ -126,6 +132,8 @@ export async function runWhatIf(payload: {
     treeCanopyChange: number;
   };
 }): Promise<CounterfactualRecord> {
+  // The simulator uses a POST so the backend can read both the county and the intervention values.
+  // This is the live counterfactual call behind View 4.
   const response = await fetch(`${API_BASE}/api/whatif`, {
     method: "POST",
     headers: {

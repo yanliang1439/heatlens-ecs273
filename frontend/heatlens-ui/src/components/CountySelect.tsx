@@ -14,6 +14,7 @@ function CountySelect(props: CountySelectProps) {
 
   return (
     <label className="control-group">
+      {/* App keeps the real selection state. This control just forwards changes. */}
       <span>County</span>
       <select
         value={selectedCountyFips}

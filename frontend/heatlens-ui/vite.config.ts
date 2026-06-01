@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
+        // Let the frontend call /api in dev without hardcoding the backend host in each fetch.
         target: "http://127.0.0.1:5000",
         changeOrigin: true,
       },

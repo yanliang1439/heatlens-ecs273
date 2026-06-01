@@ -46,6 +46,7 @@ function App() {
   const visibleCountySummaries = getCountySummaries(selectedCounty.year);
   const currentDataSource = getCurrentDataSource();
 
+  // This is the API availability check behind the backend-connected version of the dashboard.
   useEffect(() => {
     let isCancelled = false;
 
@@ -69,6 +70,7 @@ function App() {
       }
     }
 
+    // Start in backend mode when the API is up, but keep the app usable if it is not.
     checkBackend();
 
     return () => {
@@ -109,6 +111,7 @@ function App() {
       }
     }
 
+    // Pull the selected county from the API when possible, otherwise keep the local copy.
     loadLiveSelection();
 
     return () => {
@@ -121,6 +124,7 @@ function App() {
       return;
     }
 
+    // One county selection drives all four views so the dashboard stays linked.
     setSelection((currentSelection) => ({
       ...currentSelection,
       selectedCountyFips: nextCountyFips,
@@ -130,6 +134,7 @@ function App() {
   function handleYearChange(nextYear: number) {
     const firstCountyInYear = getFirstCountyForYear(nextYear);
 
+    // Reset to a valid county when the year changes so the selection never points to missing data.
     setSelection({
       selectedYear: nextYear,
       selectedCountyFips:

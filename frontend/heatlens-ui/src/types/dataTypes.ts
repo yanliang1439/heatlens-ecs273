@@ -1,3 +1,4 @@
+// These types match the shared data shape used across the map, detail, SHAP, and simulator views.
 export type RiskLevel = "low" | "medium" | "high";
 
 export type CountySummaryRecord = {

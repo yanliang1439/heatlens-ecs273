@@ -17,6 +17,7 @@ export function formatFeatureValue(
   featureName: string,
   value: number
 ): string {
+  // Group the known feature names here so the views do not each have to decide how to print them.
   const countFeatures = new Set([
     "consecutiveHotDays",
     "heatwaveDays",

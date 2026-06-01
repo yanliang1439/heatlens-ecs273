@@ -58,6 +58,7 @@ dist/
 .env
 .env.*
 *.local
+.venv*
 
 # -----------------------------
 # Local project tooling

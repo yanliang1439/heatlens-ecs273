@@ -45,8 +45,7 @@ function makeShap(input: ShapInput): ShapBreakdownRecord {
   return input;
 }
 
-// These values are still mock placeholders so the frontend can move forward
-// while we wait for real backend and model outputs from the team.
+// I kept a small mock set around so the UI can still run even without the API.
 export const countySummariesMock: CountySummaryRecord[] = [
   makeSummary({
     countyName: "Sacramento",

@@ -12,6 +12,8 @@ type ShapBreakdownProps = {
 function ShapBreakdown(props: ShapBreakdownProps) {
   const { shapBreakdown } = props;
 
+  // Sort by absolute size so the strongest upward or downward effects stay near the top.
+  // This is the explanation view for why the current county prediction looks the way it does.
   const orderedValues = [...shapBreakdown.shapValues].sort((left, right) => {
     return Math.abs(right.shapContribution) - Math.abs(left.shapContribution);
   });

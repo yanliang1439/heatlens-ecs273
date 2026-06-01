@@ -28,6 +28,7 @@ type TooltipState = {
   y: number;
 };
 
+// The map color scale matches the low / medium / high overview used in the county list.
 function getCountyFill(
   countyFips: string,
   selectedCountyFips: string,
@@ -42,6 +43,7 @@ function getCountyFill(
     return county.countyFips === countyFips && county.year === selectedYear;
   });
 
+  // Gray means this county shape exists in the map file, but not in the current year data.
   if (!countyRecord) {
     return "#2d333b";
   }
@@ -76,6 +78,7 @@ function CountyMap(props: CountyMapProps) {
       }
     }
 
+    // The county SVG paths are static, so load them once and reuse them.
     loadCountyPaths().catch((error) => {
       console.error("Could not load county path file.", error);
     });
@@ -100,6 +103,7 @@ function CountyMap(props: CountyMapProps) {
           preserveAspectRatio="xMidYMid meet"
           onMouseLeave={() => setTooltip(null)}
         >
+          {/* Clicking the map is one of the main entry points into the linked dashboard workflow. */}
           {countyPaths.counties.map((county) => {
             const countyRecord = countySummaries.find((record) => {
               return (

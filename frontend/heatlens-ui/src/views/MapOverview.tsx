@@ -12,6 +12,7 @@ function MapOverview(props: MapOverviewProps) {
   const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } =
     props;
 
+  // The county list stays year-specific so it mirrors the current map state exactly.
   const visibleCounties = countySummaries.filter((county) => {
     return county.year === selectedYear;
   });
@@ -40,6 +41,7 @@ function MapOverview(props: MapOverviewProps) {
 
           <aside className="county-sidebar">
             <div className="county-sidebar-header">
+              {/* Keep the list tied to the selected year so it matches the map colors. */}
               <p className="feature-group-label">County List</p>
               <span className="year-badge">{selectedYear}</span>
             </div>

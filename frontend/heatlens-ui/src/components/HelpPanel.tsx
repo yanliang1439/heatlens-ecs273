@@ -6,6 +6,7 @@ type HelpPanelProps = {
 function HelpPanel(props: HelpPanelProps) {
   const { isOpen, onClose } = props;
 
+  // The help drawer is the lightweight explanation layer for model and health terms.
   if (!isOpen) {
     return null;
   }
@@ -15,6 +16,7 @@ function HelpPanel(props: HelpPanelProps) {
       <aside
         className="help-panel"
         onClick={(event) => {
+          // Let the drawer stay open when the user clicks inside it.
           event.stopPropagation();
         }}
       >
@@ -102,24 +104,27 @@ function HelpPanel(props: HelpPanelProps) {
               might the predicted ED rate change?
             </p>
             <p>
-              In the current frontend, the simulator still uses placeholder
-              local logic. The selected county context is real to the dashboard,
-              but the intervention response is not yet a live backend
-              counterfactual calculation.
+              When the backend is available, the simulator sends the selected
+              county, year, and intervention changes to the live counterfactual
+              route and shows the returned prediction update.
+            </p>
+            <p>
+              If that route is unavailable, the frontend falls back to a simple
+              local estimate so the panel still stays usable during a demo.
             </p>
           </section>
 
           <section className="help-section">
             <h3>Current Data Source</h3>
             <p>
-              The first three views currently use ML export snapshot files. That
-              means the frontend is no longer using hand-written mock records
-              for those panels.
+              When the backend is running, the selected county prediction,
+              feature detail, SHAP breakdown, and what-if result come from the
+              API.
             </p>
             <p>
-              However, some upstream ML inputs may still be synthetic or
-              provisional depending on the state of the team pipeline, so this
-              dashboard should still be read as an in-progress project build.
+              The map still relies on the exported county summary snapshot for
+              its year-by-year overview, and the app can fall back to local
+              files if the backend is down.
             </p>
           </section>
         </div>

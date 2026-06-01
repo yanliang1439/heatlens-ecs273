@@ -44,11 +44,11 @@ const mlExportBundle: DataBundle = {
   shapBreakdowns: shapBreakdownsMl as ShapBreakdownRecord[],
 };
 
-// Keeping the source choice in one place makes it easy to switch while the
-// rest of the frontend keeps the same view/component code.
+// This switch lets the same UI run on either the old mock set or the exported ML files.
 const currentDataSource: DataSourceKey = "mlExport";
 
 function getBundle(): DataBundle {
+  // Keep this bundle lookup separate so App can swap sources without changing view code.
   if (currentDataSource === "mlExport") {
     return mlExportBundle;
   }
@@ -109,6 +109,7 @@ export function getFirstCountyForYear(year: number): CountySummaryRecord | undef
 export function getDashboardData(selection: AppSelection): DashboardData | null {
   const { countyDetails, countySummaries, shapBreakdowns } = getBundle();
 
+  // All local fallback data is resolved from the same county-year selection shape.
   const selectedCounty =
     countySummaries.find((county) => {
       return (
