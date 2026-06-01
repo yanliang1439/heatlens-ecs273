@@ -105,6 +105,8 @@ body {
   background: #0d1117;
   color: #e6edf3;
   cursor: pointer;
+  align-self: end;
+  height: 2.05rem;
 }
 
 .toolbar-summary {
@@ -117,7 +119,7 @@ body {
 
 .workspace-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.92fr) minmax(300px, 1fr);
+  grid-template-columns: minmax(0, 1.55fr) minmax(360px, 1.12fr) minmax(260px, 0.84fr);
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   min-height: 0;
 }
@@ -224,13 +226,15 @@ body {
 
 .panel-header h2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.38rem;
+  color: #f0f6fc;
+  letter-spacing: 0.01em;
 }
 
 .panel-tag {
   margin-top: 0;
   margin-bottom: 0.3rem;
-  font-size: 0.76rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -268,6 +272,12 @@ body {
   font-size: 0.82rem;
   color: #7d8590;
   margin-top: -0.4rem;
+}
+
+.shap-baseline-copy {
+  font-size: 0.74rem;
+  margin-top: 0.12rem;
+  margin-bottom: 0.45rem;
 }
 
 .map-overview-shell {
@@ -386,12 +396,19 @@ body {
 }
 
 .county-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.county-sidebar-header h3 {
-  margin: 0;
-  font-size: 0.95rem;
+.year-badge {
+  padding: 0.18rem 0.5rem;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #c9d1d9;
+  font-size: 0.78rem;
 }
 
 .county-list {
@@ -446,8 +463,10 @@ body {
   padding-right: 0.15rem;
 }
 
-.feature-section + .feature-section {
-  margin-top: 1rem;
+.feature-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
 .feature-section h3 {
@@ -468,23 +487,26 @@ body {
 }
 
 .feature-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 0.65rem 0.8rem;
   border: 1px solid #30363d;
   background: #0d1117;
-  align-items: center;
 }
 
 .feature-copy {
   min-width: 0;
-  flex: 1;
 }
 
-.feature-copy span {
+.feature-row-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.feature-row-top span {
   display: block;
-  margin-bottom: 0.3rem;
+  min-width: 0;
 }
 
 .feature-meter {
@@ -512,6 +534,10 @@ body {
   margin-bottom: 0.9rem;
 }
 
+.single-summary {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .summary-box {
   padding: 0.75rem 0.85rem;
   border: 1px solid #30363d;
@@ -530,21 +556,25 @@ body {
 }
 
 .shap-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  padding: 0.75rem 0.85rem;
+  padding: 0.6rem 0.75rem;
 }
 
 .shap-copy {
   min-width: 0;
-  flex: 1;
+}
+
+.shap-row-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
 }
 
 .shap-row p {
+  margin-top: 0.2rem;
   margin-bottom: 0;
   color: #9da7b3;
+  font-size: 0.84rem;
 }
 
 .shap-meter {
@@ -611,6 +641,41 @@ body {
   padding: 0.65rem 0.8rem;
   border: 1px solid #30363d;
   background: #0d1117;
+  align-items: center;
+}
+
+.delta-row.positive {
+  border-color: #5a1f23;
+  background: #2d1418;
+  color: #ffb4ad;
+}
+
+.delta-row.negative {
+  border-color: #1f3a5f;
+  background: #101b2b;
+  color: #9ecbff;
+}
+
+.delta-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.delta-copy span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #e6edf3;
+}
+
+.delta-meter {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.delta-meter-fill {
+  height: 100%;
+  background: currentColor;
 }
 
 .emphasis-box {
@@ -674,6 +739,10 @@ body {
   .before-after-grid {
     grid-template-columns: 1fr;
   }
+
+  .feature-sections {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 700px) {
@@ -711,6 +780,10 @@ body {
 
   .county-list,
   .shap-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-sections {
     grid-template-columns: 1fr;
   }
 

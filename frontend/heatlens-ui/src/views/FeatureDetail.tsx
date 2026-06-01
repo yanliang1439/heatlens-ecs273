@@ -61,7 +61,12 @@ function FeatureDetail(props: FeatureDetailProps) {
               {climateFeatures.map((feature) => (
                 <div key={feature.featureName} className="feature-row">
                   <div className="feature-copy">
-                    <span>{feature.label}</span>
+                    <div className="feature-row-top">
+                      <span>{feature.label}</span>
+                      <strong>
+                        {formatFeatureValue(feature.featureName, feature.value)}
+                      </strong>
+                    </div>
                     <div className="feature-meter">
                       <div
                         className="feature-meter-fill climate-fill"
@@ -71,9 +76,6 @@ function FeatureDetail(props: FeatureDetailProps) {
                       />
                     </div>
                   </div>
-                  <strong>
-                    {formatFeatureValue(feature.featureName, feature.value)}
-                  </strong>
                 </div>
               ))}
             </div>
@@ -86,7 +88,12 @@ function FeatureDetail(props: FeatureDetailProps) {
               {vulnerabilityFeatures.map((feature) => (
                 <div key={feature.featureName} className="feature-row">
                   <div className="feature-copy">
-                    <span>{feature.label}</span>
+                    <div className="feature-row-top">
+                      <span>{feature.label}</span>
+                      <strong>
+                        {formatFeatureValue(feature.featureName, feature.value)}
+                      </strong>
+                    </div>
                     <div className="feature-meter">
                       <div
                         className="feature-meter-fill vulnerability-fill"
@@ -96,9 +103,6 @@ function FeatureDetail(props: FeatureDetailProps) {
                       />
                     </div>
                   </div>
-                  <strong>
-                    {formatFeatureValue(feature.featureName, feature.value)}
-                  </strong>
                 </div>
               ))}
             </div>

@@ -26,17 +26,9 @@ function ShapBreakdown(props: ShapBreakdownProps) {
           <div>
             <p className="panel-tag">View 3</p>
             <h2>SHAP Breakdown</h2>
-          </div>
-        </div>
-
-        <div className="shap-summary">
-          <div className="summary-box">
-            <span>Base value</span>
-            <strong>{shapBreakdown.baseValue.toFixed(1)}</strong>
-          </div>
-          <div className="summary-box">
-            <span>Prediction</span>
-            <strong>{shapBreakdown.prediction.toFixed(1)}</strong>
+            <p className="panel-copy muted-copy shap-baseline-copy">
+              Model baseline: {shapBreakdown.baseValue.toFixed(1)}
+            </p>
           </div>
         </div>
 
@@ -56,7 +48,10 @@ function ShapBreakdown(props: ShapBreakdownProps) {
             return (
               <div key={item.feature} className={directionClass}>
                 <div className="shap-copy">
-                  <strong>{formatFeatureLabel(item.feature)}</strong>
+                  <div className="shap-row-top">
+                    <strong>{formatFeatureLabel(item.feature)}</strong>
+                    <strong>{formatSignedNumber(item.shapContribution)}</strong>
+                  </div>
                   <p>
                     Feature value: {formatFeatureValue(item.feature, item.value)}
                   </p>
@@ -67,7 +62,6 @@ function ShapBreakdown(props: ShapBreakdownProps) {
                     />
                   </div>
                 </div>
-                <strong>{formatSignedNumber(item.shapContribution)}</strong>
               </div>
             );
           })}

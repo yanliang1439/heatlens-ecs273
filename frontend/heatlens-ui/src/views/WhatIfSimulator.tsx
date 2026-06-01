@@ -5,7 +5,7 @@ import type {
   CountyDetailRecord,
   ShapBreakdownRecord,
 } from "../types/dataTypes";
-import { formatFeatureLabel } from "../utils/formatters";
+import { formatFeatureLabel, formatSignedNumber } from "../utils/formatters";
 
 type WhatIfSimulatorProps = {
   countyDetail: CountyDetailRecord;
@@ -106,6 +106,11 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
       }
     : localSimulation;
 
+  const maxDelta = Math.max(
+    ...simulation.shapDelta.map((item) => Math.abs(item.delta)),
+    0.01
+  );
+
   return (
     <section className="view-panel">
       <div className="simulator-shell">
@@ -184,17 +189,31 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
             <div className="summary-box">
               <span>Prediction change</span>
               <strong>
-                {isLoadingWhatIf ? "..." : simulation.predictionChange.toFixed(1)}
+                {isLoadingWhatIf ? "..." : formatSignedNumber(simulation.predictionChange)}
               </strong>
             </div>
 
             <div className="delta-list">
-              {simulation.shapDelta.map((item) => (
-                <div key={item.feature} className="delta-row">
-                  <span>{formatFeatureLabel(item.feature)}</span>
-                  <strong>{item.delta.toFixed(2)}</strong>
-                </div>
-              ))}
+              {simulation.shapDelta.map((item) => {
+                const directionClass =
+                  item.delta >= 0 ? "delta-row positive" : "delta-row negative";
+                const barWidth = `${(Math.abs(item.delta) / maxDelta) * 100}%`;
+
+                return (
+                  <div key={item.feature} className={directionClass}>
+                    <div className="delta-copy">
+                      <span>{formatFeatureLabel(item.feature)}</span>
+                      <div className="delta-meter">
+                        <div
+                          className="delta-meter-fill"
+                          style={{ width: barWidth }}
+                        />
+                      </div>
+                    </div>
+                    <strong>{formatSignedNumber(item.delta)}</strong>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

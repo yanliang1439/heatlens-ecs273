@@ -41,7 +41,7 @@ function MapOverview(props: MapOverviewProps) {
           <aside className="county-sidebar">
             <div className="county-sidebar-header">
               <p className="feature-group-label">County List</p>
-              <h3>Counties in {selectedYear}</h3>
+              <span className="year-badge">{selectedYear}</span>
             </div>
 
             <div className="county-list">
