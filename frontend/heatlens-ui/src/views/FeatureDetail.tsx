@@ -1,5 +1,5 @@
 import type { CountyDetailRecord } from "../types/dataTypes";
-import { formatFeatureLabel } from "../utils/formatters";
+import { formatFeatureLabel, formatFeatureValue } from "../utils/formatters";
 
 type FeatureDetailProps = {
   countyDetail: CountyDetailRecord;
@@ -71,7 +71,9 @@ function FeatureDetail(props: FeatureDetailProps) {
                       />
                     </div>
                   </div>
-                  <strong>{feature.value}</strong>
+                  <strong>
+                    {formatFeatureValue(feature.featureName, feature.value)}
+                  </strong>
                 </div>
               ))}
             </div>
@@ -94,7 +96,9 @@ function FeatureDetail(props: FeatureDetailProps) {
                       />
                     </div>
                   </div>
-                  <strong>{feature.value}</strong>
+                  <strong>
+                    {formatFeatureValue(feature.featureName, feature.value)}
+                  </strong>
                 </div>
               ))}
             </div>

@@ -1,5 +1,9 @@
 import type { ShapBreakdownRecord } from "../types/dataTypes";
-import { formatFeatureLabel, formatSignedNumber } from "../utils/formatters";
+import {
+  formatFeatureLabel,
+  formatFeatureValue,
+  formatSignedNumber,
+} from "../utils/formatters";
 
 type ShapBreakdownProps = {
   shapBreakdown: ShapBreakdownRecord;
@@ -53,7 +57,9 @@ function ShapBreakdown(props: ShapBreakdownProps) {
               <div key={item.feature} className={directionClass}>
                 <div className="shap-copy">
                   <strong>{formatFeatureLabel(item.feature)}</strong>
-                  <p>Feature value: {item.value}</p>
+                  <p>
+                    Feature value: {formatFeatureValue(item.feature, item.value)}
+                  </p>
                   <div className="shap-meter">
                     <div
                       className="shap-meter-fill"
