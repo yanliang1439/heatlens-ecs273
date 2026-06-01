@@ -35,3 +35,25 @@ export type ShapBreakdownRecord = {
   prediction: number;
   shapValues: ShapValueRecord[];
 };
+
+export type ShapDeltaRecord = {
+  feature: string;
+  delta: number;
+};
+
+export type CounterfactualRecord = {
+  countyName: string;
+  countyFips: string;
+  year: number;
+  originalPrediction: number;
+  updatedPrediction: number;
+  predictionDelta: number;
+  interventions: {
+    acCoverageChange?: number;
+    treeCanopyChange?: number;
+  };
+  baseValue: number;
+  originalShapValues: ShapValueRecord[];
+  updatedShapValues: ShapValueRecord[];
+  shapDelta: ShapDeltaRecord[];
+};

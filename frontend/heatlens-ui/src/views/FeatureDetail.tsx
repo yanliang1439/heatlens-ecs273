@@ -38,9 +38,8 @@ function FeatureDetail(props: FeatureDetailProps) {
         </div>
 
         <p className="panel-copy">
-          These values are coming from mock county detail records for now.
-          Later this panel can turn into a chart, but right now it answers the
-          simple question: what does the model know about this county?
+          Review the climate and vulnerability values associated with the
+          selected county.
         </p>
 
         <div className="summary-strip">

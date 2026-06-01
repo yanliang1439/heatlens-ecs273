@@ -1,29 +1,91 @@
-import { useState } from "react";
-import type { CountyDetailRecord, ShapBreakdownRecord } from "../types/dataTypes";
+import { useEffect, useState } from "react";
+import { runWhatIf } from "../services/backendApi";
+import type {
+  CounterfactualRecord,
+  CountyDetailRecord,
+  ShapBreakdownRecord,
+} from "../types/dataTypes";
 import { formatFeatureLabel } from "../utils/formatters";
 
 type WhatIfSimulatorProps = {
   countyDetail: CountyDetailRecord;
   shapBreakdown: ShapBreakdownRecord;
+  useLiveWhatIf: boolean;
 };
 
 function WhatIfSimulator(props: WhatIfSimulatorProps) {
-  const { countyDetail, shapBreakdown } = props;
+  const { countyDetail, shapBreakdown, useLiveWhatIf } = props;
 
   const [acCoverageChange, setAcCoverageChange] = useState(0);
   const [treeCanopyChange, setTreeCanopyChange] = useState(0);
+  const [liveSimulation, setLiveSimulation] = useState<CounterfactualRecord | null>(null);
+  const [whatIfError, setWhatIfError] = useState("");
+  const [isLoadingWhatIf, setIsLoadingWhatIf] = useState(false);
 
-  // This is only a temporary local calculation so we can test the panel
-  // before the backend counterfactual route exists.
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function loadWhatIf() {
+      if (!useLiveWhatIf) {
+        setLiveSimulation(null);
+        setWhatIfError("");
+        return;
+      }
+
+      setIsLoadingWhatIf(true);
+      setWhatIfError("");
+
+      try {
+        const result = await runWhatIf({
+          countyFips: countyDetail.countyFips,
+          year: countyDetail.year,
+          interventions: {
+            acCoverageChange,
+            treeCanopyChange,
+          },
+        });
+
+        if (isCancelled) {
+          return;
+        }
+
+        setLiveSimulation(result);
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+
+        setLiveSimulation(null);
+        setWhatIfError("Live what-if request failed. Showing local estimate instead.");
+      } finally {
+        if (!isCancelled) {
+          setIsLoadingWhatIf(false);
+        }
+      }
+    }
+
+    loadWhatIf();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [
+    acCoverageChange,
+    countyDetail.countyFips,
+    countyDetail.year,
+    treeCanopyChange,
+    useLiveWhatIf,
+  ]);
+
   const predictionDrop = acCoverageChange * 0.12 + treeCanopyChange * 0.09;
-  const updatedPrediction = Math.max(
+  const localUpdatedPrediction = Math.max(
     0,
     countyDetail.predictedEdRate - predictionDrop
   );
 
-  const simulation = {
-    updatedPrediction,
-    predictionChange: updatedPrediction - countyDetail.predictedEdRate,
+  const localSimulation = {
+    updatedPrediction: localUpdatedPrediction,
+    predictionChange: localUpdatedPrediction - countyDetail.predictedEdRate,
     shapDelta: [
       {
         feature: "acCoverage",
@@ -35,6 +97,14 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
       },
     ],
   };
+
+  const simulation = liveSimulation
+    ? {
+        updatedPrediction: liveSimulation.updatedPrediction,
+        predictionChange: liveSimulation.predictionDelta,
+        shapDelta: liveSimulation.shapDelta,
+      }
+    : localSimulation;
 
   return (
     <section className="view-panel">
@@ -50,6 +120,8 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
           This panel answers the intervention question: if we improve AC
           coverage or tree canopy, how might the prediction change?
         </p>
+
+        {whatIfError ? <p className="panel-copy muted-copy">{whatIfError}</p> : null}
 
         <div className="summary-strip">
           <div className="summary-chip">
@@ -103,13 +175,17 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
               </div>
               <div className="summary-box emphasis-box">
                 <span>Updated prediction</span>
-                <strong>{simulation.updatedPrediction.toFixed(1)}</strong>
+                <strong>
+                  {isLoadingWhatIf ? "..." : simulation.updatedPrediction.toFixed(1)}
+                </strong>
               </div>
             </div>
 
             <div className="summary-box">
               <span>Prediction change</span>
-              <strong>{simulation.predictionChange.toFixed(1)}</strong>
+              <strong>
+                {isLoadingWhatIf ? "..." : simulation.predictionChange.toFixed(1)}
+              </strong>
             </div>
 
             <div className="delta-list">

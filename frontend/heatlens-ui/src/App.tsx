@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CountySelect from "./components/CountySelect";
 import HelpPanel from "./components/HelpPanel";
 import YearSelect from "./components/YearSelect";
+import {
+  getBackendHealth,
+  getLiveDashboardData,
+} from "./services/backendApi";
 import {
   getAvailableYears,
   getCountyOptions,
@@ -18,13 +22,17 @@ import MapOverview from "./views/MapOverview";
 import ShapBreakdown from "./views/ShapBreakdown";
 import WhatIfSimulator from "./views/WhatIfSimulator";
 
+type BackendMode = "checking" | "available" | "fallback";
+
 function App() {
   const defaultSelection = getDefaultSelection();
+  const localDashboardData = getDashboardData(defaultSelection);
 
   const [selection, setSelection] = useState<AppSelection>(defaultSelection);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
-
-  const dashboardData = getDashboardData(selection);
+  const [backendMode, setBackendMode] = useState<BackendMode>("checking");
+  const [counterfactualAvailable, setCounterfactualAvailable] = useState(false);
+  const [dashboardData, setDashboardData] = useState(localDashboardData);
 
   if (!dashboardData) {
     return <main className="app-shell">Mock dashboard data could not be loaded.</main>;
@@ -37,6 +45,76 @@ function App() {
   const countyOptions = getCountyOptions(selection.selectedYear);
   const visibleCountySummaries = getCountySummaries(selectedCounty.year);
   const currentDataSource = getCurrentDataSource();
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function checkBackend() {
+      try {
+        const health = await getBackendHealth();
+
+        if (isCancelled) {
+          return;
+        }
+
+        setBackendMode("available");
+        setCounterfactualAvailable(Boolean(health.counterfactualAvailable));
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+
+        setBackendMode("fallback");
+        setCounterfactualAvailable(false);
+      }
+    }
+
+    checkBackend();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isCancelled = false;
+    const fallbackDashboardData = getDashboardData(selection);
+
+    if (!fallbackDashboardData) {
+      return;
+    }
+
+    if (backendMode !== "available") {
+      setDashboardData(fallbackDashboardData);
+      return;
+    }
+
+    async function loadLiveSelection() {
+      try {
+        const liveData = await getLiveDashboardData(selection);
+
+        if (isCancelled) {
+          return;
+        }
+
+        setDashboardData(liveData);
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+
+        setDashboardData(fallbackDashboardData);
+        setBackendMode("fallback");
+        setCounterfactualAvailable(false);
+      }
+    }
+
+    loadLiveSelection();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [backendMode, selection]);
 
   function handleCountyChange(nextCountyFips: string) {
     if (!isCountyAvailable(nextCountyFips, selection.selectedYear)) {
@@ -94,13 +172,14 @@ function App() {
 
           <div className="toolbar-summary">
             <span>
-              Source <strong>{currentDataSource === "mlExport" ? "ML export" : "Mock data"}</strong>
-            </span>
-            <span>
-              County <strong>{selectedCounty.countyName}</strong>
-            </span>
-            <span>
-              Year <strong>{selectedCounty.year}</strong>
+              Source{" "}
+              <strong>
+                {backendMode === "available"
+                  ? "Backend + ML outputs"
+                  : currentDataSource === "mlExport"
+                    ? "ML export"
+                    : "Mock data"}
+              </strong>
             </span>
             <span>
               Predicted ED rate{" "}
@@ -132,6 +211,7 @@ function App() {
           <WhatIfSimulator
             countyDetail={selectedCountyDetail}
             shapBreakdown={selectedShapBreakdown}
+            useLiveWhatIf={backendMode === "available" && counterfactualAvailable}
           />
         </div>
       </section>

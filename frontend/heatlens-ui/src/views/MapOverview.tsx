@@ -26,10 +26,6 @@ function MapOverview(props: MapOverviewProps) {
             Select a county from the map to update the detail panels on the
             right and the simulator below.
           </p>
-          <p className="panel-copy muted-copy">
-            The mock dashboard only has detailed records for the counties shown
-            in the list for now.
-          </p>
         </div>
       </div>
 

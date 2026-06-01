@@ -37,8 +37,8 @@ function ShapBreakdown(props: ShapBreakdownProps) {
         </div>
 
         <p className="panel-copy">
-          This panel answers a different question from the feature list: which
-          values are pushing the prediction upward or downward the most?
+          Compare which features are pushing the selected county's prediction
+          upward or downward the most.
         </p>
 
         <div className="shap-list">
