@@ -4,7 +4,7 @@
 
 HeatLens is an interactive visual analytics system that predicts heat-related emergency department (ED) visit rates across California counties and lets users explore how interventions like increased AC coverage or tree canopy could change those predictions.
 
-**Course Project — ECS 273 (Visual Analytics), UC Davis**
+**Course Project — ECS 273, UC Davis**
 
 ---
 
@@ -54,8 +54,6 @@ The data integrates into a single **county-year panel: 285 rows (57 California c
 heatlens-ecs273/
 ├── docs/                      # Project documentation
 │   ├── proposal.pdf
-│   ├── 14day-plan.md
-│   └── api-contract.md
 ├── data/                      # Data files (raw and processed)
 │   ├── raw/
 │   ├── processed/
@@ -144,8 +142,3 @@ npm start
 
 ✅ Feature-complete — the full ML → Flask backend → React frontend pipeline runs end-to-end, with all four linked views live. Final report in progress (ECS 273, Spring 2026).
 
----
-
-## License
-
-MIT
