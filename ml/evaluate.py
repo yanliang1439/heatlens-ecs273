@@ -25,7 +25,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import LeaveOneGroupOut
 
-from schema import FEATURE_COLUMNS, TARGET_COLUMN, monotone_constraints_tuple
+from schema import (
+    FEATURE_COLUMNS,
+    MONOTONE_CONSTRAINTS,
+    TARGET_COLUMN,
+    monotone_constraints_tuple,
+)
 
 PANEL_PATH = HERE / "data" / "panel.csv"
 METRICS_PATH = HERE / "outputs" / "metrics.json"
@@ -47,6 +52,53 @@ def _xgb_factory():
         random_state=42,
         eval_metric="rmse",
         monotone_constraints=monotone_constraints_tuple(),
+    )
+
+
+def _xgb_factory_unconstrained():
+    """Identical to _xgb_factory but WITHOUT monotonicity constraints.
+
+    Ablation for report §5: shows monotonicity costs ~nothing in CV accuracy
+    while it is what makes the counterfactual interventions directionally
+    faithful (see Method §4).
+    """
+    return xgb.XGBRegressor(
+        n_estimators=200,
+        max_depth=3,
+        learning_rate=0.05,
+        min_child_weight=5,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        reg_alpha=0.5,
+        reg_lambda=2.0,
+        random_state=42,
+        eval_metric="rmse",
+    )
+
+
+# Feature set and matching constraints for the "drop acCoverage" ablation.
+NO_AC_FEATURES = [c for c in FEATURE_COLUMNS if c != "acCoverage"]
+
+
+def _xgb_factory_no_ac():
+    """Constrained XGBoost trained without the acCoverage feature.
+
+    Ablation for report §5: quantifies how much acCoverage contributes to
+    predictive accuracy ("does AC earn its place?").
+    """
+    constraints = tuple(MONOTONE_CONSTRAINTS[f] for f in NO_AC_FEATURES)
+    return xgb.XGBRegressor(
+        n_estimators=200,
+        max_depth=3,
+        learning_rate=0.05,
+        min_child_weight=5,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        reg_alpha=0.5,
+        reg_lambda=2.0,
+        random_state=42,
+        eval_metric="rmse",
+        monotone_constraints=constraints,
     )
 
 
@@ -92,8 +144,9 @@ class TemperatureThresholdBaseline:
         )
 
 
-def loco_cv(df: pd.DataFrame, model_factory, label: str) -> dict:
-    X = df[FEATURE_COLUMNS]
+def loco_cv(df: pd.DataFrame, model_factory, label: str,
+            feature_cols: list[str] = FEATURE_COLUMNS) -> dict:
+    X = df[feature_cols]
     y = df[TARGET_COLUMN].values
     groups = df["countyFips"].values
     logo = LeaveOneGroupOut()
@@ -147,12 +200,22 @@ if __name__ == "__main__":
     results_clean = evaluate_all(df_clean, "_no_2020_2021")
     _print_table("Sensitivity — excluding 2020–2021 (pandemic ED bias)", results_clean)
 
+    # Ablations on the full panel (report §5):
+    #   - drop monotonicity constraints (cost of directional faithfulness)
+    #   - drop acCoverage feature ("does AC earn its place?")
+    results_ablation = [
+        loco_cv(df, _xgb_factory_unconstrained, "xgboost_no_constraints"),
+        loco_cv(df, _xgb_factory_no_ac, "xgboost_no_ac", feature_cols=NO_AC_FEATURES),
+    ]
+    _print_table("Ablations — full panel", results_ablation)
+
     METRICS_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "panel_rows": int(len(df)),
         "n_counties": int(df["countyFips"].nunique()),
         "results_full": results_full,
         "results_no_pandemic": results_clean,
+        "results_ablation": results_ablation,
     }
     with open(METRICS_PATH, "w") as f:
         json.dump(payload, f, indent=2)
