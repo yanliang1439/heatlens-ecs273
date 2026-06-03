@@ -9,6 +9,7 @@ function YearSelect(props: YearSelectProps) {
 
   return (
     <label className="control-group">
+      {/* Keep the year picker simple so App can decide how county selection resets. */}
       <span>Year</span>
       <select
         value={selectedYear}

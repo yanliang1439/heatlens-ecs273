@@ -12,6 +12,7 @@ function MapOverview(props: MapOverviewProps) {
   const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } =
     props;
 
+  // The county list stays year-specific so it mirrors the current map state exactly.
   const visibleCounties = countySummaries.filter((county) => {
     return county.year === selectedYear;
   });
@@ -29,32 +30,44 @@ function MapOverview(props: MapOverviewProps) {
         </div>
       </div>
 
-      <CountyMap
-        countySummaries={countySummaries}
-        selectedCountyFips={selectedCountyFips}
-        selectedYear={selectedYear}
-        onCountyChange={onCountyChange}
-      />
+      <div className="map-overview-shell">
+        <div className="map-layout">
+          <CountyMap
+            countySummaries={countySummaries}
+            selectedCountyFips={selectedCountyFips}
+            selectedYear={selectedYear}
+            onCountyChange={onCountyChange}
+          />
 
-      <div className="county-list">
-        {visibleCounties.map((county) => {
-          const isSelected = county.countyFips === selectedCountyFips;
+          <aside className="county-sidebar">
+            <div className="county-sidebar-header">
+              {/* Keep the list tied to the selected year so it matches the map colors. */}
+              <p className="feature-group-label">County List</p>
+              <span className="year-badge">{selectedYear}</span>
+            </div>
 
-          return (
-            <button
-              key={`${county.countyFips}-${county.year}`}
-              type="button"
-              className={isSelected ? "county-row selected" : "county-row"}
-              onClick={() => onCountyChange(county.countyFips)}
-            >
-              <div>
-                <strong>{county.countyName}</strong>
-                <p>{county.riskLevel} risk</p>
-              </div>
-              <span>{county.predictedEdRate.toFixed(1)}</span>
-            </button>
-          );
-        })}
+            <div className="county-list">
+              {visibleCounties.map((county) => {
+                const isSelected = county.countyFips === selectedCountyFips;
+
+                return (
+                  <button
+                    key={`${county.countyFips}-${county.year}`}
+                    type="button"
+                    className={isSelected ? "county-row selected" : "county-row"}
+                    onClick={() => onCountyChange(county.countyFips)}
+                  >
+                    <div>
+                      <strong>{county.countyName}</strong>
+                      <p>{county.riskLevel} risk</p>
+                    </div>
+                    <span>{county.predictedEdRate.toFixed(1)}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   );

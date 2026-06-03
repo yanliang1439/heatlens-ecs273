@@ -58,9 +58,15 @@ dist/
 .env
 .env.*
 *.local
+.venv*
 
 # -----------------------------
 # Local project tooling
 # -----------------------------
 .agents/
 .codex/
+
+# -----------------------------
+# Local notes / scratch files
+# -----------------------------
+.local-notes/

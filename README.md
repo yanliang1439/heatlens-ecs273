@@ -1,147 +1,156 @@
-# heatlens-ecs273
-Visual Analytics for California Heat Health Risk — ECS 273 Final Project
 # HeatLens
 
-> Visual Analytics for California Heat Health Risk
+HeatLens is a course project for ECS 273 (Visual Analytics) at UC Davis. The
+project focuses on county-level heat-health risk in California and combines a
+predictive model, explanation views, and an intervention simulator into one
+interactive dashboard. The goal is to help a user move from a geographic
+overview of risk to a more detailed understanding of what is driving that risk
+and how simple mitigation changes could affect the prediction.
 
-HeatLens is an interactive visual analytics system that predicts heat-related emergency department (ED) visit rates across California counties and lets users explore how interventions like increased AC coverage or tree canopy could change those predictions.
+The repository includes three main parts. The `backend/` directory contains the
+Flask API that serves county prediction, feature, SHAP, and what-if endpoints.
+The `ml/` directory contains the model training, evaluation, SHAP export, and
+counterfactual code. The `frontend/heatlens-ui/` directory contains the React +
+TypeScript dashboard with the four linked views used in the final demo.
 
-**Course Project — ECS 273 (Visual Analytics), UC Davis**
-
----
-
-## What HeatLens Does
-
-- **Predicts** county-level heat-related ED visit rates using climate, demographic, and vulnerability features
-- **Explains** each prediction using SHAP values
-- **Simulates interventions** through a What-if simulator — drag sliders to change AC coverage or tree canopy, and see both the new predicted risk and which features drove the change (Counterfactual SHAP)
-
----
-
-## Four Linked Views
-
-1. **Map Overview** — California county risk map over time
-2. **Feature Detail** — what climate features drive each county's risk
-3. **SHAP Breakdown** — vulnerability force plot
-4. **What-if Simulator** — interactive intervention testing with live SHAP delta
-
----
-
-## Tech Stack
-
-- **Backend**: Python, Flask, pandas, geopandas
-- **ML**: XGBoost, SHAP, scikit-learn
-- **Frontend**: React, D3.js, Leaflet
-- **Data**: NOAA GHCN-Daily, Tracking California, US Census ACS
-
----
-
-## Data Sources
-
-| Dataset | Granularity | Volume |
-|---|---|---|
-| NOAA GHCN-Daily | Daily station temperature | ~3 million records (1,500 CA stations × 6 years) |
-| Tracking California | County-year heat-related ED visit rates | 240 county-year observations |
-| US Census ACS | County + tract-level demographics | ~9,000 tracts × dozens of variables |
-
----
+For the final version of the project, the dashboard supports four coordinated
+views: a California county map overview, a feature detail panel, a SHAP
+breakdown panel, and a what-if simulator. The frontend uses backend-first API
+calls for the selected county-year record and falls back to local ML-export
+snapshots when needed. This keeps the interface usable even if the full backend
+path is unavailable.
 
 ## Repository Structure
 
 ```
 heatlens-ecs273/
-├── docs/                      # Project documentation
-│   ├── proposal.pdf
-│   ├── 14day-plan.md
-│   └── api-contract.md
-├── data/                      # Data files (raw and processed)
-│   ├── raw/
-│   ├── processed/
-│   └── README.md              # Data dictionary
-├── backend/                   # Data pipeline + Flask API
-│   ├── data_pipeline/
+├── backend/                  # Flask API and backend requirements
 │   ├── api/
 │   └── requirements.txt
-├── ml/                        # ML training + SHAP
-│   ├── notebooks/
-│   ├── train.py
-│   └── counterfactual_shap.py
-├── frontend/                  # React + D3 UI
-│   └── heatlens-ui/
-└── report/                    # Final report
-    └── final_report.tex
+├── data/                     # Processed panel and supporting data files
+│   └── processed/
+├── frontend/
+│   └── heatlens-ui/          # React + TypeScript dashboard
+├── ml/                       # Training, evaluation, SHAP, and counterfactual code
+│   ├── models/
+│   └── outputs/
+└── README.md
 ```
 
----
+## Installation
 
-## How to Run
-
-### 1. Backend (Data + API)
+### 1. Clone the repository
 
 ```bash
-cd backend
-conda create -n heatlens python=3.12
-conda activate heatlens
-pip install -r requirements.txt
-
-# Run the data pipeline (one-time)
-python data_pipeline/run_pipeline.py
-
-# Start the Flask API
-cd api
-python app.py
-# API runs on http://localhost:5000
+git clone https://github.com/yanliang1439/heatlens-ecs273
+cd heatlens-ecs273
 ```
 
-### 2. ML Training
+### 2. Set up the backend Python environment
+
+The backend and ML routes were tested with a Python virtual environment from the
+project root.
 
 ```bash
-cd ml
-python train.py
-# Trains XGBoost, evaluates with leave-county-out CV,
-# saves model to models/xgb_model.pkl
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r backend/requirements.txt
 ```
 
-### 3. Frontend
+This installs the backend and ML dependencies used by the Flask API, including
+Flask, pandas, GeoPandas, scikit-learn, XGBoost, and SHAP.
+
+Recommended backend environment: Python 3.12. The live `/api/whatif` counterfactual route was tested in a Python 3.12 environment; older local Python/SHAP/XGBoost combinations may cause that endpoint to fail even if the rest of the backend runs.
+
+### 3. Set up the frontend
 
 ```bash
 cd frontend/heatlens-ui
 npm install
-npm start
-# UI runs on http://localhost:3000
 ```
 
----
+The frontend uses Vite, React, and TypeScript. During development, Vite proxies
+`/api` requests to the Flask backend running on port `5000`.
 
-## Methodology
+## Execution
 
-### Algorithm
-- **Feature engineering**: ~10 core climate features per county-year (heatwave days, hot night counts, consecutive hot streaks, tail percentiles)
-- **Model**: XGBoost regression on county-year panel (~240 observations)
-- **Evaluation**: Leave-county-out cross-validation; baselines include linear regression and a temperature-only threshold
-- **Explainability**: SHAP TreeExplainer
-- **Novelty — Counterfactual SHAP**: when users adjust intervention sliders, we recompute SHAP values on the modified instance and surface the change in feature contributions
+### 1. Start the backend
 
-### Visualization
-- Four coordinated views with shared React state for cross-view interactions
-- What-if simulator with live API calls for real-time intervention testing
+From the project root:
 
----
+```bash
+source .venv/bin/activate
+python3 backend/api/app.py
+```
+
+The backend should start on:
+
+```text
+http://127.0.0.1:5000
+```
+
+You can verify the API is up with:
+
+```bash
+curl http://127.0.0.1:5000/api/health
+```
+
+### 2. Start the frontend
+
+In a second terminal:
+
+```bash
+cd frontend/heatlens-ui
+npm run dev
+```
+
+Vite will print the local frontend URL, usually:
+
+```text
+http://localhost:5173
+```
+
+Open that URL in the browser.
+
+## Demo Instructions
+
+Once both services are running:
+
+1. Open the dashboard in the browser.
+2. Confirm the header shows that the backend is connected.
+3. Use the year selector to switch between available years.
+4. Click counties on the map or in the county list.
+5. Inspect the Feature Detail panel for climate and vulnerability values.
+6. Inspect the SHAP Breakdown panel for the main positive and negative
+   contributors to the current prediction.
+7. Use the What-If Simulator sliders to change AC coverage or tree canopy and
+   observe the updated prediction and SHAP deltas.
+
+## Main Functionality
+
+- **Map Overview:** county-level heat-risk overview for the selected year
+- **Feature Detail:** observed and predicted ED rates plus climate and
+  vulnerability feature values
+- **SHAP Breakdown:** ranked explanation of which features are pushing the
+  selected county prediction upward or downward
+- **What-If Simulator:** intervention testing through the backend counterfactual
+  route when available, with frontend fallback behavior if needed
+
+## Data Notes
+
+This repository includes processed files and ML output snapshots used by the
+demo, including:
+
+- processed county-year panel data in `data/processed/`
+- model output JSON files in `ml/outputs/`
+- frontend snapshot copies in `frontend/heatlens-ui/src/data/mlOutputs/`
+
+Large raw data sources are not bundled in full in this README. The project uses
+derived and processed files already present in the repository so the final demo
+can run with minimal setup.
 
 ## Team
 
-- **A** — Data pipeline + Backend
-- **B** — ML + Algorithm
-- **C** — Frontend + Visualization
-
----
-
-## Status
-
-🚧 Under active development (14-day sprint, see `docs/14day-plan.md`)
-
----
-
-## License
-
-MIT
+- Yan Liang - machine learning, evaluation, counterfactual SHAP
+- Peiyu Lin - data pipeline and backend API
+- Pablo Rodriguez - frontend visualization and linked-view interaction
