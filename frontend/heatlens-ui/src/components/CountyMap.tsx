@@ -1,19 +1,16 @@
-import { geoMercator, geoPath } from "d3";
 import { useEffect, useState } from "react";
 import type { CountySummaryRecord } from "../types/dataTypes";
 
-type CountyGeoFeature = {
-  type: "Feature";
-  properties: {
-    countyName: string;
-    countyFips: string;
-  };
-  geometry: unknown;
+type CountyPathRecord = {
+  countyName: string;
+  countyFips: string;
+  path: string;
 };
 
-type CountyGeoCollection = {
-  type: "FeatureCollection";
-  features: CountyGeoFeature[];
+type CountyPathCollection = {
+  width: number;
+  height: number;
+  counties: CountyPathRecord[];
 };
 
 type CountyMapProps = {
@@ -23,9 +20,15 @@ type CountyMapProps = {
   onCountyChange: (countyFips: string) => void;
 };
 
-const mapWidth = 760;
-const mapHeight = 430;
+type TooltipState = {
+  countyName: string;
+  predictedEdRate: number;
+  riskLevel: string;
+  x: number;
+  y: number;
+};
 
+// The map color scale matches the low / medium / high overview used in the county list.
 function getCountyFill(
   countyFips: string,
   selectedCountyFips: string,
@@ -40,6 +43,7 @@ function getCountyFill(
     return county.countyFips === countyFips && county.year === selectedYear;
   });
 
+  // Gray means this county shape exists in the map file, but not in the current year data.
   if (!countyRecord) {
     return "#2d333b";
   }
@@ -57,24 +61,26 @@ function getCountyFill(
 
 function CountyMap(props: CountyMapProps) {
   const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } = props;
-  const [countyGeoJson, setCountyGeoJson] = useState<CountyGeoCollection | null>(
+  const [countyPaths, setCountyPaths] = useState<CountyPathCollection | null>(
     null
   );
+  const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
   useEffect(() => {
     let ignore = false;
 
-    async function loadCountyData() {
-      const response = await fetch("/data/california-counties.json");
-      const data = (await response.json()) as CountyGeoCollection;
+    async function loadCountyPaths() {
+      const response = await fetch("/data/california-county-paths.json");
+      const data = (await response.json()) as CountyPathCollection;
 
       if (!ignore) {
-        setCountyGeoJson(data);
+        setCountyPaths(data);
       }
     }
 
-    loadCountyData().catch((error) => {
-      console.error("Could not load county boundary file.", error);
+    // The county SVG paths are static, so load them once and reuse them.
+    loadCountyPaths().catch((error) => {
+      console.error("Could not load county path file.", error);
     });
 
     return () => {
@@ -82,58 +88,79 @@ function CountyMap(props: CountyMapProps) {
     };
   }, []);
 
-  if (!countyGeoJson) {
+  if (!countyPaths) {
     return <div className="map-loading">Loading county boundaries...</div>;
   }
 
-  const projection = geoMercator().fitExtent(
-    [
-      [18, 18],
-      [mapWidth - 18, mapHeight - 18],
-    ],
-    countyGeoJson as never
-  );
-
-  const pathBuilder = geoPath(projection);
-
   return (
     <div className="county-map-shell">
-      <svg
-        viewBox={`0 0 ${mapWidth} ${mapHeight}`}
-        className="county-map"
-        role="img"
-        aria-label="California county heat risk map"
-      >
-        {countyGeoJson.features.map((feature) => {
-          const pathValue = pathBuilder(feature as never);
+      <div className="county-map-frame">
+        <svg
+          viewBox={`0 0 ${countyPaths.width} ${countyPaths.height}`}
+          className="county-map"
+          role="img"
+          aria-label="California county heat risk map"
+          preserveAspectRatio="xMidYMid meet"
+          onMouseLeave={() => setTooltip(null)}
+        >
+          {/* Clicking the map is one of the main entry points into the linked dashboard workflow. */}
+          {countyPaths.counties.map((county) => {
+            const countyRecord = countySummaries.find((record) => {
+              return (
+                record.countyFips === county.countyFips &&
+                record.year === selectedYear
+              );
+            });
 
-          if (!pathValue) {
-            return null;
-          }
+            const fill = getCountyFill(
+              county.countyFips,
+              selectedCountyFips,
+              countySummaries,
+              selectedYear
+            );
 
-          const { countyFips, countyName } = feature.properties;
-          const fill = getCountyFill(
-            countyFips,
-            selectedCountyFips,
-            countySummaries,
-            selectedYear
-          );
+            return (
+              <path
+                key={county.countyFips}
+                d={county.path}
+                fill={fill}
+                stroke="#0d1117"
+                strokeWidth={0.8}
+                className="county-shape"
+                onClick={() => onCountyChange(county.countyFips)}
+                onMouseMove={(event) => {
+                  if (!countyRecord) {
+                    setTooltip(null);
+                    return;
+                  }
 
-          return (
-            <path
-              key={countyFips}
-              d={pathValue}
-              fill={fill}
-              stroke="#0d1117"
-              strokeWidth={1}
-              className="county-shape"
-              onClick={() => onCountyChange(countyFips)}
-            >
-              <title>{countyName}</title>
-            </path>
-          );
-        })}
-      </svg>
+                  setTooltip({
+                    countyName: county.countyName,
+                    predictedEdRate: countyRecord.predictedEdRate,
+                    riskLevel: countyRecord.riskLevel,
+                    x: event.clientX,
+                    y: event.clientY,
+                  });
+                }}
+              />
+            );
+          })}
+        </svg>
+
+        {tooltip ? (
+          <div
+            className="map-tooltip"
+            style={{
+              left: `${tooltip.x + 12}px`,
+              top: `${tooltip.y + 12}px`,
+            }}
+          >
+            <strong>{tooltip.countyName}</strong>
+            <span>Predicted ED rate: {tooltip.predictedEdRate.toFixed(1)}</span>
+            <span>Risk level: {tooltip.riskLevel}</span>
+          </div>
+        ) : null}
+      </div>
 
       <div className="map-legend">
         <div className="legend-item">

@@ -1,0 +1,2282 @@
+[
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2020,
+    "predictedEdRate": 7.04,
+    "observedEdRate": 7.8,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2021,
+    "predictedEdRate": 6.57,
+    "observedEdRate": 5.4,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2022,
+    "predictedEdRate": 8.21,
+    "observedEdRate": 8.26,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2023,
+    "predictedEdRate": 5.82,
+    "observedEdRate": 7.38,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Alameda",
+    "countyFips": "06001",
+    "year": 2024,
+    "predictedEdRate": 8.93,
+    "observedEdRate": 7.76,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Alpine",
+    "countyFips": "06003",
+    "year": 2020,
+    "predictedEdRate": 37.0,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Alpine",
+    "countyFips": "06003",
+    "year": 2021,
+    "predictedEdRate": 30.33,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Alpine",
+    "countyFips": "06003",
+    "year": 2022,
+    "predictedEdRate": 17.06,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Alpine",
+    "countyFips": "06003",
+    "year": 2023,
+    "predictedEdRate": 9.83,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Alpine",
+    "countyFips": "06003",
+    "year": 2024,
+    "predictedEdRate": 9.03,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Amador",
+    "countyFips": "06005",
+    "year": 2020,
+    "predictedEdRate": 39.09,
+    "observedEdRate": 36.42,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Amador",
+    "countyFips": "06005",
+    "year": 2021,
+    "predictedEdRate": 47.13,
+    "observedEdRate": 54.02,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Amador",
+    "countyFips": "06005",
+    "year": 2022,
+    "predictedEdRate": 55.8,
+    "observedEdRate": 69.0,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Amador",
+    "countyFips": "06005",
+    "year": 2023,
+    "predictedEdRate": 26.77,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Amador",
+    "countyFips": "06005",
+    "year": 2024,
+    "predictedEdRate": 72.89,
+    "observedEdRate": 85.7,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Butte",
+    "countyFips": "06007",
+    "year": 2020,
+    "predictedEdRate": 34.65,
+    "observedEdRate": 27.45,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Butte",
+    "countyFips": "06007",
+    "year": 2021,
+    "predictedEdRate": 42.05,
+    "observedEdRate": 40.37,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Butte",
+    "countyFips": "06007",
+    "year": 2022,
+    "predictedEdRate": 50.56,
+    "observedEdRate": 34.89,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Butte",
+    "countyFips": "06007",
+    "year": 2023,
+    "predictedEdRate": 33.55,
+    "observedEdRate": 43.53,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Butte",
+    "countyFips": "06007",
+    "year": 2024,
+    "predictedEdRate": 62.94,
+    "observedEdRate": 69.3,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Calaveras",
+    "countyFips": "06009",
+    "year": 2020,
+    "predictedEdRate": 26.23,
+    "observedEdRate": 30.16,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Calaveras",
+    "countyFips": "06009",
+    "year": 2021,
+    "predictedEdRate": 44.1,
+    "observedEdRate": 34.39,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Calaveras",
+    "countyFips": "06009",
+    "year": 2022,
+    "predictedEdRate": 54.62,
+    "observedEdRate": 60.39,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Calaveras",
+    "countyFips": "06009",
+    "year": 2023,
+    "predictedEdRate": 60.19,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Calaveras",
+    "countyFips": "06009",
+    "year": 2024,
+    "predictedEdRate": 73.63,
+    "observedEdRate": 62.55,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Colusa",
+    "countyFips": "06011",
+    "year": 2020,
+    "predictedEdRate": 31.21,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Colusa",
+    "countyFips": "06011",
+    "year": 2021,
+    "predictedEdRate": 37.32,
+    "observedEdRate": 54.25,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Colusa",
+    "countyFips": "06011",
+    "year": 2022,
+    "predictedEdRate": 38.82,
+    "observedEdRate": 55.13,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Colusa",
+    "countyFips": "06011",
+    "year": 2023,
+    "predictedEdRate": 36.1,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Colusa",
+    "countyFips": "06011",
+    "year": 2024,
+    "predictedEdRate": 38.74,
+    "observedEdRate": 55.46,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2020,
+    "predictedEdRate": 10.16,
+    "observedEdRate": 8.91,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2021,
+    "predictedEdRate": 8.75,
+    "observedEdRate": 9.59,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2022,
+    "predictedEdRate": 10.5,
+    "observedEdRate": 13.84,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2023,
+    "predictedEdRate": 9.84,
+    "observedEdRate": 13.06,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Contra Costa",
+    "countyFips": "06013",
+    "year": 2024,
+    "predictedEdRate": 12.0,
+    "observedEdRate": 14.73,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Del Norte",
+    "countyFips": "06015",
+    "year": 2020,
+    "predictedEdRate": 12.21,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Del Norte",
+    "countyFips": "06015",
+    "year": 2021,
+    "predictedEdRate": 12.39,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Del Norte",
+    "countyFips": "06015",
+    "year": 2022,
+    "predictedEdRate": 3.08,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Del Norte",
+    "countyFips": "06015",
+    "year": 2023,
+    "predictedEdRate": 3.0,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Del Norte",
+    "countyFips": "06015",
+    "year": 2024,
+    "predictedEdRate": 6.35,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2020,
+    "predictedEdRate": 12.89,
+    "observedEdRate": 15.86,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2021,
+    "predictedEdRate": 14.4,
+    "observedEdRate": 20.26,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2022,
+    "predictedEdRate": 16.99,
+    "observedEdRate": 33.87,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2023,
+    "predictedEdRate": 13.15,
+    "observedEdRate": 17.31,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "El Dorado",
+    "countyFips": "06017",
+    "year": 2024,
+    "predictedEdRate": 25.35,
+    "observedEdRate": 55.63,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2020,
+    "predictedEdRate": 28.02,
+    "observedEdRate": 20.07,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2021,
+    "predictedEdRate": 30.5,
+    "observedEdRate": 28.28,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2022,
+    "predictedEdRate": 30.32,
+    "observedEdRate": 30.51,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2023,
+    "predictedEdRate": 26.79,
+    "observedEdRate": 28.84,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Fresno",
+    "countyFips": "06019",
+    "year": 2024,
+    "predictedEdRate": 41.95,
+    "observedEdRate": 46.41,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Glenn",
+    "countyFips": "06021",
+    "year": 2020,
+    "predictedEdRate": 43.36,
+    "observedEdRate": 57.45,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Glenn",
+    "countyFips": "06021",
+    "year": 2021,
+    "predictedEdRate": 50.18,
+    "observedEdRate": 47.52,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Glenn",
+    "countyFips": "06021",
+    "year": 2022,
+    "predictedEdRate": 61.46,
+    "observedEdRate": 76.31,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Glenn",
+    "countyFips": "06021",
+    "year": 2023,
+    "predictedEdRate": 36.32,
+    "observedEdRate": 47.49,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Glenn",
+    "countyFips": "06021",
+    "year": 2024,
+    "predictedEdRate": 62.35,
+    "observedEdRate": 74.88,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2020,
+    "predictedEdRate": 15.12,
+    "observedEdRate": 13.04,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2021,
+    "predictedEdRate": 15.12,
+    "observedEdRate": 10.7,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2022,
+    "predictedEdRate": 15.3,
+    "observedEdRate": 15.18,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2023,
+    "predictedEdRate": 15.31,
+    "observedEdRate": 10.1,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Humboldt",
+    "countyFips": "06023",
+    "year": 2024,
+    "predictedEdRate": 21.95,
+    "observedEdRate": 21.04,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2020,
+    "predictedEdRate": 103.74,
+    "observedEdRate": 66.71,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2021,
+    "predictedEdRate": 109.51,
+    "observedEdRate": 103.31,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2022,
+    "predictedEdRate": 120.86,
+    "observedEdRate": 103.85,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2023,
+    "predictedEdRate": 118.06,
+    "observedEdRate": 115.94,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Imperial",
+    "countyFips": "06025",
+    "year": 2024,
+    "predictedEdRate": 124.02,
+    "observedEdRate": 174.73,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Inyo",
+    "countyFips": "06027",
+    "year": 2020,
+    "predictedEdRate": 66.88,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Inyo",
+    "countyFips": "06027",
+    "year": 2021,
+    "predictedEdRate": 91.86,
+    "observedEdRate": 73.15,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Inyo",
+    "countyFips": "06027",
+    "year": 2022,
+    "predictedEdRate": 63.14,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Inyo",
+    "countyFips": "06027",
+    "year": 2023,
+    "predictedEdRate": 56.93,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Inyo",
+    "countyFips": "06027",
+    "year": 2024,
+    "predictedEdRate": 65.46,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2020,
+    "predictedEdRate": 32.2,
+    "observedEdRate": 25.21,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2021,
+    "predictedEdRate": 35.98,
+    "observedEdRate": 34.58,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2022,
+    "predictedEdRate": 34.28,
+    "observedEdRate": 31.16,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2023,
+    "predictedEdRate": 33.87,
+    "observedEdRate": 33.46,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Kern",
+    "countyFips": "06029",
+    "year": 2024,
+    "predictedEdRate": 41.42,
+    "observedEdRate": 55.44,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2020,
+    "predictedEdRate": 22.57,
+    "observedEdRate": 21.26,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2021,
+    "predictedEdRate": 35.46,
+    "observedEdRate": 32.53,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2022,
+    "predictedEdRate": 27.44,
+    "observedEdRate": 26.35,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2023,
+    "predictedEdRate": 24.88,
+    "observedEdRate": 29.14,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Kings",
+    "countyFips": "06031",
+    "year": 2024,
+    "predictedEdRate": 42.68,
+    "observedEdRate": 49.1,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Lake",
+    "countyFips": "06033",
+    "year": 2020,
+    "predictedEdRate": 35.28,
+    "observedEdRate": 30.82,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Lake",
+    "countyFips": "06033",
+    "year": 2021,
+    "predictedEdRate": 40.1,
+    "observedEdRate": 49.08,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Lake",
+    "countyFips": "06033",
+    "year": 2022,
+    "predictedEdRate": 36.93,
+    "observedEdRate": 36.66,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Lake",
+    "countyFips": "06033",
+    "year": 2023,
+    "predictedEdRate": 33.99,
+    "observedEdRate": 22.0,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Lake",
+    "countyFips": "06033",
+    "year": 2024,
+    "predictedEdRate": 62.93,
+    "observedEdRate": 63.63,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Lassen",
+    "countyFips": "06035",
+    "year": 2020,
+    "predictedEdRate": 5.0,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Lassen",
+    "countyFips": "06035",
+    "year": 2021,
+    "predictedEdRate": 5.76,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Lassen",
+    "countyFips": "06035",
+    "year": 2022,
+    "predictedEdRate": 7.03,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Lassen",
+    "countyFips": "06035",
+    "year": 2023,
+    "predictedEdRate": 3.96,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Lassen",
+    "countyFips": "06035",
+    "year": 2024,
+    "predictedEdRate": 7.54,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2020,
+    "predictedEdRate": 18.57,
+    "observedEdRate": 7.86,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2021,
+    "predictedEdRate": 13.44,
+    "observedEdRate": 7.7,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2022,
+    "predictedEdRate": 25.77,
+    "observedEdRate": 11.86,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2023,
+    "predictedEdRate": 10.91,
+    "observedEdRate": 8.35,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Los Angeles",
+    "countyFips": "06037",
+    "year": 2024,
+    "predictedEdRate": 18.6,
+    "observedEdRate": 13.45,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2020,
+    "predictedEdRate": 42.15,
+    "observedEdRate": 22.38,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2021,
+    "predictedEdRate": 48.69,
+    "observedEdRate": 34.47,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2022,
+    "predictedEdRate": 44.08,
+    "observedEdRate": 31.12,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2023,
+    "predictedEdRate": 39.83,
+    "observedEdRate": 22.13,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Madera",
+    "countyFips": "06039",
+    "year": 2024,
+    "predictedEdRate": 45.11,
+    "observedEdRate": 37.14,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2020,
+    "predictedEdRate": 11.43,
+    "observedEdRate": 6.11,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2021,
+    "predictedEdRate": 10.04,
+    "observedEdRate": 5.62,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2022,
+    "predictedEdRate": 11.75,
+    "observedEdRate": 5.83,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2023,
+    "predictedEdRate": 10.38,
+    "observedEdRate": 5.89,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Marin",
+    "countyFips": "06041",
+    "year": 2024,
+    "predictedEdRate": 18.08,
+    "observedEdRate": 8.71,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Mariposa",
+    "countyFips": "06043",
+    "year": 2020,
+    "predictedEdRate": 51.35,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Mariposa",
+    "countyFips": "06043",
+    "year": 2021,
+    "predictedEdRate": 56.89,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Mariposa",
+    "countyFips": "06043",
+    "year": 2022,
+    "predictedEdRate": 58.38,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Mariposa",
+    "countyFips": "06043",
+    "year": 2023,
+    "predictedEdRate": 48.04,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Mariposa",
+    "countyFips": "06043",
+    "year": 2024,
+    "predictedEdRate": 85.61,
+    "observedEdRate": 120.14,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2020,
+    "predictedEdRate": 23.16,
+    "observedEdRate": 32.14,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2021,
+    "predictedEdRate": 30.03,
+    "observedEdRate": 18.54,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2022,
+    "predictedEdRate": 22.14,
+    "observedEdRate": 24.65,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2023,
+    "predictedEdRate": 19.05,
+    "observedEdRate": 15.26,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Mendocino",
+    "countyFips": "06045",
+    "year": 2024,
+    "predictedEdRate": 36.61,
+    "observedEdRate": 39.05,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2020,
+    "predictedEdRate": 24.97,
+    "observedEdRate": 18.79,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2021,
+    "predictedEdRate": 26.87,
+    "observedEdRate": 29.07,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2022,
+    "predictedEdRate": 29.64,
+    "observedEdRate": 34.69,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2023,
+    "predictedEdRate": 27.27,
+    "observedEdRate": 27.86,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Merced",
+    "countyFips": "06047",
+    "year": 2024,
+    "predictedEdRate": 35.08,
+    "observedEdRate": 46.9,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Modoc",
+    "countyFips": "06049",
+    "year": 2020,
+    "predictedEdRate": 31.65,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Modoc",
+    "countyFips": "06049",
+    "year": 2021,
+    "predictedEdRate": 36.51,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Modoc",
+    "countyFips": "06049",
+    "year": 2022,
+    "predictedEdRate": 46.58,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Modoc",
+    "countyFips": "06049",
+    "year": 2023,
+    "predictedEdRate": 43.25,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Modoc",
+    "countyFips": "06049",
+    "year": 2024,
+    "predictedEdRate": 45.56,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Mono",
+    "countyFips": "06051",
+    "year": 2020,
+    "predictedEdRate": 5.18,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Mono",
+    "countyFips": "06051",
+    "year": 2021,
+    "predictedEdRate": 5.64,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Mono",
+    "countyFips": "06051",
+    "year": 2022,
+    "predictedEdRate": 5.4,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Mono",
+    "countyFips": "06051",
+    "year": 2023,
+    "predictedEdRate": 4.14,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Mono",
+    "countyFips": "06051",
+    "year": 2024,
+    "predictedEdRate": 7.13,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2020,
+    "predictedEdRate": 7.2,
+    "observedEdRate": 10.28,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2021,
+    "predictedEdRate": 5.91,
+    "observedEdRate": 4.52,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2022,
+    "predictedEdRate": 6.47,
+    "observedEdRate": 11.11,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2023,
+    "predictedEdRate": 6.1,
+    "observedEdRate": 6.6,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Monterey",
+    "countyFips": "06053",
+    "year": 2024,
+    "predictedEdRate": 7.19,
+    "observedEdRate": 11.96,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2020,
+    "predictedEdRate": 16.6,
+    "observedEdRate": 13.17,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2021,
+    "predictedEdRate": 13.39,
+    "observedEdRate": 8.06,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2022,
+    "predictedEdRate": 23.76,
+    "observedEdRate": 18.01,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2023,
+    "predictedEdRate": 12.85,
+    "observedEdRate": 17.22,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Napa",
+    "countyFips": "06055",
+    "year": 2024,
+    "predictedEdRate": 20.05,
+    "observedEdRate": 28.85,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2020,
+    "predictedEdRate": 16.24,
+    "observedEdRate": 10.52,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2021,
+    "predictedEdRate": 19.71,
+    "observedEdRate": 19.52,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2022,
+    "predictedEdRate": 23.99,
+    "observedEdRate": 15.16,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2023,
+    "predictedEdRate": 30.25,
+    "observedEdRate": 22.29,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Nevada",
+    "countyFips": "06057",
+    "year": 2024,
+    "predictedEdRate": 48.76,
+    "observedEdRate": 44.47,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2020,
+    "predictedEdRate": 7.98,
+    "observedEdRate": 7.23,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2021,
+    "predictedEdRate": 4.73,
+    "observedEdRate": 5.07,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2022,
+    "predictedEdRate": 9.59,
+    "observedEdRate": 8.63,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2023,
+    "predictedEdRate": 4.01,
+    "observedEdRate": 5.9,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Orange",
+    "countyFips": "06059",
+    "year": 2024,
+    "predictedEdRate": 9.56,
+    "observedEdRate": 9.95,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2020,
+    "predictedEdRate": 9.08,
+    "observedEdRate": 19.37,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2021,
+    "predictedEdRate": 13.07,
+    "observedEdRate": 15.9,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2022,
+    "predictedEdRate": 14.68,
+    "observedEdRate": 20.27,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2023,
+    "predictedEdRate": 11.28,
+    "observedEdRate": 19.06,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Placer",
+    "countyFips": "06061",
+    "year": 2024,
+    "predictedEdRate": 16.93,
+    "observedEdRate": 33.47,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Plumas",
+    "countyFips": "06063",
+    "year": 2020,
+    "predictedEdRate": 27.41,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Plumas",
+    "countyFips": "06063",
+    "year": 2021,
+    "predictedEdRate": 41.68,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Plumas",
+    "countyFips": "06063",
+    "year": 2022,
+    "predictedEdRate": 41.9,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Plumas",
+    "countyFips": "06063",
+    "year": 2023,
+    "predictedEdRate": 37.87,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Plumas",
+    "countyFips": "06063",
+    "year": 2024,
+    "predictedEdRate": 69.07,
+    "observedEdRate": 59.82,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2020,
+    "predictedEdRate": 34.4,
+    "observedEdRate": 24.74,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2021,
+    "predictedEdRate": 35.63,
+    "observedEdRate": 26.5,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2022,
+    "predictedEdRate": 41.55,
+    "observedEdRate": 33.43,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2023,
+    "predictedEdRate": 36.79,
+    "observedEdRate": 30.31,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Riverside",
+    "countyFips": "06065",
+    "year": 2024,
+    "predictedEdRate": 54.88,
+    "observedEdRate": 44.11,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2020,
+    "predictedEdRate": 19.87,
+    "observedEdRate": 14.43,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2021,
+    "predictedEdRate": 13.48,
+    "observedEdRate": 15.39,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2022,
+    "predictedEdRate": 27.89,
+    "observedEdRate": 17.69,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2023,
+    "predictedEdRate": 12.97,
+    "observedEdRate": 19.75,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Sacramento",
+    "countyFips": "06067",
+    "year": 2024,
+    "predictedEdRate": 30.03,
+    "observedEdRate": 27.36,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Benito",
+    "countyFips": "06069",
+    "year": 2020,
+    "predictedEdRate": 7.89,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Benito",
+    "countyFips": "06069",
+    "year": 2021,
+    "predictedEdRate": 9.86,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Benito",
+    "countyFips": "06069",
+    "year": 2022,
+    "predictedEdRate": 23.13,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Benito",
+    "countyFips": "06069",
+    "year": 2023,
+    "predictedEdRate": 5.55,
+    "observedEdRate": null,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Benito",
+    "countyFips": "06069",
+    "year": 2024,
+    "predictedEdRate": 15.32,
+    "observedEdRate": 19.54,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2020,
+    "predictedEdRate": 27.92,
+    "observedEdRate": 18.34,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2021,
+    "predictedEdRate": 28.2,
+    "observedEdRate": 19.55,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2022,
+    "predictedEdRate": 28.82,
+    "observedEdRate": 23.66,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2023,
+    "predictedEdRate": 26.64,
+    "observedEdRate": 21.95,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Bernardino",
+    "countyFips": "06071",
+    "year": 2024,
+    "predictedEdRate": 34.58,
+    "observedEdRate": 33.23,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2020,
+    "predictedEdRate": 11.51,
+    "observedEdRate": 8.01,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2021,
+    "predictedEdRate": 8.11,
+    "observedEdRate": 7.55,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2022,
+    "predictedEdRate": 9.14,
+    "observedEdRate": 9.97,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2023,
+    "predictedEdRate": 8.9,
+    "observedEdRate": 7.26,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Diego",
+    "countyFips": "06073",
+    "year": 2024,
+    "predictedEdRate": 12.14,
+    "observedEdRate": 13.71,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2020,
+    "predictedEdRate": 3.26,
+    "observedEdRate": 5.85,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2021,
+    "predictedEdRate": 3.26,
+    "observedEdRate": 3.23,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2022,
+    "predictedEdRate": 3.9,
+    "observedEdRate": 3.46,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2023,
+    "predictedEdRate": 4.6,
+    "observedEdRate": 2.89,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Francisco",
+    "countyFips": "06075",
+    "year": 2024,
+    "predictedEdRate": 5.4,
+    "observedEdRate": 4.16,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2020,
+    "predictedEdRate": 19.66,
+    "observedEdRate": 17.08,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2021,
+    "predictedEdRate": 11.51,
+    "observedEdRate": 18.58,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2022,
+    "predictedEdRate": 26.43,
+    "observedEdRate": 23.34,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2023,
+    "predictedEdRate": 26.67,
+    "observedEdRate": 24.77,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Joaquin",
+    "countyFips": "06077",
+    "year": 2024,
+    "predictedEdRate": 27.23,
+    "observedEdRate": 30.63,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2020,
+    "predictedEdRate": 22.57,
+    "observedEdRate": 12.56,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2021,
+    "predictedEdRate": 21.9,
+    "observedEdRate": 12.68,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2022,
+    "predictedEdRate": 29.66,
+    "observedEdRate": 19.2,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2023,
+    "predictedEdRate": 17.03,
+    "observedEdRate": 17.56,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "San Luis Obispo",
+    "countyFips": "06079",
+    "year": 2024,
+    "predictedEdRate": 34.92,
+    "observedEdRate": 13.03,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2020,
+    "predictedEdRate": 2.72,
+    "observedEdRate": 5.66,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2021,
+    "predictedEdRate": 2.93,
+    "observedEdRate": 3.22,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2022,
+    "predictedEdRate": 4.44,
+    "observedEdRate": 7.32,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2023,
+    "predictedEdRate": 4.27,
+    "observedEdRate": 4.35,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "San Mateo",
+    "countyFips": "06081",
+    "year": 2024,
+    "predictedEdRate": 4.19,
+    "observedEdRate": 4.6,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2020,
+    "predictedEdRate": 8.31,
+    "observedEdRate": 4.43,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2021,
+    "predictedEdRate": 8.76,
+    "observedEdRate": 4.44,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2022,
+    "predictedEdRate": 10.44,
+    "observedEdRate": 9.59,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2023,
+    "predictedEdRate": 9.89,
+    "observedEdRate": 5.35,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Barbara",
+    "countyFips": "06083",
+    "year": 2024,
+    "predictedEdRate": 14.38,
+    "observedEdRate": 7.02,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2020,
+    "predictedEdRate": 7.3,
+    "observedEdRate": 6.25,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2021,
+    "predictedEdRate": 4.73,
+    "observedEdRate": 5.88,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2022,
+    "predictedEdRate": 7.73,
+    "observedEdRate": 8.84,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2023,
+    "predictedEdRate": 4.06,
+    "observedEdRate": 7.12,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Clara",
+    "countyFips": "06085",
+    "year": 2024,
+    "predictedEdRate": 8.47,
+    "observedEdRate": 10.89,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2020,
+    "predictedEdRate": 4.29,
+    "observedEdRate": 7.53,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2021,
+    "predictedEdRate": 1.38,
+    "observedEdRate": 4.76,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2022,
+    "predictedEdRate": 5.9,
+    "observedEdRate": 11.3,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2023,
+    "predictedEdRate": 2.4,
+    "observedEdRate": 7.31,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Santa Cruz",
+    "countyFips": "06087",
+    "year": 2024,
+    "predictedEdRate": 3.21,
+    "observedEdRate": 5.92,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2020,
+    "predictedEdRate": 28.72,
+    "observedEdRate": 21.17,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2021,
+    "predictedEdRate": 54.67,
+    "observedEdRate": 50.64,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2022,
+    "predictedEdRate": 46.28,
+    "observedEdRate": 40.64,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2023,
+    "predictedEdRate": 35.13,
+    "observedEdRate": 45.59,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Shasta",
+    "countyFips": "06089",
+    "year": 2024,
+    "predictedEdRate": 49.97,
+    "observedEdRate": 50.14,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Sierra",
+    "countyFips": "06091",
+    "year": 2020,
+    "predictedEdRate": 21.42,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sierra",
+    "countyFips": "06091",
+    "year": 2021,
+    "predictedEdRate": 20.4,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sierra",
+    "countyFips": "06091",
+    "year": 2022,
+    "predictedEdRate": 30.33,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sierra",
+    "countyFips": "06091",
+    "year": 2023,
+    "predictedEdRate": 30.04,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sierra",
+    "countyFips": "06091",
+    "year": 2024,
+    "predictedEdRate": 30.02,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Siskiyou",
+    "countyFips": "06093",
+    "year": 2020,
+    "predictedEdRate": 28.52,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Siskiyou",
+    "countyFips": "06093",
+    "year": 2021,
+    "predictedEdRate": 52.09,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Siskiyou",
+    "countyFips": "06093",
+    "year": 2022,
+    "predictedEdRate": 38.85,
+    "observedEdRate": 33.01,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Siskiyou",
+    "countyFips": "06093",
+    "year": 2023,
+    "predictedEdRate": 32.68,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Siskiyou",
+    "countyFips": "06093",
+    "year": 2024,
+    "predictedEdRate": 60.59,
+    "observedEdRate": 55.08,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2020,
+    "predictedEdRate": 19.15,
+    "observedEdRate": 14.69,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2021,
+    "predictedEdRate": 18.06,
+    "observedEdRate": 13.65,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2022,
+    "predictedEdRate": 33.95,
+    "observedEdRate": 16.65,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2023,
+    "predictedEdRate": 17.3,
+    "observedEdRate": 14.05,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Solano",
+    "countyFips": "06095",
+    "year": 2024,
+    "predictedEdRate": 29.48,
+    "observedEdRate": 22.1,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2020,
+    "predictedEdRate": 12.62,
+    "observedEdRate": 11.38,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2021,
+    "predictedEdRate": 10.16,
+    "observedEdRate": 8.91,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2022,
+    "predictedEdRate": 13.42,
+    "observedEdRate": 13.38,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2023,
+    "predictedEdRate": 12.11,
+    "observedEdRate": 13.56,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Sonoma",
+    "countyFips": "06097",
+    "year": 2024,
+    "predictedEdRate": 16.71,
+    "observedEdRate": 21.36,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2020,
+    "predictedEdRate": 19.76,
+    "observedEdRate": 24.08,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2021,
+    "predictedEdRate": 19.85,
+    "observedEdRate": 28.44,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2022,
+    "predictedEdRate": 27.12,
+    "observedEdRate": 34.23,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2023,
+    "predictedEdRate": 16.94,
+    "observedEdRate": 31.31,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Stanislaus",
+    "countyFips": "06099",
+    "year": 2024,
+    "predictedEdRate": 31.03,
+    "observedEdRate": 43.05,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2020,
+    "predictedEdRate": 36.2,
+    "observedEdRate": 32.72,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2021,
+    "predictedEdRate": 46.28,
+    "observedEdRate": 58.95,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2022,
+    "predictedEdRate": 62.58,
+    "observedEdRate": 51.52,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2023,
+    "predictedEdRate": 31.46,
+    "observedEdRate": 24.21,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tehama",
+    "countyFips": "06103",
+    "year": 2024,
+    "predictedEdRate": 58.02,
+    "observedEdRate": 50.31,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Trinity",
+    "countyFips": "06105",
+    "year": 2020,
+    "predictedEdRate": 44.07,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Trinity",
+    "countyFips": "06105",
+    "year": 2021,
+    "predictedEdRate": 62.35,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Trinity",
+    "countyFips": "06105",
+    "year": 2022,
+    "predictedEdRate": 54.9,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Trinity",
+    "countyFips": "06105",
+    "year": 2023,
+    "predictedEdRate": 47.85,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Trinity",
+    "countyFips": "06105",
+    "year": 2024,
+    "predictedEdRate": 73.49,
+    "observedEdRate": null,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2020,
+    "predictedEdRate": 22.61,
+    "observedEdRate": 21.87,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2021,
+    "predictedEdRate": 24.94,
+    "observedEdRate": 29.84,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2022,
+    "predictedEdRate": 19.34,
+    "observedEdRate": 31.27,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2023,
+    "predictedEdRate": 19.14,
+    "observedEdRate": 29.81,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tulare",
+    "countyFips": "06107",
+    "year": 2024,
+    "predictedEdRate": 29.94,
+    "observedEdRate": 49.81,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2020,
+    "predictedEdRate": 27.03,
+    "observedEdRate": null,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2021,
+    "predictedEdRate": 32.55,
+    "observedEdRate": 22.78,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2022,
+    "predictedEdRate": 46.25,
+    "observedEdRate": 33.28,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2023,
+    "predictedEdRate": 35.81,
+    "observedEdRate": 33.28,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Tuolumne",
+    "countyFips": "06109",
+    "year": 2024,
+    "predictedEdRate": 74.39,
+    "observedEdRate": 69.81,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2020,
+    "predictedEdRate": 9.03,
+    "observedEdRate": 11.47,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2021,
+    "predictedEdRate": 6.71,
+    "observedEdRate": 6.02,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2022,
+    "predictedEdRate": 11.48,
+    "observedEdRate": 13.21,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2023,
+    "predictedEdRate": 7.79,
+    "observedEdRate": 10.49,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Ventura",
+    "countyFips": "06111",
+    "year": 2024,
+    "predictedEdRate": 11.09,
+    "observedEdRate": 13.02,
+    "riskLevel": "low"
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2020,
+    "predictedEdRate": 21.87,
+    "observedEdRate": 24.16,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2021,
+    "predictedEdRate": 23.55,
+    "observedEdRate": 16.88,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2022,
+    "predictedEdRate": 33.38,
+    "observedEdRate": 29.98,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2023,
+    "predictedEdRate": 33.77,
+    "observedEdRate": 35.67,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yolo",
+    "countyFips": "06113",
+    "year": 2024,
+    "predictedEdRate": 38.09,
+    "observedEdRate": 37.45,
+    "riskLevel": "high"
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2020,
+    "predictedEdRate": 16.9,
+    "observedEdRate": 16.84,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2021,
+    "predictedEdRate": 22.65,
+    "observedEdRate": 29.1,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2022,
+    "predictedEdRate": 30.6,
+    "observedEdRate": 28.67,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2023,
+    "predictedEdRate": 25.35,
+    "observedEdRate": 51.7,
+    "riskLevel": "medium"
+  },
+  {
+    "countyName": "Yuba",
+    "countyFips": "06115",
+    "year": 2024,
+    "predictedEdRate": 41.04,
+    "observedEdRate": 68.03,
+    "riskLevel": "high"
+  }
+]

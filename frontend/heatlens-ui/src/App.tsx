@@ -1,72 +1,130 @@
-import { useState } from "react";
-import {
-  countyDetailsMock,
-  countySummariesMock,
-  shapBreakdownsMock,
-} from "./data/mockData";
+import { useEffect, useState } from "react";
 import CountySelect from "./components/CountySelect";
+import HelpPanel from "./components/HelpPanel";
 import YearSelect from "./components/YearSelect";
+import {
+  getBackendHealth,
+  getLiveDashboardData,
+} from "./services/backendApi";
+import {
+  getAvailableYears,
+  getCountyOptions,
+  getCountySummaries,
+  getCurrentDataSource,
+  getDashboardData,
+  getDefaultSelection,
+  getFirstCountyForYear,
+  isCountyAvailable,
+} from "./services/mockDataService";
 import type { AppSelection } from "./types/stateTypes";
 import FeatureDetail from "./views/FeatureDetail";
 import MapOverview from "./views/MapOverview";
 import ShapBreakdown from "./views/ShapBreakdown";
 import WhatIfSimulator from "./views/WhatIfSimulator";
 
+type BackendMode = "checking" | "available" | "fallback";
+
 function App() {
-  const defaultSelection: AppSelection = {
-    selectedCountyFips: countySummariesMock[0].countyFips,
-    selectedYear: countySummariesMock[0].year,
-  };
+  const defaultSelection = getDefaultSelection();
+  const localDashboardData = getDashboardData(defaultSelection);
 
   const [selection, setSelection] = useState<AppSelection>(defaultSelection);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [backendMode, setBackendMode] = useState<BackendMode>("checking");
+  const [counterfactualAvailable, setCounterfactualAvailable] = useState(false);
+  const [dashboardData, setDashboardData] = useState(localDashboardData);
 
-  // Keeping this lookup close to App for now makes the early state flow easier
-  // to follow before we split more logic into separate files.
-  const selectedCounty = countySummariesMock.find((county) => {
-    return (
-      county.countyFips === selection.selectedCountyFips &&
-      county.year === selection.selectedYear
-    );
-  });
-
-  if (!selectedCounty) {
-    return <main className="app-shell">Selection could not be loaded.</main>;
+  if (!dashboardData) {
+    return <main className="app-shell">Mock dashboard data could not be loaded.</main>;
   }
 
-  const selectedCountyDetail = countyDetailsMock.find((county) => {
-    return (
-      county.countyFips === selection.selectedCountyFips &&
-      county.year === selection.selectedYear
-    );
-  });
+  const { selectedCounty, selectedCountyDetail, selectedShapBreakdown } =
+    dashboardData;
 
-  if (!selectedCountyDetail) {
-    return <main className="app-shell">County detail could not be loaded.</main>;
-  }
+  const yearOptions = getAvailableYears();
+  const countyOptions = getCountyOptions(selection.selectedYear);
+  const visibleCountySummaries = getCountySummaries(selectedCounty.year);
+  const currentDataSource = getCurrentDataSource();
 
-  const selectedShapBreakdown = shapBreakdownsMock.find((county) => {
-    return (
-      county.countyFips === selection.selectedCountyFips &&
-      county.year === selection.selectedYear
-    );
-  });
+  // This is the API availability check behind the backend-connected version of the dashboard.
+  useEffect(() => {
+    let isCancelled = false;
 
-  if (!selectedShapBreakdown) {
-    return <main className="app-shell">SHAP detail could not be loaded.</main>;
-  }
+    async function checkBackend() {
+      try {
+        const health = await getBackendHealth();
 
-  const yearOptions = Array.from(
-    new Set(countySummariesMock.map((county) => county.year))
-  ).sort();
+        if (isCancelled) {
+          return;
+        }
 
-  const countyOptions = countySummariesMock
-    .filter((county) => county.year === selection.selectedYear)
-    .map((county) => ({
-      countyFips: county.countyFips,
-      countyName: county.countyName,
-    }));
+        setBackendMode("available");
+        setCounterfactualAvailable(Boolean(health.counterfactualAvailable));
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+
+        setBackendMode("fallback");
+        setCounterfactualAvailable(false);
+      }
+    }
+
+    // Start in backend mode when the API is up, but keep the app usable if it is not.
+    checkBackend();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isCancelled = false;
+    const fallbackDashboardData = getDashboardData(selection);
+
+    if (!fallbackDashboardData) {
+      return;
+    }
+
+    if (backendMode !== "available") {
+      setDashboardData(fallbackDashboardData);
+      return;
+    }
+
+    async function loadLiveSelection() {
+      try {
+        const liveData = await getLiveDashboardData(selection);
+
+        if (isCancelled) {
+          return;
+        }
+
+        setDashboardData(liveData);
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+
+        setDashboardData(fallbackDashboardData);
+        setBackendMode("fallback");
+        setCounterfactualAvailable(false);
+      }
+    }
+
+    // Pull the selected county from the API when possible, otherwise keep the local copy.
+    loadLiveSelection();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [backendMode, selection]);
 
   function handleCountyChange(nextCountyFips: string) {
+    if (!isCountyAvailable(nextCountyFips, selection.selectedYear)) {
+      return;
+    }
+
+    // One county selection drives all four views so the dashboard stays linked.
     setSelection((currentSelection) => ({
       ...currentSelection,
       selectedCountyFips: nextCountyFips,
@@ -74,10 +132,9 @@ function App() {
   }
 
   function handleYearChange(nextYear: number) {
-    const firstCountyInYear = countySummariesMock.find((county) => {
-      return county.year === nextYear;
-    });
+    const firstCountyInYear = getFirstCountyForYear(nextYear);
 
+    // Reset to a valid county when the year changes so the selection never points to missing data.
     setSelection({
       selectedYear: nextYear,
       selectedCountyFips:
@@ -87,17 +144,17 @@ function App() {
 
   return (
     <main className="app-shell">
-      <section className="top-bar">
-        <div>
+      <header className="app-header">
+        <div className="header-title">
           <p className="eyebrow">ECS 273 Final Project</p>
           <h1>HeatLens</h1>
           <p className="hero-copy">
-            Mock frontend dashboard for exploring county heat-health risk,
-            model explanations, and simple intervention scenarios.
+            Explore county heat-health risk, explanation signals, and simple
+            intervention scenarios in one workspace.
           </p>
         </div>
 
-        <div className="toolbar-card">
+        <div className="header-controls">
           <div className="control-row">
             <YearSelect
               years={yearOptions}
@@ -106,53 +163,69 @@ function App() {
             />
             <CountySelect
               counties={countyOptions}
-              selectedCountyFips={selection.selectedCountyFips}
+              selectedCountyFips={selectedCounty.countyFips}
               onChange={handleCountyChange}
             />
+            <button
+              type="button"
+              className="help-button"
+              onClick={() => setIsHelpOpen(true)}
+            >
+              Help
+            </button>
           </div>
 
-          <div className="selection-summary">
-            <div className="status-card">
-              <h2>Selected County</h2>
-              <p>
-                <strong>{selectedCounty.countyName}</strong> in{" "}
-                <strong>{selectedCounty.year}</strong>
-              </p>
-              <p>
-                Predicted ED rate:{" "}
-                <strong>{selectedCounty.predictedEdRate.toFixed(1)}</strong>
-              </p>
-            </div>
-
-            <div className="status-card">
-              <h2>How To Read This</h2>
-              <p>1. Pick a county and year.</p>
-              <p>2. Check its features and SHAP drivers.</p>
-              <p>3. Try an intervention in the simulator.</p>
-            </div>
+          <div className="toolbar-summary">
+            <span>
+              Source{" "}
+              <strong>
+                {backendMode === "available"
+                  ? "Backend + ML outputs"
+                  : currentDataSource === "mlExport"
+                    ? "ML export"
+                    : "Mock data"}
+              </strong>
+            </span>
+            <span>
+              Predicted ED rate{" "}
+              <strong>{selectedCounty.predictedEdRate.toFixed(1)}</strong>
+            </span>
           </div>
         </div>
-      </section>
+      </header>
 
-      <section className="dashboard-grid">
-        <div className="map-column">
+      <section className="workspace-grid">
+        <div className="workspace-pane map-pane">
           <MapOverview
-            countySummaries={countySummariesMock}
-            selectedCountyFips={selection.selectedCountyFips}
-            selectedYear={selection.selectedYear}
+            countySummaries={visibleCountySummaries}
+            selectedCountyFips={selectedCounty.countyFips}
+            selectedYear={selectedCounty.year}
             onCountyChange={handleCountyChange}
           />
         </div>
 
-        <div className="side-column">
+        <div className="workspace-pane feature-pane">
           <FeatureDetail countyDetail={selectedCountyDetail} />
+        </div>
+
+        <div className="workspace-pane shap-pane">
           <ShapBreakdown shapBreakdown={selectedShapBreakdown} />
+        </div>
+
+        <div className="workspace-pane simulator-pane">
+          <WhatIfSimulator
+            countyDetail={selectedCountyDetail}
+            shapBreakdown={selectedShapBreakdown}
+            useLiveWhatIf={backendMode === "available" && counterfactualAvailable}
+          />
         </div>
       </section>
 
-      <WhatIfSimulator
-        countyDetail={selectedCountyDetail}
-        shapBreakdown={selectedShapBreakdown}
+      <HelpPanel
+        isOpen={isHelpOpen}
+        onClose={() => {
+          setIsHelpOpen(false);
+        }}
       />
     </main>
   );

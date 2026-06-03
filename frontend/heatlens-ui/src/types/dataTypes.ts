@@ -1,3 +1,4 @@
+// These types match the shared data shape used across the map, detail, SHAP, and simulator views.
 export type RiskLevel = "low" | "medium" | "high";
 
 export type CountySummaryRecord = {
@@ -34,4 +35,26 @@ export type ShapBreakdownRecord = {
   baseValue: number;
   prediction: number;
   shapValues: ShapValueRecord[];
+};
+
+export type ShapDeltaRecord = {
+  feature: string;
+  delta: number;
+};
+
+export type CounterfactualRecord = {
+  countyName: string;
+  countyFips: string;
+  year: number;
+  originalPrediction: number;
+  updatedPrediction: number;
+  predictionDelta: number;
+  interventions: {
+    acCoverageChange?: number;
+    treeCanopyChange?: number;
+  };
+  baseValue: number;
+  originalShapValues: ShapValueRecord[];
+  updatedShapValues: ShapValueRecord[];
+  shapDelta: ShapDeltaRecord[];
 };
