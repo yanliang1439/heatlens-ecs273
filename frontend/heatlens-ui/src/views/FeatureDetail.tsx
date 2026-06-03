@@ -1,5 +1,9 @@
 import type { CountyDetailRecord } from "../types/dataTypes";
-import { formatFeatureLabel, formatFeatureValue } from "../utils/formatters";
+import {
+  formatFeatureLabel,
+  formatFeatureValue,
+  getFeatureFillPercent,
+} from "../utils/formatters";
 
 type FeatureDetailProps = {
   countyDetail: CountyDetailRecord;
@@ -23,11 +27,6 @@ function FeatureDetail(props: FeatureDetailProps) {
     label: formatFeatureLabel(featureName),
     value,
   }));
-
-  // This panel splits the selected county into climate drivers and vulnerability drivers.
-  const allFeatureValues = [...climateFeatures, ...vulnerabilityFeatures];
-  // Use one scale so the bars stay visually comparable across both groups.
-  const maxValue = Math.max(...allFeatureValues.map((feature) => feature.value));
 
   return (
     <section className="view-panel">
@@ -73,7 +72,10 @@ function FeatureDetail(props: FeatureDetailProps) {
                       <div
                         className="feature-meter-fill climate-fill"
                         style={{
-                          width: `${(feature.value / maxValue) * 100}%`,
+                          width: `${getFeatureFillPercent(
+                            feature.featureName,
+                            feature.value
+                          )}%`,
                         }}
                       />
                     </div>
@@ -100,7 +102,10 @@ function FeatureDetail(props: FeatureDetailProps) {
                       <div
                         className="feature-meter-fill vulnerability-fill"
                         style={{
-                          width: `${(feature.value / maxValue) * 100}%`,
+                          width: `${getFeatureFillPercent(
+                            feature.featureName,
+                            feature.value
+                          )}%`,
                         }}
                       />
                     </div>

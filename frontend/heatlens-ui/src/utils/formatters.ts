@@ -54,3 +54,31 @@ export function formatFeatureValue(
 
   return value.toFixed(1);
 }
+
+export function getFeatureFillPercent(
+  featureName: string,
+  value: number
+): number {
+  // The bars in View 2 should read like rough context within a sensible range,
+  // not compete against the single biggest raw number in the panel.
+  const featureRanges: Record<string, { min: number; max: number }> = {
+    summerAvgMax: { min: 60, max: 120 },
+    tailPercentileTemp: { min: 80, max: 130 },
+    heatwaveDays: { min: 0, max: 900 },
+    warmNightCount: { min: 0, max: 800 },
+    consecutiveHotDays: { min: 0, max: 120 },
+    elderlyPct: { min: 0, max: 100 },
+    povertyPct: { min: 0, max: 100 },
+    acCoverage: { min: 0, max: 100 },
+    treeCanopy: { min: 0, max: 100 },
+  };
+
+  const range = featureRanges[featureName];
+
+  if (!range) {
+    return Math.max(0, Math.min(value, 100));
+  }
+
+  const normalized = ((value - range.min) / (range.max - range.min)) * 100;
+  return Math.max(0, Math.min(normalized, 100));
+}
