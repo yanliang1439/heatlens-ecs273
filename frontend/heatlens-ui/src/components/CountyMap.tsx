@@ -1,5 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { geoMercator, geoPath, scaleOrdinal } from "d3";
+import {
+  geoMercator,
+  geoPath,
+  scaleLinear,
+  scaleOrdinal,
+  scaleSqrt,
+} from "d3";
 import type { CountySummaryRecord } from "../types/dataTypes";
 
 type CountyGeometry = {
@@ -26,6 +32,7 @@ type CountyMapProps = {
   selectedCountyFips: string;
   selectedYear: number;
   onCountyChange: (countyFips: string) => void;
+  mapMode: "riskLevel" | "predictedEdRate";
 };
 
 type TooltipState = {
@@ -55,7 +62,9 @@ function getCountyFill(
   countyFips: string,
   selectedCountyFips: string,
   countySummaries: CountySummaryRecord[],
-  selectedYear: number
+  selectedYear: number,
+  mapMode: "riskLevel" | "predictedEdRate",
+  predictedScale: (value: number) => string
 ) {
   const riskColorScale = scaleOrdinal<string, string>()
     .domain(["high", "medium", "low"])
@@ -74,11 +83,21 @@ function getCountyFill(
     return "#2d333b";
   }
 
+  if (mapMode === "predictedEdRate") {
+    return predictedScale(countyRecord.predictedEdRate);
+  }
+
   return riskColorScale(countyRecord.riskLevel);
 }
 
 function CountyMap(props: CountyMapProps) {
-  const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } = props;
+  const {
+    countySummaries,
+    selectedCountyFips,
+    selectedYear,
+    onCountyChange,
+    mapMode,
+  } = props;
   const [countyFeatures, setCountyFeatures] = useState<CountyFeatureCollection | null>(
     null
   );
@@ -115,6 +134,41 @@ function CountyMap(props: CountyMapProps) {
 
     return lookup;
   }, [countySummaries]);
+
+  const visibleCountySummaries = useMemo(() => {
+    return countySummaries.filter((county) => county.year === selectedYear);
+  }, [countySummaries, selectedYear]);
+
+  const predictedExtent = useMemo(() => {
+    const predictedValues = visibleCountySummaries.map(
+      (county) => county.predictedEdRate
+    );
+    const min = Math.min(...predictedValues);
+    const max = Math.max(...predictedValues);
+    const roundedMin = Math.floor(min / 10) * 10;
+    const roundedMax = Math.ceil(max / 10) * 10;
+    return {
+      min,
+      max,
+      roundedMin,
+      roundedMax,
+    };
+  }, [visibleCountySummaries]);
+
+  // D3 implementation note: this optional choropleth view uses a sequential
+  // color scale so the value-to-color mapping is explicit, not only categorical.
+  const predictedRateScale = useMemo(() => {
+    const safeMax =
+      predictedExtent.roundedMax || predictedExtent.roundedMin + 1;
+    const colorPosition = scaleSqrt()
+      .domain([predictedExtent.roundedMin, safeMax])
+      .range([0, 1]);
+    const colorScale = scaleLinear<string>()
+      .domain([0, 0.5, 1])
+      .range(["#238636", "#d29922", "#f85149"]);
+
+    return (value: number) => colorScale(colorPosition(value));
+  }, [predictedExtent]);
 
   const projectedMap = useMemo<ProjectedMap>(() => {
     if (!countyFeatures) {
@@ -176,7 +230,9 @@ function CountyMap(props: CountyMapProps) {
               county.countyFips,
               selectedCountyFips,
               countySummaries,
-              selectedYear
+              selectedYear,
+              mapMode,
+              predictedRateScale
             );
 
             return (
@@ -252,18 +308,28 @@ function CountyMap(props: CountyMapProps) {
           <span className="legend-swatch selected"></span>
           <span>Selected county</span>
         </div>
-        <div className="legend-item">
-          <span className="legend-swatch high"></span>
-          <span>High risk</span>
-        </div>
-        <div className="legend-item">
-          <span className="legend-swatch medium"></span>
-          <span>Medium risk</span>
-        </div>
-        <div className="legend-item">
-          <span className="legend-swatch low"></span>
-          <span>Low risk</span>
-        </div>
+        {mapMode === "riskLevel" ? (
+          <>
+            <div className="legend-item">
+              <span className="legend-swatch high"></span>
+              <span>High risk</span>
+            </div>
+            <div className="legend-item">
+              <span className="legend-swatch medium"></span>
+              <span>Medium risk</span>
+            </div>
+            <div className="legend-item">
+              <span className="legend-swatch low"></span>
+              <span>Low risk</span>
+            </div>
+          </>
+        ) : (
+          <div className="numeric-legend">
+            <span>{predictedExtent.roundedMin.toFixed(0)}</span>
+            <div className="numeric-legend-bar" />
+            <span>{predictedExtent.roundedMax.toFixed(0)}</span>
+          </div>
+        )}
       </div>
     </div>
   );

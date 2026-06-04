@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CountyMap from "../components/CountyMap";
 import type { CountySummaryRecord } from "../types/dataTypes";
 
@@ -11,6 +12,9 @@ type MapOverviewProps = {
 function MapOverview(props: MapOverviewProps) {
   const { countySummaries, selectedCountyFips, selectedYear, onCountyChange } =
     props;
+  const [mapMode, setMapMode] = useState<"riskLevel" | "predictedEdRate">(
+    "riskLevel"
+  );
 
   // The county list stays year-specific so it mirrors the current map state exactly.
   const visibleCounties = countySummaries.filter((county) => {
@@ -37,6 +41,7 @@ function MapOverview(props: MapOverviewProps) {
             selectedCountyFips={selectedCountyFips}
             selectedYear={selectedYear}
             onCountyChange={onCountyChange}
+            mapMode={mapMode}
           />
 
           <aside className="county-sidebar">
@@ -66,6 +71,19 @@ function MapOverview(props: MapOverviewProps) {
                 );
               })}
             </div>
+
+            <label className="map-mode-toggle sidebar-toggle">
+              <span>Map color</span>
+              <select
+                value={mapMode}
+                onChange={(event) =>
+                  setMapMode(event.target.value as "riskLevel" | "predictedEdRate")
+                }
+              >
+                <option value="riskLevel">Risk level</option>
+                <option value="predictedEdRate">Predicted ED rate</option>
+              </select>
+            </label>
           </aside>
         </div>
       </div>

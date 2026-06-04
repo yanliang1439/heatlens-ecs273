@@ -287,6 +287,25 @@ body {
   overflow: hidden;
 }
 
+.map-mode-toggle {
+  display: grid;
+  gap: 0.28rem;
+  color: #9da7b3;
+  font-size: 0.82rem;
+}
+
+.sidebar-toggle {
+  margin-top: 0.65rem;
+}
+
+.map-mode-toggle select {
+  width: 100%;
+  padding: 0.42rem 0.55rem;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+}
+
 .county-map-shell {
   min-height: 0;
   display: grid;
@@ -320,7 +339,8 @@ body {
 
 .county-shape {
   cursor: pointer;
-  transition: opacity 120ms ease;
+  /* Animate fill changes so year switches read as one smooth update instead of a hard swap. */
+  transition: fill 220ms ease, opacity 120ms ease;
 }
 
 .county-shape:hover {
@@ -348,6 +368,7 @@ body {
   flex-wrap: wrap;
   color: #9da7b3;
   font-size: 0.88rem;
+  align-items: center;
 }
 
 .legend-item {
@@ -378,6 +399,25 @@ body {
   background: #238636;
 }
 
+.numeric-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 200px;
+}
+
+.numeric-legend-bar {
+  flex: 1;
+  height: 10px;
+  border: 1px solid #30363d;
+  background: linear-gradient(
+    90deg,
+    #238636 0%,
+    #d29922 50%,
+    #f85149 100%
+  );
+}
+
 .map-layout {
   min-height: 0;
   height: 100%;
@@ -390,7 +430,7 @@ body {
 .county-sidebar {
   min-height: 0;
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
   border-left: 1px solid #21262d;
   padding-left: 0.75rem;
   overflow: hidden;
