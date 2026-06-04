@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { scaleLinear } from "d3";
 import { runWhatIf } from "../services/backendApi";
 import type {
   CounterfactualRecord,
@@ -114,6 +115,11 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
     ...simulation.shapDelta.map((item) => Math.abs(item.delta)),
     0.01
   );
+  // D3 implementation note: use a linear scale for delta bars so the simulator
+  // also uses D3 for quantitative visual encoding, not only the map.
+  const deltaScale = scaleLinear()
+    .domain([0, maxDelta])
+    .range([0, 100]);
 
   return (
     <section className="view-panel">
@@ -201,7 +207,7 @@ function WhatIfSimulator(props: WhatIfSimulatorProps) {
               {simulation.shapDelta.map((item) => {
                 const directionClass =
                   item.delta >= 0 ? "delta-row positive" : "delta-row negative";
-                const barWidth = `${(Math.abs(item.delta) / maxDelta) * 100}%`;
+                const barWidth = `${deltaScale(Math.abs(item.delta))}%`;
 
                 return (
                   <div key={item.feature} className={directionClass}>

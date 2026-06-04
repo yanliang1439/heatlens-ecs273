@@ -1,3 +1,4 @@
+import { scaleLinear } from "d3";
 import type { ShapBreakdownRecord } from "../types/dataTypes";
 import {
   formatFeatureLabel,
@@ -20,6 +21,11 @@ function ShapBreakdown(props: ShapBreakdownProps) {
   const maxContribution = Math.max(
     ...orderedValues.map((item) => Math.abs(item.shapContribution))
   );
+  // D3 implementation note: use a linear scale for SHAP bar lengths so the
+  // quantitative encoding is clearly D3-based, not just manual width math.
+  const barScale = scaleLinear()
+    .domain([0, maxContribution || 1])
+    .range([0, 100]);
 
   return (
     <section className="view-panel">
@@ -45,7 +51,7 @@ function ShapBreakdown(props: ShapBreakdownProps) {
               item.shapContribution >= 0
                 ? "shap-row positive"
                 : "shap-row negative";
-            const barWidth = `${(Math.abs(item.shapContribution) / maxContribution) * 100}%`;
+            const barWidth = `${barScale(Math.abs(item.shapContribution))}%`;
 
             return (
               <div key={item.feature} className={directionClass}>
