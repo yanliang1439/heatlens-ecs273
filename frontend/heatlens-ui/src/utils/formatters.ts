@@ -1,3 +1,5 @@
+import { scaleLinear } from "d3";
+
 export function formatFeatureLabel(featureName: string): string {
   return featureName
     .replace(/([A-Z])/g, " $1")
@@ -59,8 +61,8 @@ export function getFeatureFillPercent(
   featureName: string,
   value: number
 ): number {
-  // The bars in View 2 should read like rough context within a sensible range,
-  // not compete against the single biggest raw number in the panel.
+  // View 2 uses D3 scales too so all three quantitative bar views share the same
+  // implementation story for the rubric: D3 maps feature values into visible widths.
   const featureRanges: Record<string, { min: number; max: number }> = {
     summerAvgMax: { min: 60, max: 120 },
     tailPercentileTemp: { min: 80, max: 130 },
@@ -79,6 +81,8 @@ export function getFeatureFillPercent(
     return Math.max(0, Math.min(value, 100));
   }
 
-  const normalized = ((value - range.min) / (range.max - range.min)) * 100;
-  return Math.max(0, Math.min(normalized, 100));
+  return scaleLinear()
+    .domain([range.min, range.max])
+    .range([0, 100])
+    .clamp(true)(value);
 }
